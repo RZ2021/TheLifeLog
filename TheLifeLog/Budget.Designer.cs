@@ -29,6 +29,7 @@ namespace TheLifeLog
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Budget));
             this.panel1 = new System.Windows.Forms.Panel();
             this.billsButton = new System.Windows.Forms.Button();
@@ -65,7 +66,7 @@ namespace TheLifeLog
             this.budgetTB12 = new System.Windows.Forms.TextBox();
             this.IncomeLabel = new System.Windows.Forms.Label();
             this.SetBudgetButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.totalLabel = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.errorLabel = new System.Windows.Forms.Label();
             this.exitLabel = new System.Windows.Forms.Label();
@@ -82,7 +83,8 @@ namespace TheLifeLog
             this.budgetTB17 = new System.Windows.Forms.TextBox();
             this.ExLabel18 = new System.Windows.Forms.Label();
             this.budgetTB18 = new System.Windows.Forms.TextBox();
-            this.myProgressBar1 = new TheLifeLog.MyProgressBar();
+            this.budgetProgressBar = new TheLifeLog.MyProgressBar();
+            this.progressTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -485,15 +487,15 @@ namespace TheLifeLog
             this.SetBudgetButton.UseVisualStyleBackColor = false;
             this.SetBudgetButton.Click += new System.EventHandler(this.SetBudgetButton_Click);
             // 
-            // label3
+            // totalLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Minerva", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(849, 536);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 29);
-            this.label3.TabIndex = 50;
-            this.label3.Text = "Budget Progress";
+            this.totalLabel.AutoSize = true;
+            this.totalLabel.Font = new System.Drawing.Font("Minerva", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLabel.Location = new System.Drawing.Point(849, 536);
+            this.totalLabel.Name = "totalLabel";
+            this.totalLabel.Size = new System.Drawing.Size(167, 29);
+            this.totalLabel.TabIndex = 50;
+            this.totalLabel.Text = "Budget Progress";
             // 
             // label18
             // 
@@ -671,12 +673,16 @@ namespace TheLifeLog
             this.budgetTB18.TabIndex = 56;
             this.budgetTB18.Text = "0.0";
             // 
-            // myProgressBar1
+            // budgetProgressBar
             // 
-            this.myProgressBar1.Location = new System.Drawing.Point(897, 144);
-            this.myProgressBar1.Name = "myProgressBar1";
-            this.myProgressBar1.Size = new System.Drawing.Size(71, 372);
-            this.myProgressBar1.TabIndex = 68;
+            this.budgetProgressBar.Location = new System.Drawing.Point(897, 144);
+            this.budgetProgressBar.Name = "budgetProgressBar";
+            this.budgetProgressBar.Size = new System.Drawing.Size(71, 372);
+            this.budgetProgressBar.TabIndex = 68;
+            // 
+            // progressTimer
+            // 
+            this.progressTimer.Tick += new System.EventHandler(this.progressTimer_Tick);
             // 
             // Budget
             // 
@@ -684,7 +690,7 @@ namespace TheLifeLog
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1016, 648);
-            this.Controls.Add(this.myProgressBar1);
+            this.Controls.Add(this.budgetProgressBar);
             this.Controls.Add(this.ExLabel14);
             this.Controls.Add(this.budgetTB13);
             this.Controls.Add(this.ExLabel3);
@@ -701,7 +707,7 @@ namespace TheLifeLog
             this.Controls.Add(this.exitLabel);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.totalLabel);
             this.Controls.Add(this.SetBudgetButton);
             this.Controls.Add(this.IncomeLabel);
             this.Controls.Add(this.ExLabel4);
@@ -778,7 +784,7 @@ namespace TheLifeLog
         private System.Windows.Forms.TextBox budgetTB12;
         private System.Windows.Forms.Label IncomeLabel;
         private System.Windows.Forms.Button SetBudgetButton;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label errorLabel;
@@ -798,6 +804,7 @@ namespace TheLifeLog
         private System.Windows.Forms.TextBox budgetTB17;
         private System.Windows.Forms.Label ExLabel18;
         private System.Windows.Forms.TextBox budgetTB18;
-        private MyProgressBar myProgressBar1;
+        private MyProgressBar budgetProgressBar;
+        private System.Windows.Forms.Timer progressTimer;
     }
 }
