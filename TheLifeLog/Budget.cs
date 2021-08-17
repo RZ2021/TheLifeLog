@@ -103,7 +103,6 @@ namespace TheLifeLog
         private void SetBudgetButton_Click(object sender, EventArgs e)
         {
             budData.Clear();
-
             TextBox[] tb = {budgetTB1, budgetTB2, budgetTB3, budgetTB4, budgetTB5, budgetTB6, budgetTB7,
                 budgetTB8, budgetTB9, budgetTB10, budgetTB11, budgetTB12, budgetTB13, budgetTB14, budgetTB15,
                 budgetTB16, budgetTB17, budgetTB18};
@@ -116,8 +115,6 @@ namespace TheLifeLog
             string budget = String.Join("*", budData.ToArray());
 
             exData.Clear();
-
-
             Label[] lab = {ExLabel1, ExLabel2, ExLabel3, ExLabel4, ExLabel5, ExLabel6, ExLabel7,
                 ExLabel8, ExLabel9, ExLabel10, ExLabel11, ExLabel12, ExLabel13, ExLabel14, ExLabel15,
                 ExLabel16, ExLabel17, ExLabel18};
@@ -128,7 +125,6 @@ namespace TheLifeLog
             }
 
             string expense = String.Join("*", exData.ToArray());
-
             string income = IncomeTb.Text;
 
 
@@ -145,19 +141,6 @@ namespace TheLifeLog
             }
 
         }
-
-        bool isDigits(string s)
-        {
-            bool isDig = double.TryParse(s, out _);
-            return isDig;
-        }
-
-        string removeSpace(string str)
-        {
-            string var = str.Replace(" ", String.Empty);
-            return var;
-        }
-
 
         private void SavingsButton_Click(object sender, EventArgs e)
         {
@@ -205,7 +188,6 @@ namespace TheLifeLog
             {
                 errorLabel.Text = "Your way too over budget";
             }
-
 
         }
 

@@ -48,16 +48,12 @@ namespace TheLifeLog
                     tdData.Add(str);
                 }
 
-                tdTb1.Text = tdData[0];
-                tdTb2.Text = tdData[1];
-                tdTb3.Text = tdData[2];
-                tdTb4.Text = tdData[3];
-                tdTb5.Text = tdData[4];
-                tdTb6.Text = tdData[5];
-                tdTb7.Text = tdData[6];
-                tdTb8.Text = tdData[7];
-                tdTb9.Text = tdData[8];
-                tdTb10.Text = tdData[9];
+                TextBox[] tb = { tdTb1, tdTb2, tdTb3, tdTb4, tdTb5, tdTb6, tdTb7, tdTb8, tdTb9, tdTb10 };
+
+                for (int len = 0; len < tdData.Count; len++)
+                {
+                    tb[len].Text = tdData[len];
+                }
 
                 string[] tempArray2 = checks.Split('*');
                 foreach (string str in tempArray2)
@@ -65,16 +61,13 @@ namespace TheLifeLog
                     chData.Add(str);
                 }
 
-                checkPos1 = chData[0];
-                checkPos2 = chData[1];
-                checkPos3 = chData[2];
-                checkPos4 = chData[3];
-                checkPos5 = chData[4];
-                checkPos6 = chData[5];
-                checkPos7 = chData[6];
-                checkPos8 = chData[7];
-                checkPos9 = chData[8];
-                checkPos10 = chData[9];
+                string[] check = {checkPos1, checkPos2, checkPos3, checkPos4, checkPos5, checkPos6, checkPos7,
+                checkPos8, checkPos9, checkPos10};
+
+                for (int len = 0; len < chData.Count; len++)
+                {
+                    check[len] = chData[len];
+                }
             }
             catch
             {
@@ -108,28 +101,21 @@ namespace TheLifeLog
             try
             {
                 tdData.Clear();
-                tdData.Add(tdTb1.Text);
-                tdData.Add(tdTb2.Text);
-                tdData.Add(tdTb3.Text);
-                tdData.Add(tdTb4.Text);
-                tdData.Add(tdTb5.Text);
-                tdData.Add(tdTb6.Text);
-                tdData.Add(tdTb7.Text);
-                tdData.Add(tdTb8.Text);
-                tdData.Add(tdTb9.Text);
-                tdData.Add(tdTb10.Text);
+                TextBox[] tb = {tdTb1, tdTb2, tdTb3, tdTb4, tdTb5, tdTb6, tdTb7, tdTb8, tdTb9, tdTb10};
+                //writes data in textboxes to database
+                for (int len = 0; len < tb.Length; len++)
+                {
+                    tdData.Add(tb[len].Text);
+                }
 
                 chData.Clear();
-                chData.Add(checkPos1);
-                chData.Add(checkPos2);
-                chData.Add(checkPos3);
-                chData.Add(checkPos4);
-                chData.Add(checkPos5);
-                chData.Add(checkPos6);
-                chData.Add(checkPos7);
-                chData.Add(checkPos8);
-                chData.Add(checkPos9);
-                chData.Add(checkPos10);
+                string[] checks = {checkPos1, checkPos2, checkPos3, checkPos4, checkPos5, checkPos6, checkPos7,
+                checkPos8, checkPos9, checkPos10};
+
+                for (int len = 0; len < checks.Length; len++)
+                {
+                    chData.Add(checks[len]);
+                }
 
                 string todo = String.Join("*", tdData.ToArray());
                 string check = String.Join("*", chData.ToArray());

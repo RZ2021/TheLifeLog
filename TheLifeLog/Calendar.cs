@@ -91,49 +91,22 @@ namespace TheLifeLog
                 {
                     mon = Convert.ToInt32(dc.ReadCalendar(id, 2));
                     year = Convert.ToInt32(dc.ReadCalendar(id, 3));
-                    string[] tempArray = temp.Split('*');
-                    foreach (string str in tempArray)
+
+                    string[] tempArray2 = temp.Split('*');
+                    foreach (string str in tempArray2)
                     {
                         calData.Add(str);
                     }
 
-                    tb1.Text = calData[0];
-                    tb2.Text = calData[1];
-                    tb3.Text = calData[2];
-                    tb4.Text = calData[3];
-                    tb5.Text = calData[4];
-                    tb6.Text = calData[5];
-                    tb7.Text = calData[6];
-                    tb8.Text = calData[7];
-                    tb9.Text = calData[8];
-                    tb10.Text = calData[9];
-                    tb11.Text = calData[10];
-                    tb12.Text = calData[11];
-                    tb13.Text = calData[12];
-                    tb14.Text = calData[13];
-                    tb15.Text = calData[14];
-                    tb16.Text = calData[15];
-                    tb17.Text = calData[16];
-                    tb18.Text = calData[17];
-                    tb19.Text = calData[18];
-                    tb20.Text = calData[19];
-                    tb21.Text = calData[20];
-                    tb22.Text = calData[21];
-                    tb23.Text = calData[22];
-                    tb24.Text = calData[23];
-                    tb25.Text = calData[24];
-                    tb26.Text = calData[25];
-                    tb27.Text = calData[26];
-                    tb28.Text = calData[27];
-                    tb29.Text = calData[28];
-                    tb30.Text = calData[29];
-                    tb31.Text = calData[30];
-                    tb32.Text = calData[31];
-                    tb33.Text = calData[32];
-                    tb34.Text = calData[33];
-                    tb35.Text = calData[34];
-                    tb36.Text = calData[35];
-                    tb37.Text = calData[36];
+                    RichTextBox[] tb = {tb1, tb2, tb3, tb4, tb5, tb6, tb7, tb8, tb9, tb10, tb11, tb12, tb13, tb14,
+                    tb15, tb16, tb17, tb18, tb19, tb20, tb21, tb22, tb23, tb24, tb25, tb26, tb27, tb28, tb29, tb30,
+                    tb31, tb32, tb33, tb34, tb35, tb36, tb37};
+
+                    for (int len = 0; len < calData.Count; len++)
+                    {
+                        tb[len].Text = calData[len];
+                    }
+
                 }
             }
             catch
@@ -146,44 +119,15 @@ namespace TheLifeLog
         private void updateCalendar_Click(object sender, EventArgs e)
         {
             calData.Clear();
+
+            RichTextBox[] tb = {tb1, tb2, tb3, tb4, tb5, tb6, tb7, tb8, tb9, tb10, tb11, tb12, tb13, tb14,
+                    tb15, tb16, tb17, tb18, tb19, tb20, tb21, tb22, tb23, tb24, tb25, tb26, tb27, tb28, tb29, tb30,
+                    tb31, tb32, tb33, tb34, tb35, tb36, tb37};
             //writes data in textboxes to database
-            calData.Add(tb1.Text);
-            calData.Add(tb2.Text);
-            calData.Add(tb3.Text);
-            calData.Add(tb4.Text);
-            calData.Add(tb5.Text);
-            calData.Add(tb6.Text);
-            calData.Add(tb7.Text);
-            calData.Add(tb8.Text);
-            calData.Add(tb9.Text);
-            calData.Add(tb10.Text);
-            calData.Add(tb11.Text);
-            calData.Add(tb12.Text);
-            calData.Add(tb13.Text);
-            calData.Add(tb14.Text);
-            calData.Add(tb15.Text);
-            calData.Add(tb16.Text);
-            calData.Add(tb17.Text);
-            calData.Add(tb18.Text);
-            calData.Add(tb19.Text);
-            calData.Add(tb20.Text);
-            calData.Add(tb21.Text);
-            calData.Add(tb22.Text);
-            calData.Add(tb23.Text);
-            calData.Add(tb24.Text);
-            calData.Add(tb25.Text);
-            calData.Add(tb26.Text);
-            calData.Add(tb27.Text);
-            calData.Add(tb28.Text);
-            calData.Add(tb29.Text);
-            calData.Add(tb30.Text);
-            calData.Add(tb31.Text);
-            calData.Add(tb32.Text);
-            calData.Add(tb33.Text);
-            calData.Add(tb34.Text);
-            calData.Add(tb35.Text);
-            calData.Add(tb36.Text);
-            calData.Add(tb37.Text);
+            for (int len = 0; len < tb.Length; len++)
+            {
+                calData.Add(tb[len].Text);
+            }
 
             string dates = String.Join("*", calData.ToArray());
             DataConnect dc = new DataConnect();
