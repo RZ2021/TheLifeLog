@@ -12,6 +12,7 @@ namespace TheLifeLog
 {
     public partial class MyProgressBar : ProgressBar
     {
+        
         public MyProgressBar()
         {
             InitializeComponent();

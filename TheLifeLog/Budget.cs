@@ -16,6 +16,7 @@ namespace TheLifeLog
         List<string> budData = new List<string>();
         List<string> exData = new List<string>();
         int userId;
+        double income;
         string total;
         public Budget(int user)
         {
@@ -25,12 +26,16 @@ namespace TheLifeLog
 
         private void Budget_Load(object sender, EventArgs e)
         {
+            budgetProgressBar.Enabled = true;
+            budgetProgressBar.Minimum = 0;
+            budgetProgressBar.Maximum = 100;
+            progressTimer.Enabled = true;
             try
             {
                 DataConnect dc = new DataConnect();
                 string ex = dc.ReadBudget(userId, 1);
                 string budget = dc.ReadBudget(userId, 2);
-                string income = dc.ReadBudget(userId, 3);
+                string userIncome = dc.ReadBudget(userId, 3);
                 total = dc.ReadBudget(userId, 4);
 
                 //Get expenses categories and set the correct labels
@@ -65,7 +70,8 @@ namespace TheLifeLog
                     tb[len].Text = budData[len];
                 }
 
-                IncomeTb.Text = income;
+                IncomeTb.Text = userIncome;
+                income = double.Parse(userIncome);
                 totalLabel.Text = total;
 
             }
@@ -178,6 +184,27 @@ namespace TheLifeLog
         {
             double total = GetTotal();
             totalLabel.Text = total.ToString();
+            income = double.Parse(IncomeTb.Text);
+            double pbValue = total / income * 100;
+            try
+            {
+                if (pbValue > 100)
+                {
+                    ProgressLabel.Text = "You are \nover budget!!!";
+                    ProgressLabel.ForeColor = Color.Red;
+                    budgetProgressBar.Enabled = false;
+                }
+                else
+                {
+                    ProgressLabel.Text = "You're getting \nthere!";
+                    budgetProgressBar.Enabled = true;
+                    budgetProgressBar.Value = Convert.ToInt32(pbValue);
+                }
+            }
+            catch
+            {
+                errorLabel.Text = "Your way too over budget";
+            }
 
 
         }
