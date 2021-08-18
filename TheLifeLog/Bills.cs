@@ -75,7 +75,7 @@ namespace TheLifeLog
 
         private void SavingsButton_Click(object sender, EventArgs e)
         {
-            Savings ss = new Savings();
+            Savings ss = new Savings(1);
             ss.Show();
             this.Close();
         }

@@ -165,5 +165,41 @@ namespace TheLifeLog
             int updated = cmd.ExecuteNonQuery();
             return updated;
         }
+
+        public string ReadSavings(int id, int option)
+        {
+            string goal, names, current;
+            string constr = @"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True";
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT Goals, Names, CurrentTotal FROM Savings WHERE UserId = @id"))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        sdr.Read();
+                        goal = sdr["Goals"].ToString();
+                        names = sdr["Names"].ToString();
+                        current = sdr["CurrentTotal"].ToString();
+                    }
+                    con.Close();
+                }
+            }
+            if (option == 1)
+            {
+                return goal;
+            }
+            else if (option == 2)
+            {
+                return names;
+            }
+            else
+            {
+                return current;
+            }
+        }
     }
 }

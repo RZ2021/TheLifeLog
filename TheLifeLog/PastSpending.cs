@@ -19,7 +19,7 @@ namespace TheLifeLog
 
         private void SavingsButton_Click(object sender, EventArgs e)
         {
-            Savings save = new Savings();
+            Savings save = new Savings(1);
             save.Show();
         }
 
