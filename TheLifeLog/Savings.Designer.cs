@@ -29,16 +29,14 @@ namespace TheLifeLog
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Savings));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.billsButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PSButton = new System.Windows.Forms.Button();
             this.savingsButton = new System.Windows.Forms.Button();
             this.BudgetButton = new System.Windows.Forms.Button();
-            this.proBar1 = new System.Windows.Forms.PictureBox();
-            this.proBar2 = new System.Windows.Forms.PictureBox();
-            this.proBar3 = new System.Windows.Forms.PictureBox();
-            this.proBar4 = new System.Windows.Forms.PictureBox();
             this.oneUpdateTB = new System.Windows.Forms.RichTextBox();
             this.twoUpdateTB = new System.Windows.Forms.RichTextBox();
             this.threeUpdateTB = new System.Windows.Forms.RichTextBox();
@@ -46,23 +44,34 @@ namespace TheLifeLog
             this.label3 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.SavingSettings = new System.Windows.Forms.Label();
-            this.Goal1Label = new System.Windows.Forms.Label();
-            this.Goal2Label = new System.Windows.Forms.Label();
-            this.Goal3Label = new System.Windows.Forms.Label();
-            this.Goal4Label = new System.Windows.Forms.Label();
+            this.gnLabel1 = new System.Windows.Forms.Label();
+            this.gnLabel2 = new System.Windows.Forms.Label();
+            this.gnLabel3 = new System.Windows.Forms.Label();
+            this.gnLabel4 = new System.Windows.Forms.Label();
             this.name1Label = new System.Windows.Forms.Label();
             this.name2Label = new System.Windows.Forms.Label();
             this.name3Label = new System.Windows.Forms.Label();
             this.name4Label = new System.Windows.Forms.Label();
             this.exitLabel = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
-            this.billsButton = new System.Windows.Forms.Button();
+            this.myProgressBar1 = new TheLifeLog.MyProgressBar();
+            this.myProgressBar2 = new TheLifeLog.MyProgressBar();
+            this.myProgressBar3 = new TheLifeLog.MyProgressBar();
+            this.myProgressBar4 = new TheLifeLog.MyProgressBar();
+            this.currentLabel4 = new System.Windows.Forms.Label();
+            this.currentLabel3 = new System.Windows.Forms.Label();
+            this.currentLabel2 = new System.Windows.Forms.Label();
+            this.currentLabel1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.ProgressTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proBar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proBar3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proBar4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,6 +88,19 @@ namespace TheLifeLog
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel1.Size = new System.Drawing.Size(241, 748);
             this.panel1.TabIndex = 18;
+            // 
+            // billsButton
+            // 
+            this.billsButton.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.billsButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.billsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.billsButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.billsButton.Location = new System.Drawing.Point(3, 449);
+            this.billsButton.Name = "billsButton";
+            this.billsButton.Size = new System.Drawing.Size(238, 67);
+            this.billsButton.TabIndex = 12;
+            this.billsButton.Text = "Bills";
+            this.billsButton.UseVisualStyleBackColor = false;
             // 
             // pictureBox2
             // 
@@ -130,53 +152,12 @@ namespace TheLifeLog
             this.BudgetButton.UseVisualStyleBackColor = false;
             this.BudgetButton.Click += new System.EventHandler(this.BudgetButton_Click);
             // 
-            // proBar1
-            // 
-            this.proBar1.Image = ((System.Drawing.Image)(resources.GetObject("proBar1.Image")));
-            this.proBar1.Location = new System.Drawing.Point(349, 156);
-            this.proBar1.Name = "proBar1";
-            this.proBar1.Size = new System.Drawing.Size(91, 418);
-            this.proBar1.TabIndex = 19;
-            this.proBar1.TabStop = false;
-            this.proBar1.MouseLeave += new System.EventHandler(this.proBar1_MouseLeave);
-            this.proBar1.MouseHover += new System.EventHandler(this.proBar1_MouseHover);
-            // 
-            // proBar2
-            // 
-            this.proBar2.Image = ((System.Drawing.Image)(resources.GetObject("proBar2.Image")));
-            this.proBar2.Location = new System.Drawing.Point(527, 156);
-            this.proBar2.Name = "proBar2";
-            this.proBar2.Size = new System.Drawing.Size(91, 418);
-            this.proBar2.TabIndex = 20;
-            this.proBar2.TabStop = false;
-            this.proBar2.MouseHover += new System.EventHandler(this.proBar2_MouseHover);
-            // 
-            // proBar3
-            // 
-            this.proBar3.Image = ((System.Drawing.Image)(resources.GetObject("proBar3.Image")));
-            this.proBar3.Location = new System.Drawing.Point(712, 156);
-            this.proBar3.Name = "proBar3";
-            this.proBar3.Size = new System.Drawing.Size(91, 418);
-            this.proBar3.TabIndex = 21;
-            this.proBar3.TabStop = false;
-            this.proBar3.MouseHover += new System.EventHandler(this.proBar3_MouseHover);
-            // 
-            // proBar4
-            // 
-            this.proBar4.Image = ((System.Drawing.Image)(resources.GetObject("proBar4.Image")));
-            this.proBar4.Location = new System.Drawing.Point(892, 156);
-            this.proBar4.Name = "proBar4";
-            this.proBar4.Size = new System.Drawing.Size(91, 418);
-            this.proBar4.TabIndex = 22;
-            this.proBar4.TabStop = false;
-            this.proBar4.MouseHover += new System.EventHandler(this.proBar4_MouseHover);
-            // 
             // oneUpdateTB
             // 
             this.oneUpdateTB.BackColor = System.Drawing.Color.MediumTurquoise;
             this.oneUpdateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.oneUpdateTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oneUpdateTB.Location = new System.Drawing.Point(349, 594);
+            this.oneUpdateTB.Location = new System.Drawing.Point(385, 559);
             this.oneUpdateTB.Name = "oneUpdateTB";
             this.oneUpdateTB.Size = new System.Drawing.Size(91, 38);
             this.oneUpdateTB.TabIndex = 23;
@@ -187,7 +168,7 @@ namespace TheLifeLog
             this.twoUpdateTB.BackColor = System.Drawing.Color.MediumTurquoise;
             this.twoUpdateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.twoUpdateTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.twoUpdateTB.Location = new System.Drawing.Point(527, 594);
+            this.twoUpdateTB.Location = new System.Drawing.Point(547, 559);
             this.twoUpdateTB.Name = "twoUpdateTB";
             this.twoUpdateTB.Size = new System.Drawing.Size(91, 38);
             this.twoUpdateTB.TabIndex = 24;
@@ -198,7 +179,7 @@ namespace TheLifeLog
             this.threeUpdateTB.BackColor = System.Drawing.Color.MediumTurquoise;
             this.threeUpdateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.threeUpdateTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.threeUpdateTB.Location = new System.Drawing.Point(712, 594);
+            this.threeUpdateTB.Location = new System.Drawing.Point(712, 559);
             this.threeUpdateTB.Name = "threeUpdateTB";
             this.threeUpdateTB.Size = new System.Drawing.Size(91, 38);
             this.threeUpdateTB.TabIndex = 25;
@@ -209,7 +190,7 @@ namespace TheLifeLog
             this.fourUpdateTB.BackColor = System.Drawing.Color.MediumTurquoise;
             this.fourUpdateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fourUpdateTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fourUpdateTB.Location = new System.Drawing.Point(892, 594);
+            this.fourUpdateTB.Location = new System.Drawing.Point(892, 559);
             this.fourUpdateTB.Name = "fourUpdateTB";
             this.fourUpdateTB.Size = new System.Drawing.Size(91, 38);
             this.fourUpdateTB.TabIndex = 26;
@@ -219,7 +200,7 @@ namespace TheLifeLog
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Minerva", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(561, 9);
+            this.label3.Location = new System.Drawing.Point(595, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 47);
             this.label3.TabIndex = 27;
@@ -235,7 +216,6 @@ namespace TheLifeLog
             this.saveButton.TabIndex = 28;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = false;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // SavingSettings
             // 
@@ -248,85 +228,85 @@ namespace TheLifeLog
             this.SavingSettings.Text = "+";
             this.SavingSettings.Click += new System.EventHandler(this.SavingSetting_Click);
             // 
-            // Goal1Label
+            // gnLabel1
             // 
-            this.Goal1Label.AutoSize = true;
-            this.Goal1Label.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Goal1Label.Location = new System.Drawing.Point(360, 129);
-            this.Goal1Label.Name = "Goal1Label";
-            this.Goal1Label.Size = new System.Drawing.Size(51, 24);
-            this.Goal1Label.TabIndex = 30;
-            this.Goal1Label.Text = "Goal:";
+            this.gnLabel1.AutoSize = true;
+            this.gnLabel1.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gnLabel1.Location = new System.Drawing.Point(1001, 135);
+            this.gnLabel1.Name = "gnLabel1";
+            this.gnLabel1.Size = new System.Drawing.Size(51, 24);
+            this.gnLabel1.TabIndex = 30;
+            this.gnLabel1.Text = "Goal:";
             // 
-            // Goal2Label
+            // gnLabel2
             // 
-            this.Goal2Label.AutoSize = true;
-            this.Goal2Label.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Goal2Label.Location = new System.Drawing.Point(541, 129);
-            this.Goal2Label.Name = "Goal2Label";
-            this.Goal2Label.Size = new System.Drawing.Size(51, 24);
-            this.Goal2Label.TabIndex = 31;
-            this.Goal2Label.Text = "Goal:";
+            this.gnLabel2.AutoSize = true;
+            this.gnLabel2.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gnLabel2.Location = new System.Drawing.Point(1001, 251);
+            this.gnLabel2.Name = "gnLabel2";
+            this.gnLabel2.Size = new System.Drawing.Size(51, 24);
+            this.gnLabel2.TabIndex = 31;
+            this.gnLabel2.Text = "Goal:";
             // 
-            // Goal3Label
+            // gnLabel3
             // 
-            this.Goal3Label.AutoSize = true;
-            this.Goal3Label.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Goal3Label.Location = new System.Drawing.Point(721, 129);
-            this.Goal3Label.Name = "Goal3Label";
-            this.Goal3Label.Size = new System.Drawing.Size(51, 24);
-            this.Goal3Label.TabIndex = 32;
-            this.Goal3Label.Text = "Goal:";
+            this.gnLabel3.AutoSize = true;
+            this.gnLabel3.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gnLabel3.Location = new System.Drawing.Point(1001, 361);
+            this.gnLabel3.Name = "gnLabel3";
+            this.gnLabel3.Size = new System.Drawing.Size(51, 24);
+            this.gnLabel3.TabIndex = 32;
+            this.gnLabel3.Text = "Goal:";
             // 
-            // Goal4Label
+            // gnLabel4
             // 
-            this.Goal4Label.AutoSize = true;
-            this.Goal4Label.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Goal4Label.Location = new System.Drawing.Point(898, 129);
-            this.Goal4Label.Name = "Goal4Label";
-            this.Goal4Label.Size = new System.Drawing.Size(51, 24);
-            this.Goal4Label.TabIndex = 33;
-            this.Goal4Label.Text = "Goal:";
+            this.gnLabel4.AutoSize = true;
+            this.gnLabel4.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gnLabel4.Location = new System.Drawing.Point(1001, 471);
+            this.gnLabel4.Name = "gnLabel4";
+            this.gnLabel4.Size = new System.Drawing.Size(51, 24);
+            this.gnLabel4.TabIndex = 33;
+            this.gnLabel4.Text = "Goal:";
             // 
             // name1Label
             // 
             this.name1Label.AutoSize = true;
             this.name1Label.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name1Label.Location = new System.Drawing.Point(360, 78);
+            this.name1Label.Location = new System.Drawing.Point(637, 87);
             this.name1Label.Name = "name1Label";
-            this.name1Label.Size = new System.Drawing.Size(51, 24);
+            this.name1Label.Size = new System.Drawing.Size(34, 24);
             this.name1Label.TabIndex = 34;
-            this.name1Label.Text = "Goal:";
+            this.name1Label.Text = "1. ";
             // 
             // name2Label
             // 
             this.name2Label.AutoSize = true;
             this.name2Label.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name2Label.Location = new System.Drawing.Point(541, 78);
+            this.name2Label.Location = new System.Drawing.Point(637, 201);
             this.name2Label.Name = "name2Label";
-            this.name2Label.Size = new System.Drawing.Size(51, 24);
+            this.name2Label.Size = new System.Drawing.Size(27, 24);
             this.name2Label.TabIndex = 35;
-            this.name2Label.Text = "Goal:";
+            this.name2Label.Text = "2.";
             // 
             // name3Label
             // 
             this.name3Label.AutoSize = true;
             this.name3Label.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name3Label.Location = new System.Drawing.Point(721, 78);
+            this.name3Label.Location = new System.Drawing.Point(637, 317);
             this.name3Label.Name = "name3Label";
-            this.name3Label.Size = new System.Drawing.Size(51, 24);
+            this.name3Label.Size = new System.Drawing.Size(22, 24);
             this.name3Label.TabIndex = 36;
-            this.name3Label.Text = "Goal:";
+            this.name3Label.Text = "3.";
             // 
             // name4Label
             // 
             this.name4Label.AutoSize = true;
             this.name4Label.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name4Label.Location = new System.Drawing.Point(898, 78);
+            this.name4Label.Location = new System.Drawing.Point(637, 427);
             this.name4Label.Name = "name4Label";
-            this.name4Label.Size = new System.Drawing.Size(51, 24);
+            this.name4Label.Size = new System.Drawing.Size(26, 24);
             this.name4Label.TabIndex = 37;
-            this.name4Label.Text = "Goal:";
+            this.name4Label.Text = "4.";
             // 
             // exitLabel
             // 
@@ -349,20 +329,144 @@ namespace TheLifeLog
             this.clearButton.TabIndex = 41;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = false;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
-            // billsButton
+            // myProgressBar1
             // 
-            this.billsButton.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.billsButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.billsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.billsButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.billsButton.Location = new System.Drawing.Point(3, 449);
-            this.billsButton.Name = "billsButton";
-            this.billsButton.Size = new System.Drawing.Size(238, 67);
-            this.billsButton.TabIndex = 12;
-            this.billsButton.Text = "Bills";
-            this.billsButton.UseVisualStyleBackColor = false;
+            this.myProgressBar1.Location = new System.Drawing.Point(349, 114);
+            this.myProgressBar1.Name = "myProgressBar1";
+            this.myProgressBar1.Size = new System.Drawing.Size(633, 61);
+            this.myProgressBar1.TabIndex = 42;
+            // 
+            // myProgressBar2
+            // 
+            this.myProgressBar2.Location = new System.Drawing.Point(349, 230);
+            this.myProgressBar2.Name = "myProgressBar2";
+            this.myProgressBar2.Size = new System.Drawing.Size(633, 61);
+            this.myProgressBar2.TabIndex = 43;
+            // 
+            // myProgressBar3
+            // 
+            this.myProgressBar3.Location = new System.Drawing.Point(349, 342);
+            this.myProgressBar3.Name = "myProgressBar3";
+            this.myProgressBar3.Size = new System.Drawing.Size(633, 61);
+            this.myProgressBar3.TabIndex = 44;
+            // 
+            // myProgressBar4
+            // 
+            this.myProgressBar4.Location = new System.Drawing.Point(349, 454);
+            this.myProgressBar4.Name = "myProgressBar4";
+            this.myProgressBar4.Size = new System.Drawing.Size(633, 61);
+            this.myProgressBar4.TabIndex = 45;
+            // 
+            // currentLabel4
+            // 
+            this.currentLabel4.AutoSize = true;
+            this.currentLabel4.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentLabel4.Location = new System.Drawing.Point(273, 471);
+            this.currentLabel4.Name = "currentLabel4";
+            this.currentLabel4.Size = new System.Drawing.Size(51, 24);
+            this.currentLabel4.TabIndex = 49;
+            this.currentLabel4.Text = "Goal:";
+            // 
+            // currentLabel3
+            // 
+            this.currentLabel3.AutoSize = true;
+            this.currentLabel3.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentLabel3.Location = new System.Drawing.Point(273, 361);
+            this.currentLabel3.Name = "currentLabel3";
+            this.currentLabel3.Size = new System.Drawing.Size(51, 24);
+            this.currentLabel3.TabIndex = 48;
+            this.currentLabel3.Text = "Goal:";
+            // 
+            // currentLabel2
+            // 
+            this.currentLabel2.AutoSize = true;
+            this.currentLabel2.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentLabel2.Location = new System.Drawing.Point(273, 251);
+            this.currentLabel2.Name = "currentLabel2";
+            this.currentLabel2.Size = new System.Drawing.Size(51, 24);
+            this.currentLabel2.TabIndex = 47;
+            this.currentLabel2.Text = "Goal:";
+            // 
+            // currentLabel1
+            // 
+            this.currentLabel1.AutoSize = true;
+            this.currentLabel1.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentLabel1.Location = new System.Drawing.Point(273, 135);
+            this.currentLabel1.Name = "currentLabel1";
+            this.currentLabel1.Size = new System.Drawing.Size(51, 24);
+            this.currentLabel1.TabIndex = 46;
+            this.currentLabel1.Text = "Goal:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(259, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 24);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "Current";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1001, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 24);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Goal";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(307, 627);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(713, 24);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "Add to current savings goals using the textboxes, hit save when you\'re done!";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(345, 573);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 24);
+            this.label5.TabIndex = 53;
+            this.label5.Text = "1. ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(507, 573);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 24);
+            this.label6.TabIndex = 54;
+            this.label6.Text = "2.";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(671, 573);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(22, 24);
+            this.label7.TabIndex = 55;
+            this.label7.Text = "3.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(851, 573);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(26, 24);
+            this.label8.TabIndex = 56;
+            this.label8.Text = "4.";
             // 
             // Savings
             // 
@@ -370,16 +474,31 @@ namespace TheLifeLog
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1082, 748);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.currentLabel4);
+            this.Controls.Add(this.currentLabel3);
+            this.Controls.Add(this.currentLabel2);
+            this.Controls.Add(this.currentLabel1);
+            this.Controls.Add(this.myProgressBar4);
+            this.Controls.Add(this.myProgressBar3);
+            this.Controls.Add(this.myProgressBar2);
+            this.Controls.Add(this.myProgressBar1);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.exitLabel);
             this.Controls.Add(this.name4Label);
             this.Controls.Add(this.name3Label);
             this.Controls.Add(this.name2Label);
             this.Controls.Add(this.name1Label);
-            this.Controls.Add(this.Goal4Label);
-            this.Controls.Add(this.Goal3Label);
-            this.Controls.Add(this.Goal2Label);
-            this.Controls.Add(this.Goal1Label);
+            this.Controls.Add(this.gnLabel4);
+            this.Controls.Add(this.gnLabel3);
+            this.Controls.Add(this.gnLabel2);
+            this.Controls.Add(this.gnLabel1);
             this.Controls.Add(this.SavingSettings);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label3);
@@ -387,10 +506,6 @@ namespace TheLifeLog
             this.Controls.Add(this.threeUpdateTB);
             this.Controls.Add(this.twoUpdateTB);
             this.Controls.Add(this.oneUpdateTB);
-            this.Controls.Add(this.proBar4);
-            this.Controls.Add(this.proBar3);
-            this.Controls.Add(this.proBar2);
-            this.Controls.Add(this.proBar1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Savings";
@@ -399,10 +514,6 @@ namespace TheLifeLog
             this.Load += new System.EventHandler(this.Savings_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proBar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proBar3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proBar4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,10 +524,6 @@ namespace TheLifeLog
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button savingsButton;
         private System.Windows.Forms.Button BudgetButton;
-        private System.Windows.Forms.PictureBox proBar1;
-        private System.Windows.Forms.PictureBox proBar2;
-        private System.Windows.Forms.PictureBox proBar3;
-        private System.Windows.Forms.PictureBox proBar4;
         private System.Windows.Forms.Button PSButton;
         private System.Windows.Forms.RichTextBox oneUpdateTB;
         private System.Windows.Forms.RichTextBox twoUpdateTB;
@@ -425,10 +532,10 @@ namespace TheLifeLog
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Label SavingSettings;
-        private System.Windows.Forms.Label Goal1Label;
-        private System.Windows.Forms.Label Goal2Label;
-        private System.Windows.Forms.Label Goal3Label;
-        private System.Windows.Forms.Label Goal4Label;
+        private System.Windows.Forms.Label gnLabel1;
+        private System.Windows.Forms.Label gnLabel2;
+        private System.Windows.Forms.Label gnLabel3;
+        private System.Windows.Forms.Label gnLabel4;
         private System.Windows.Forms.Label name1Label;
         private System.Windows.Forms.Label name2Label;
         private System.Windows.Forms.Label name3Label;
@@ -437,5 +544,21 @@ namespace TheLifeLog
         private System.Windows.Forms.Label exitLabel;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button billsButton;
+        private MyProgressBar myProgressBar1;
+        private MyProgressBar myProgressBar2;
+        private MyProgressBar myProgressBar3;
+        private MyProgressBar myProgressBar4;
+        private System.Windows.Forms.Label currentLabel4;
+        private System.Windows.Forms.Label currentLabel3;
+        private System.Windows.Forms.Label currentLabel2;
+        private System.Windows.Forms.Label currentLabel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Timer ProgressTimer;
     }
 }

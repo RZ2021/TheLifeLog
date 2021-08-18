@@ -23,11 +23,11 @@ namespace TheLifeLog
         {
             Rectangle rect = this.ClientRectangle;
             Graphics g = pe.Graphics;
-            ProgressBarRenderer.DrawHorizontalBar(g, rect);
+            ProgressBarRenderer.DrawVerticalBar(g, rect);
             if (this.Value > 0)
             {
-                Rectangle clip = new Rectangle(rect.X, rect.Y, (int)Math.Round(((float)this.Value / this.Maximum) * rect.Width), rect.Height);
-                ProgressBarRenderer.DrawHorizontalChunks(g, clip);
+                Rectangle clip = new Rectangle(rect.X, rect.Y, (int)Math.Round(((float)this.Value / this.Maximum) * rect.Height), rect.Width);
+                ProgressBarRenderer.DrawVerticalChunks(g, clip);
                 g.FillRectangle(Brushes.Gold, clip);
             }
             using (Font f = new Font(FontFamily.GenericMonospace, 10))

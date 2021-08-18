@@ -1,23 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace TheLifeLog
 {
     public partial class ToDo : Form
     {
-        private string checkPos1, checkPos2, checkPos3, checkPos4, checkPos5, checkPos6,
-            checkPos7, checkPos8, checkPos9, checkPos10;
         readonly int userId, listNum;
-        List<string> tdData = new List<string>();
-        List<string> chData = new List<string>();
+        readonly List<string> tdData = new List<string>();
+        readonly List<string> chData = new List<string>();
 
         public ToDo(int user)
         {
@@ -61,13 +53,6 @@ namespace TheLifeLog
                     chData.Add(str);
                 }
 
-                string[] check = {checkPos1, checkPos2, checkPos3, checkPos4, checkPos5, checkPos6, checkPos7,
-                checkPos8, checkPos9, checkPos10};
-
-                for (int len = 0; len < chData.Count; len++)
-                {
-                    check[len] = chData[len];
-                }
             }
             catch
             {
@@ -79,17 +64,16 @@ namespace TheLifeLog
         private void checkMarked()
         {
             //Goes through the arrays and sets up what checkmarks need to be filled in
-            string[] checks = { checkPos1, checkPos2, checkPos3, checkPos4, checkPos5, checkPos6, checkPos7, checkPos8, checkPos9, checkPos10 };
 
             PictureBox[] boxes = { checkMark1, checkMark2, checkMark3, checkMark4, checkMark5, checkMark6, checkMark7, checkMark8, checkMark9, checkMark10 };
 
-            for (int i = 0; i < checks.Length; i++)
+            for (int i = 0; i < chData.Count; i++)
             {
-                if (checks[i] == "0")
+                if (chData[i] == "0")
                 {
                     boxes[i].Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
                 }
-                else if (checks[i] == "1")
+                else if (chData[i] == "1")
                 {
                     boxes[i].Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
                 }
@@ -108,15 +92,6 @@ namespace TheLifeLog
                     tdData.Add(tb[len].Text);
                 }
 
-                chData.Clear();
-                string[] checks = {checkPos1, checkPos2, checkPos3, checkPos4, checkPos5, checkPos6, checkPos7,
-                checkPos8, checkPos9, checkPos10};
-
-                for (int len = 0; len < checks.Length; len++)
-                {
-                    chData.Add(checks[len]);
-                }
-
                 string todo = String.Join("*", tdData.ToArray());
                 string check = String.Join("*", chData.ToArray());
 
@@ -129,122 +104,120 @@ namespace TheLifeLog
             }
             catch
             {
-
+                MessageBox.Show("Something went wrong, exit and try again.");
             }
-            
-
 
         }
 
         private void checkMark1_Click(object sender, EventArgs e)
         {
-            if (checkPos1 == "0")
+            if (chData[0] == "0")
             {
                 checkMark1.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
-                checkPos1 = "1";
+                chData[0] = "1";
             }
-            else if (checkPos1 == "1")
+            else if (chData[0] == "1")
             {
                 checkMark1.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
-                checkPos1 = "0";
+                chData[0] = "0";
             }
         }
 
         private void checkMark2_Click(object sender, EventArgs e)
         {
-            if (checkPos2 == "0")
+            if (chData[1] == "0")
             {
                 checkMark2.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
-                checkPos2 = "1";
+                chData[1] = "1";
             }
-            else if (checkPos2 == "1")
+            else if (chData[1] == "1")
             {
                 checkMark2.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
-                checkPos2 = "0";
+                chData[1] = "0";
             }
         }
 
         private void checkMark3_Click(object sender, EventArgs e)
         {
-            if (checkPos3 == "0")
+            if (chData[2] == "0")
             {
                 checkMark3.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
-                checkPos3 = "1";
+                chData[2] = "1";
             }
-            else if (checkPos3 == "1")
+            else if (chData[2] == "1")
             {
                 checkMark3.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
-                checkPos3 = "0";
+                chData[2] = "0";
             }
         }
 
         private void checkMark4_Click(object sender, EventArgs e)
         {
-            if (checkPos4 == "0")
+            if (chData[3] == "0")
             {
                 checkMark4.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
-                checkPos4 = "1";
+                chData[3] = "1";
             }
-            else if (checkPos4 == "1")
+            else if (chData[3] == "1")
             {
                 checkMark4.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
-                checkPos4 = "0";
+                chData[3] = "0";
             }
         }
 
         private void checkMark5_Click(object sender, EventArgs e)
         {
-            if (checkPos5 == "0")
+            if (chData[4] == "0")
             {
                 checkMark5.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
-                checkPos5 = "1";
+                chData[4] = "1";
             }
-            else if (checkPos5 == "1")
+            else if (chData[4] == "1")
             {
                 checkMark5.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
-                checkPos5 = "0";
+                chData[4] = "0";
             }
         }
 
         private void checkMark6_Click(object sender, EventArgs e)
         {
-            if (checkPos6 == "0")
+            if (chData[5] == "0")
             {
                 checkMark6.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
-                checkPos6 = "1";
+                chData[5] = "1";
             }
-            else if (checkPos6 == "1")
+            else if (chData[5] == "1")
             {
                 checkMark6.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
-                checkPos6 = "0";
+                chData[5] = "0";
             }
         }
 
         private void checkMark7_Click(object sender, EventArgs e)
         {
-            if (checkPos7 == "0")
+            if (chData[6] == "0")
             {
                 checkMark7.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
-                checkPos7 = "1";
+                chData[6] = "1";
             }
-            else if (checkPos7 == "1")
+            else if (chData[6] == "1")
             {
                 checkMark7.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
-                checkPos7 = "0";
+                chData[6] = "0";
             }
         }
 
         private void checkMark8_Click(object sender, EventArgs e)
         {
-            if (checkPos8 == "0")
+            if (chData[7] == "0")
             {
                 checkMark8.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
-                checkPos8 = "1";
+                chData[7] = "1";
             }
-            else if (checkPos8 == "1")
+            else if (chData[7] == "1")
             {
                 checkMark8.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
-                checkPos8 = "0";
+                chData[7] = "0";
             }
         }
 
@@ -268,63 +241,48 @@ namespace TheLifeLog
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear everything?", "Clear To Do List", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                tdTb1.Text = " ";
-                tdTb2.Text = " ";
-                tdTb3.Text = " ";
-                tdTb4.Text = " ";
-                tdTb5.Text = " ";
-                tdTb6.Text = " ";
-                tdTb7.Text = " ";
-                tdTb8.Text = " ";
-                tdTb9.Text = " ";
-                tdTb10.Text = " ";
-                checkPos1 = "0";
-                checkPos2 = "0";
-                checkPos3 = "0";
-                checkPos4 = "0";
-                checkPos5 = "0";
-                checkPos6 = "0";
-                checkPos7 = "0";
-                checkPos8 = "0";
-                checkPos9 = "0";
-                checkPos10 = "0";
+                TextBox[] tb = { tdTb1, tdTb2, tdTb3, tdTb4, tdTb5, tdTb6, tdTb7, tdTb8, tdTb9, tdTb10 };
+
+                for (int len = 0; len < tdData.Count; len++)
+                {
+                    tb[len].Text = "";
+                }
+
+                for (int len = 0; len < chData.Count; len++)
+                {
+                    chData[len] = "0";
+                }
 
                 checkMarked();
             }
-            else if (dialogResult == DialogResult.No)
-            {
-                //do nothing
-            }
             
-
-
         }
 
         private void checkMark9_Click(object sender, EventArgs e)
         {
-            if (checkPos9 == "0")
+            if (chData[8] == "0")
             {
                 checkMark9.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
-                checkPos9 = "1";
+                chData[8] = "1";
             }
-            else if (checkPos9 == "1")
+            else if (chData[8] == "1")
             {
                 checkMark9.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
-                checkPos9 = "0";
+                chData[8] = "0";
             }
         }
 
         private void checkMark10_Click(object sender, EventArgs e)
         {
-            if (checkPos10 == "0")
+            if (chData[9] == "0")
             {
                 checkMark10.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
-                checkPos10 = "1";
+                chData[9] = "1";
             }
-            else if (checkPos10 == "1")
+            else if (chData[9] == "1")
             {
                 checkMark10.Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
-                checkPos10 = "0";
+                chData[9] = "0";
             }
         }
 

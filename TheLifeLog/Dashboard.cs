@@ -20,7 +20,7 @@ namespace TheLifeLog
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            todoProgress();
+            //todoProgress();
             calendarPreview();
             motivationQuotes();
             savingsPreview();
@@ -43,7 +43,7 @@ namespace TheLifeLog
         }
 
 
-        private void todoProgress()
+       /* private void todoProgress()
         {
             string checkPos1, checkPos2, checkPos3, checkPos4, checkPos5, checkPos6, checkPos7, checkPos8, checkPos9, checkPos10;
             try
@@ -158,7 +158,7 @@ namespace TheLifeLog
 
             }
 
-        }
+        }*/
 
         private void calendarPreview()
         {
@@ -472,7 +472,7 @@ namespace TheLifeLog
         private void label3_Click(object sender, EventArgs e)
         {
             calendarPreview();
-            todoProgress();
+            //todoProgress();
             savingsPreview();
             
         }

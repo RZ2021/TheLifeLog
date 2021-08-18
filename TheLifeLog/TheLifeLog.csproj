@@ -139,6 +139,7 @@
     <Compile Include="ToDo.Designer.cs">
       <DependentUpon>ToDo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validation.cs" />
     <EmbeddedResource Include="Bills.resx">
       <DependentUpon>Bills.cs</DependentUpon>
     </EmbeddedResource>
