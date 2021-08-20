@@ -233,5 +233,54 @@ namespace TheLifeLog
             conn.Close();
             return updated;
         }
+
+        public string ReadShop(int id, int ln, int option)
+        {
+            string list, check;
+            string constr = @"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True";
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT Items, Checked FROM ShoppingList WHERE UserId = @id AND ListNum = @ln"))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                    cmd.Parameters.Add("@ln", SqlDbType.Int).Value = ln;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        sdr.Read();
+                        list = sdr["Items"].ToString();
+                        check = sdr["Checked"].ToString();
+                    }
+                    con.Close();
+                }
+            }
+            if (option == 1)
+            {
+                return list;
+            }
+            else
+            {
+                return check;
+            }
+        }
+
+        public int WriteShop(int id, string items, string check, int listNum)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True");
+            string sql = "UPDATE ShoppingList SET Items = (@it), Checked = (@checks) WHERE UserId = (@id) AND ListNum = (@LN)";
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@it", SqlDbType.NVarChar).Value = items;
+            cmd.Parameters.Add("@checks", SqlDbType.NVarChar).Value = check;
+            cmd.Parameters.Add("@LN", SqlDbType.Int).Value = listNum;
+            int updated = cmd.ExecuteNonQuery();
+            conn.Close();
+            return updated;
+        }
+
     }
 }

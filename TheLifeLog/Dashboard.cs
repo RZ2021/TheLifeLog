@@ -26,7 +26,6 @@ namespace TheLifeLog
             calendarPreview();
             motivationQuotes();
             savingsPreview();
-
         }
 
         private void motivationQuotes()
@@ -370,8 +369,6 @@ namespace TheLifeLog
             double big = nums.Max();
             big = Math.Round((100 - (big * 100)), 1);
 
-
-
             if (big == 100 || big == 0)
             {
                 percentLabel.Text = "You have no saving goals at the moment.";
@@ -381,7 +378,6 @@ namespace TheLifeLog
             {
                 percentLabel.Text = "You are " + big.ToString() + "% away from a savings goal!";
             }
-
 
         }
 
@@ -410,8 +406,6 @@ namespace TheLifeLog
         {
             Calendar cal = new Calendar(userId);
             cal.Show();
-
-
         }
 
         private void ToDoButton_Click(object sender, EventArgs e)
@@ -432,32 +426,24 @@ namespace TheLifeLog
         {
             BudgetMain bm = new BudgetMain(userId);
             bm.Show();
-
-
         }
 
         private void ShoppingButton_Click(object sender, EventArgs e)
         {
-            ShoppingList sl = new ShoppingList();
+            ShoppingList sl = new ShoppingList(userId);
             sl.Show();
-
-
         }
 
         private void GoalsButton_Click(object sender, EventArgs e)
         {
             GoalsMain gm = new GoalsMain();
             gm.Show();
-
-
         }
 
         private void CleaningButton_Click(object sender, EventArgs e)
         {
             Cleaning clean = new Cleaning();
             clean.Show();
-
-
         }
 
         private void CalendarButton_MouseHover(object sender, EventArgs e)
@@ -491,67 +477,56 @@ namespace TheLifeLog
         private void ToDoButton_MouseLeave(object sender, EventArgs e)
         {
             ToDoButton.BackColor = Color.MediumTurquoise;
-
         }
 
         private void GoalsButton_MouseHover(object sender, EventArgs e)
         {
             GoalsButton.BackColor = Color.Gold;
-
         }
 
         private void GoalsButton_MouseLeave(object sender, EventArgs e)
         {
             GoalsButton.BackColor = Color.MediumTurquoise;
-
         }
 
         private void BudgetButton_MouseHover(object sender, EventArgs e)
         {
             BudgetButton.BackColor = Color.Gold;
-
         }
 
         private void BudgetButton_MouseLeave(object sender, EventArgs e)
         {
             BudgetButton.BackColor = Color.MediumTurquoise;
-
         }
 
         private void ShoppingButton_MouseHover(object sender, EventArgs e)
         {
             ShoppingButton.BackColor = Color.Gold;
-
         }
 
         private void ShoppingButton_MouseLeave(object sender, EventArgs e)
         {
             ShoppingButton.BackColor = Color.MediumTurquoise;
-
         }
 
         private void MealPlanningButton_MouseHover(object sender, EventArgs e)
         {
             MealPlanningButton.BackColor = Color.Gold;
-
         }
 
         private void MealPlanningButton_MouseLeave(object sender, EventArgs e)
         {
             MealPlanningButton.BackColor = Color.MediumTurquoise;
-
         }
 
         private void CleaningButton_MouseHover(object sender, EventArgs e)
         {
             CleaningButton.BackColor = Color.Gold;
-
         }
 
         private void CleaningButton_MouseLeave(object sender, EventArgs e)
         {
             CleaningButton.BackColor = Color.MediumTurquoise;
-
         }
     }
 }
