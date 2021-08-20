@@ -70,6 +70,7 @@ namespace TheLifeLog
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.ProgressTimer = new System.Windows.Forms.Timer(this.components);
+            this.congratsLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -156,8 +157,8 @@ namespace TheLifeLog
             // 
             this.oneUpdateTB.BackColor = System.Drawing.Color.MediumTurquoise;
             this.oneUpdateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.oneUpdateTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oneUpdateTB.Location = new System.Drawing.Point(385, 559);
+            this.oneUpdateTB.Font = new System.Drawing.Font("Minerva", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oneUpdateTB.Location = new System.Drawing.Point(384, 576);
             this.oneUpdateTB.Name = "oneUpdateTB";
             this.oneUpdateTB.Size = new System.Drawing.Size(91, 38);
             this.oneUpdateTB.TabIndex = 23;
@@ -167,8 +168,8 @@ namespace TheLifeLog
             // 
             this.twoUpdateTB.BackColor = System.Drawing.Color.MediumTurquoise;
             this.twoUpdateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.twoUpdateTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.twoUpdateTB.Location = new System.Drawing.Point(547, 559);
+            this.twoUpdateTB.Font = new System.Drawing.Font("Minerva", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.twoUpdateTB.Location = new System.Drawing.Point(546, 576);
             this.twoUpdateTB.Name = "twoUpdateTB";
             this.twoUpdateTB.Size = new System.Drawing.Size(91, 38);
             this.twoUpdateTB.TabIndex = 24;
@@ -178,8 +179,8 @@ namespace TheLifeLog
             // 
             this.threeUpdateTB.BackColor = System.Drawing.Color.MediumTurquoise;
             this.threeUpdateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.threeUpdateTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.threeUpdateTB.Location = new System.Drawing.Point(712, 559);
+            this.threeUpdateTB.Font = new System.Drawing.Font("Minerva", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.threeUpdateTB.Location = new System.Drawing.Point(711, 576);
             this.threeUpdateTB.Name = "threeUpdateTB";
             this.threeUpdateTB.Size = new System.Drawing.Size(91, 38);
             this.threeUpdateTB.TabIndex = 25;
@@ -189,8 +190,8 @@ namespace TheLifeLog
             // 
             this.fourUpdateTB.BackColor = System.Drawing.Color.MediumTurquoise;
             this.fourUpdateTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.fourUpdateTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fourUpdateTB.Location = new System.Drawing.Point(892, 559);
+            this.fourUpdateTB.Font = new System.Drawing.Font("Minerva", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fourUpdateTB.Location = new System.Drawing.Point(891, 576);
             this.fourUpdateTB.Name = "fourUpdateTB";
             this.fourUpdateTB.Size = new System.Drawing.Size(91, 38);
             this.fourUpdateTB.TabIndex = 26;
@@ -210,7 +211,7 @@ namespace TheLifeLog
             // 
             this.saveButton.BackColor = System.Drawing.Color.MediumTurquoise;
             this.saveButton.Font = new System.Drawing.Font("Minerva", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Location = new System.Drawing.Point(712, 677);
+            this.saveButton.Location = new System.Drawing.Point(711, 694);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(271, 42);
             this.saveButton.TabIndex = 28;
@@ -324,7 +325,7 @@ namespace TheLifeLog
             // 
             this.clearButton.BackColor = System.Drawing.Color.MediumTurquoise;
             this.clearButton.Font = new System.Drawing.Font("Minerva", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(349, 677);
+            this.clearButton.Location = new System.Drawing.Point(348, 694);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(271, 42);
             this.clearButton.TabIndex = 41;
@@ -423,7 +424,7 @@ namespace TheLifeLog
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(307, 627);
+            this.label4.Location = new System.Drawing.Point(306, 644);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(713, 24);
             this.label4.TabIndex = 52;
@@ -433,7 +434,7 @@ namespace TheLifeLog
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(345, 573);
+            this.label5.Location = new System.Drawing.Point(344, 590);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 24);
             this.label5.TabIndex = 53;
@@ -443,7 +444,7 @@ namespace TheLifeLog
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(507, 573);
+            this.label6.Location = new System.Drawing.Point(506, 590);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(27, 24);
             this.label6.TabIndex = 54;
@@ -453,7 +454,7 @@ namespace TheLifeLog
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(671, 573);
+            this.label7.Location = new System.Drawing.Point(670, 590);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(22, 24);
             this.label7.TabIndex = 55;
@@ -463,11 +464,25 @@ namespace TheLifeLog
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(851, 573);
+            this.label8.Location = new System.Drawing.Point(850, 590);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(26, 24);
             this.label8.TabIndex = 56;
             this.label8.Text = "4.";
+            // 
+            // ProgressTimer
+            // 
+            this.ProgressTimer.Tick += new System.EventHandler(this.ProgressTimer_Tick);
+            // 
+            // congratsLabel
+            // 
+            this.congratsLabel.AutoSize = true;
+            this.congratsLabel.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.congratsLabel.Location = new System.Drawing.Point(570, 534);
+            this.congratsLabel.Name = "congratsLabel";
+            this.congratsLabel.Size = new System.Drawing.Size(179, 24);
+            this.congratsLabel.TabIndex = 57;
+            this.congratsLabel.Text = "You can do this!!!!";
             // 
             // Savings
             // 
@@ -475,6 +490,7 @@ namespace TheLifeLog
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1082, 748);
+            this.Controls.Add(this.congratsLabel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -561,5 +577,6 @@ namespace TheLifeLog
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Timer ProgressTimer;
+        private System.Windows.Forms.Label congratsLabel;
     }
 }

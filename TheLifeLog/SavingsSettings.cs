@@ -13,194 +13,112 @@ namespace TheLifeLog
 {
     public partial class SavingsSettings : Form
     {
-        public SavingsSettings()
+        private int userId;
+        List<string> GoalNames = new List<string>();
+        List<string> Goals = new List<string>();
+        List<string> Current = new List<string>();
+        public SavingsSettings(int user)
         {
             InitializeComponent();
+            userId = user;
         }
-        bool isDigits(string s)
-        {
-            foreach (char c in s)
-            {
-                if (!char.IsDigit(c))
-                {
-                    return false;
-                }
-                else if (char.IsWhiteSpace(c))
-                {
-                    return false;
-                }
-
-            }
-            return true;
-        }
-        string removeSpace(string str)
-        {
-            string var = str.Replace(" ", String.Empty);
-            return var;
-        }
+        
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            string g1 = removeSpace(tb1.Text);
-            string g2 = removeSpace(tb2.Text);
-            string g3 = removeSpace(tb3.Text);
-            string g4 = removeSpace(tb4.Text);
-            string g5 = removeSpace(tb5.Text);
-            string g6 = removeSpace(tb6.Text);
-            string g7 = removeSpace(tb7.Text);
-            string g8 = removeSpace(tb8.Text);
-            int count = 0;
-
-            SqlConnection conn = new SqlConnection(@"Data Source=MASTERBLASTER\SQLEXPRESS;Initial Catalog=LifeLog;Integrated Security=True;");
-            conn.Open();
-
-            if (g1 != "" && g2 != "")
+            try
             {
-                bool goal1 = isDigits(g2);
-                if(goal1)
+                DataConnect dc = new DataConnect();
+                string goal = dc.ReadSavings(userId, 1);
+                string names = dc.ReadSavings(userId, 2);
+                string current = dc.ReadSavings(userId, 3);
+
+                GoalNames.Clear();
+                string[] tempArray1 = names.Split('*');
+                foreach (string str in tempArray1)
                 {
-                    string gp1 = "0";
-                    string sql = "UPDATE Savings SET GoalOneLabel = (@appt), GoalOneGoal = (@appt2), GoalOneProgress = (@appt3)";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.Add("@appt", SqlDbType.VarChar);
-                    cmd.Parameters["@appt"].Value = g1;
-                    cmd.Parameters.Add("@appt2", SqlDbType.VarChar);
-                    cmd.Parameters["@appt2"].Value = g2;
-                    cmd.Parameters.Add("@appt3", SqlDbType.VarChar);
-                    cmd.Parameters["@appt3"].Value = gp1;
-                    cmd.ExecuteNonQuery();
-                    count++;
-
-                    MessageBox.Show("Savings goal one has been set!");
+                    GoalNames.Add(str);
                 }
-                else
+
+                Goals.Clear();
+                string[] tempArray2 = goal.Split('*');
+                foreach (string str in tempArray2)
                 {
-                    MessageBox.Show("Something went wrong. Check your input for goal one.");
-                    tb2.Clear();
+                    Goals.Add(str);
                 }
-            }
-            else if ((g1 != "" && g2 == "") || (g1 == "" && g2 != ""))
-            {
-                MessageBox.Show("Please enter both a goal name and a goal amount.");
-            }
 
-            if (g3 != "" && g4 != "")
-            {
-                bool goal2 = isDigits(g4);
-                if(goal2)
+                Current.Clear();
+                string[] tempArray3 = current.Split('*');
+                foreach (string str in tempArray3)
                 {
-                    string gp2 = "0";
-                    string sql = "UPDATE Savings SET GoalTwoLabel = (@appt), GoalTwoGoal = (@appt2), GoalTwoProgress = (@appt3)";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.Add("@appt", SqlDbType.VarChar);
-                    cmd.Parameters["@appt"].Value = g3;
-                    cmd.Parameters.Add("@appt2", SqlDbType.VarChar);
-                    cmd.Parameters["@appt2"].Value = g4;
-                    cmd.Parameters.Add("@appt3", SqlDbType.VarChar);
-                    cmd.Parameters["@appt3"].Value = gp2;
-                    cmd.ExecuteNonQuery();
-                    count++;
-
-                    MessageBox.Show("Savings goal two has been set!");
-
+                    Current.Add(str);
                 }
-                else
+
+                Validation val = new Validation();
+                bool con = true;
+                while (con)
                 {
-                    MessageBox.Show("Something went wrong. Check your input for goal two.");
-                    tb4.Clear();
+                    int count = 0;
+                    RichTextBox[] tb = { tb1, tb2, tb3, tb4, tb5, tb6, tb7, tb8 };
+                    for (int x = 0; x <= 6; x +=2)
+                    {
+                        
+                        if (tb[x].Text != "" && tb[x + 1].Text != "")
+                        {
+                            bool num = val.IsDigits(tb[x + 1].Text);
+                            if (num == false)
+                            {
+                                MessageBox.Show("Use only numbers for your savings goals");
+                                con = false;
+                                break;
+                            }
+                            else
+                            {
+                                GoalNames[count] = tb[x].Text;
+                                Goals[count] = tb[x + 1].Text;
+                                Current[count] = "0";
+                            }
+                        }
+                        else if ((tb[x].Text.Length == 0 && tb[x + 1].Text.Length != 0) || (tb[x].Text.Length != 0 && tb[x + 1].Text.Length == 0))
+                        {
+                            MessageBox.Show("Please fill out both the name and the goal");
+                            con = false;
+                            break;
+                        }
+
+                        count++;
+                    }
+                    if (con == false)
+                    {
+                        break;
+                    }
+
+                    string updatedGoals = String.Join("*", Goals.ToArray());
+                    string updatedNames = String.Join("*", GoalNames.ToArray());
+                    string currents = String.Join("*", Current.ToArray());
+
+                    int answer = dc.WriteSavings(userId, updatedNames, updatedGoals, currents);
+                    if (answer != 0)
+                    {
+                        MessageBox.Show("Your new savings goals have been updated!");
+                        foreach (RichTextBox t in tb)
+                        {
+                            t.Text = "";
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong. Try again.");
+                    }
                 }
-                
             }
-            else if ((g3 != "" && g4 == "") || (g3 == "" && g4 != ""))
+            catch(Exception ex)
             {
-                MessageBox.Show("Please enter both a goal name and a goal amount.");
+                MessageBox.Show("Something went wrong. Exit and try again.");
+                MessageBox.Show(ex.ToString());
             }
-
-
-            if (g5 != "" && g6 != "")
-            {
-                bool goal3 = isDigits(g6);
-                if (goal3)
-                {
-                    string gp3 = "0";
-                    string sql = "UPDATE Savings SET GoalThreeLabel = (@appt), GoalThreeGoal = (@appt2), GoalThreeProgress = (@appt3)";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.Add("@appt", SqlDbType.VarChar);
-                    cmd.Parameters["@appt"].Value = g5;
-                    cmd.Parameters.Add("@appt2", SqlDbType.VarChar);
-                    cmd.Parameters["@appt2"].Value = g6;
-                    cmd.Parameters.Add("@appt3", SqlDbType.VarChar);
-                    cmd.Parameters["@appt3"].Value = gp3;
-                    cmd.ExecuteNonQuery();
-                    count++;
-
-                    MessageBox.Show("Savings goal three has been set!");
-
-                }
-                else
-                {
-                    MessageBox.Show("Something went wrong. Check your input for goal three.");
-                    tb6.Clear();
-                }
-                
-            }
-            else if ((g5 != "" && g6 == "") || (g5 == "" && g6 != ""))
-            {
-                MessageBox.Show("Please enter both a goal name and a goal amount.");
-            }
-
-
-            if (g7 != "" && g8 != "")
-            {
-                bool goal4 = isDigits(g8);
-                if (goal4)
-                {
-                    string gp4 = "0";
-                    string sql = "UPDATE Savings SET GoalFourLabel = (@appt), GoalFourGoal = (@appt2), GoalFourProgress = (@appt3)";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.Add("@appt", SqlDbType.VarChar);
-                    cmd.Parameters["@appt"].Value = g7;
-                    cmd.Parameters.Add("@appt2", SqlDbType.VarChar);
-                    cmd.Parameters["@appt2"].Value = g8;
-                    cmd.Parameters.Add("@appt3", SqlDbType.VarChar);
-                    cmd.Parameters["@appt3"].Value = gp4;
-                    cmd.ExecuteNonQuery();
-                    count++;
-
-                    MessageBox.Show("Savings goal four has been set!");
-
-                }
-                else
-                {
-                    MessageBox.Show("Something went wrong. Check your input for goal four.");
-                    tb8.Clear();
-                }
-                
-            }
-            else if ((g7 != "" && g8 == "") || (g7 == "" && g8 != ""))
-            {
-                MessageBox.Show("Please enter both a goal name and a goal amount.");
-            }
-
-            if (tb1.Text.Equals("") && tb2.Text.Equals("") && tb3.Text.Equals("") && tb4.Text.Equals("") && tb5.Text.Equals("") &&
-                tb6.Text.Equals("") && tb7.Text.Equals("") && tb8.Text.Equals(""))
-            {
-                MessageBox.Show("You haven't entered any new goals.");
-            }
-            else if (count > 0)
-            {
-                
-                tb1.Clear();
-                tb2.Clear();
-                tb3.Clear();
-                tb4.Clear();
-                tb5.Clear();
-                tb6.Clear();
-                tb7.Clear();
-                tb8.Clear();
-            }
-
-            
+ 
         }
 
         private void exitLabel_Click(object sender, EventArgs e)
@@ -208,12 +126,11 @@ namespace TheLifeLog
             DialogResult dialogResult = MessageBox.Show("Any unsaved progress will be lost, are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                Savings save = new Savings(userId);
+                save.Show();
                 this.Close();
             }
-            else if (dialogResult == DialogResult.No)
-            {
-                //do something else
-            }
+   
         }
     }
 }

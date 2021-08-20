@@ -59,6 +59,7 @@ namespace TheLifeLog
             cmd.Parameters.Add("@mon", SqlDbType.Int).Value = month;
             cmd.Parameters.Add("@year", SqlDbType.Int).Value = year;
             int updated = cmd.ExecuteNonQuery();
+            conn.Close();
             return updated;
         }
 
@@ -106,6 +107,7 @@ namespace TheLifeLog
             cmd.Parameters.Add("@checks", SqlDbType.NVarChar).Value = check;
             cmd.Parameters.Add("@LN", SqlDbType.Int).Value = listNum;
             int updated = cmd.ExecuteNonQuery();
+            conn.Close();
             return updated;
         }
 
@@ -163,6 +165,7 @@ namespace TheLifeLog
             cmd.Parameters.Add("@budget", SqlDbType.NVarChar).Value = bud;
             cmd.Parameters.Add("@inc", SqlDbType.NVarChar).Value = income;
             int updated = cmd.ExecuteNonQuery();
+            conn.Close();
             return updated;
         }
 
@@ -200,6 +203,35 @@ namespace TheLifeLog
             {
                 return current;
             }
+        }
+        public int WriteSavings(int id, string current)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True");
+            string sql = "UPDATE Savings SET CurrentTotal = (@cur) WHERE UserId = (@id)";
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@cur", SqlDbType.NVarChar).Value = current;
+            int updated = cmd.ExecuteNonQuery();
+            conn.Close();
+            return updated;
+        }
+
+        public int WriteSavings(int id, string names, string goals, string current)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True");
+            string sql = "UPDATE Savings SET Goals = (@goal), Names = (@name), CurrentTotal = (@cur) WHERE UserId = (@id)";
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@goal", SqlDbType.NVarChar).Value = goals;
+            cmd.Parameters.Add("@name", SqlDbType.NVarChar).Value = names;
+            cmd.Parameters.Add("@cur", SqlDbType.NVarChar).Value = current;
+            int updated = cmd.ExecuteNonQuery();
+            conn.Close();
+            return updated;
         }
     }
 }

@@ -14,6 +14,9 @@ namespace TheLifeLog
     public partial class Savings : Form
     {
         int userId;
+        List<string> GoalName = new List<string>();
+        List<string> CurrentTot = new List<string>();
+
         public Savings(int id)
         {
             InitializeComponent();
@@ -24,6 +27,15 @@ namespace TheLifeLog
         {
             savingsButton.BackColor = Color.Gold;
             GetSavings();
+            ProgressTimer.Enabled = true;
+            ProgressTimer.Interval = 1000;
+            MyProgressBar[] pb = { myProgressBar1, myProgressBar2, myProgressBar3, myProgressBar4 };
+            for(int x = 0; x < pb.Length; x++)
+            {
+                pb[x].Enabled = true;
+                pb[x].Minimum = 0;
+                pb[x].Maximum = 100;
+            }
 
         }
 
@@ -47,6 +59,8 @@ namespace TheLifeLog
                 }
                 else
                 {
+                    CurrentTot.Clear();
+                    GoalName.Clear();
                     Label[] n = { name1Label, name2Label, name3Label, name4Label };
                     Label[] c = {currentLabel1, currentLabel2, currentLabel3,
                     currentLabel4 };
@@ -56,7 +70,7 @@ namespace TheLifeLog
                     string[] tempArray1 = names.Split('*');
                     foreach (string str in tempArray1)
                     {
-                        
+                        GoalName.Add(str);
                         n[x].Text = str;
                         x++;
                     }
@@ -65,7 +79,7 @@ namespace TheLifeLog
                     string[] tempArray2 = current.Split('*');
                     foreach (string str in tempArray2)
                     {
-                        
+                        CurrentTot.Add(str);
                         c[x].Text = str;
                         x++;
                     }
@@ -74,7 +88,6 @@ namespace TheLifeLog
                     string[] tempArray3 = goal.Split('*');
                     foreach (string str in tempArray3)
                     {
-                       
                         g[x].Text = str;
                         x++;
                     }
@@ -85,8 +98,9 @@ namespace TheLifeLog
             {
                 MessageBox.Show("Something went wrong");
             }
-
         }
+
+       
 
         private void exitLabel_Click(object sender, EventArgs e)
         {
@@ -107,21 +121,109 @@ namespace TheLifeLog
 
         private void BudgetButton_Click(object sender, EventArgs e)
         {
-            Budget bud = new Budget(1);
+            Budget bud = new Budget(userId);
             bud.Show();
             this.Close();
         }
 
         private void SavingSetting_Click(object sender, EventArgs e)
         {
-            SavingsSettings ss = new SavingsSettings();
+            SavingsSettings ss = new SavingsSettings(userId);
             ss.Show();
+            this.Close();
 
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            int count = 0;
+            Validation val = new Validation();
+            RichTextBox[] tb = { oneUpdateTB, twoUpdateTB, threeUpdateTB, fourUpdateTB };
+            for(int x = 0; x < tb.Length; x++)
+            {
+                if(tb[x].Text.Length !=0 && GoalName[x].Length == 0)
+                {
+                    MessageBox.Show("You're trying to update a goal that doesn't exist.");
+                }
+                else if(tb[x].Text != null && tb[x].Text != " " && GoalName[x] != "")
+                {
+                    double current = val.ToDigits(CurrentTot[x]);
+                    double update = val.ToDigits(tb[x].Text);
+                    if (update == -1)
+                    {
+                        MessageBox.Show("Use numbers only.");
+                    }
+                    else if(update == -2)
+                    {
 
+                    }
+                    else
+                    {
+                        current += update;
+                        CurrentTot[x] = current.ToString();
+                        count++;
+                    }
+                }
+            }
+
+            if(count != 0)
+            {
+                string currents = String.Join("*", CurrentTot.ToArray());
+                DataConnect dc = new DataConnect();
+                int answer = dc.WriteSavings(userId, currents);
+                if (answer != 0)
+                {
+                    MessageBox.Show("Your savings have been updated!");
+                    GetSavings();
+                    oneUpdateTB.Text = "";
+                    twoUpdateTB.Text = "";
+                    threeUpdateTB.Text = "";
+                    fourUpdateTB.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong. Try again.");
+                }
+            }
+            
+        }
+
+        private void ProgressTimer_Tick(object sender, EventArgs e)
+        {
+            MyProgressBar[] pb = { myProgressBar1, myProgressBar2, myProgressBar3, myProgressBar4 };
+            Label[] g = { gnLabel1, gnLabel2, gnLabel3, gnLabel4 };
+            for(int x = 0; x < pb.Length; x++)
+            {
+                Validation val = new Validation();
+                double current = val.ToDigits(CurrentTot[x]);
+                double goal = val.ToDigits(g[x].Text);
+
+                if(current == -2 || goal == -2)
+                {
+                    continue;
+                }
+
+                double pbValue = current / goal * 100;
+                try
+                {
+                    if (pbValue > 100)
+                    {
+                        congratsLabel.Text = "You completed a savings goal!!!";
+                        pb[x].Value = 100;
+                        pb[x].Enabled = false;
+                    }
+                    else
+                    {
+                        pb[x].Enabled = true;
+                        pb[x].Value = Convert.ToInt32(pbValue);
+                    }
+                }
+                catch
+                {
+                    
+                }
+            }
+            
         }
     }
 }

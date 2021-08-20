@@ -9,16 +9,29 @@ namespace TheLifeLog
     class Validation
     {
 
-        string removeSpace(string str)
+        public bool IsDigits(string s)
         {
-            string var = str.Replace(" ", String.Empty);
-            return var;
-        }
-
-        bool isDigits(string s)
-        {
+            s = s.Replace(" ", String.Empty);
             bool isDig = double.TryParse(s, out _);
             return isDig;
+        }
+
+        public double ToDigits(string s)
+        {
+            s = s.Replace(" ", String.Empty);
+            if(s == "")
+            {
+                return -2;
+            }
+            bool isDig = double.TryParse(s, out double num);
+            if(isDig)
+            {
+                return num;
+            }
+            else
+            {
+                return -1;
+            }
         }
     }
 }

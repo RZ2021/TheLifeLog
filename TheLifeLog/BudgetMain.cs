@@ -12,21 +12,23 @@ namespace TheLifeLog
 {
     public partial class BudgetMain : Form
     {
-        public BudgetMain()
+        private int userId;
+        public BudgetMain(int user)
         {
             InitializeComponent();
+            userId = user;
         }
 
         private void BudgetButton_Click(object sender, EventArgs e)
         {
-            Budget bud = new Budget(1);
+            Budget bud = new Budget(userId);
             bud.Show();
             this.Close();
         }
 
         private void SavingsButton_Click(object sender, EventArgs e)
         {
-            Savings save = new Savings(1);
+            Savings save = new Savings(userId);
             save.Show();
             this.Close();
 
@@ -47,7 +49,7 @@ namespace TheLifeLog
 
         private void billsButton_Click(object sender, EventArgs e)
         {
-            Bills bs = new Bills(2);
+            Bills bs = new Bills(userId);
             bs.Show();
             this.Close();
         }

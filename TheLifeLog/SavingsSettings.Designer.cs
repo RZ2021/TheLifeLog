@@ -58,7 +58,7 @@ namespace TheLifeLog
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Minerva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(178, 9);
+            this.label3.Location = new System.Drawing.Point(148, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 37);
             this.label3.TabIndex = 28;
@@ -287,7 +287,7 @@ namespace TheLifeLog
             // 
             this.exitLabel.AutoSize = true;
             this.exitLabel.Font = new System.Drawing.Font("Minerva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitLabel.Location = new System.Drawing.Point(390, -4);
+            this.exitLabel.Location = new System.Drawing.Point(352, -6);
             this.exitLabel.Name = "exitLabel";
             this.exitLabel.Size = new System.Drawing.Size(42, 50);
             this.exitLabel.TabIndex = 53;
@@ -298,8 +298,8 @@ namespace TheLifeLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(434, 723);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(394, 723);
             this.Controls.Add(this.exitLabel);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.tb8);

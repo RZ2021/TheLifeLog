@@ -13,9 +13,11 @@ namespace TheLifeLog
 {
     public partial class Dashboard : Form
     {
+        private int userId;
         public Dashboard()
         {
             InitializeComponent();
+            userId = 1;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -406,7 +408,7 @@ namespace TheLifeLog
 
         private void CalendarButton_Click(object sender, EventArgs e)
         {
-            Calendar cal = new Calendar(1);
+            Calendar cal = new Calendar(userId);
             cal.Show();
 
 
@@ -414,7 +416,7 @@ namespace TheLifeLog
 
         private void ToDoButton_Click(object sender, EventArgs e)
         {
-            ToDo td = new ToDo(1);
+            ToDo td = new ToDo(userId);
             td.Show();
 
         }
@@ -424,12 +426,11 @@ namespace TheLifeLog
             MealPlan mp = new MealPlan();
             mp.Show();
 
-
         }
 
         private void BudgetButton_Click(object sender, EventArgs e)
         {
-            BudgetMain bm = new BudgetMain();
+            BudgetMain bm = new BudgetMain(userId);
             bm.Show();
 
 
