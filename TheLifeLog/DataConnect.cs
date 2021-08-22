@@ -234,24 +234,25 @@ namespace TheLifeLog
             return updated;
         }
 
-        public string ReadShop(int id, int ln, int option)
+        public string ReadShop(int id, int option)
         {
-            string list, check;
+            string list, check, names;
             string constr = @"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(constr))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT Items, Checked FROM ShoppingList WHERE UserId = @id AND ListNum = @ln"))
+                using (SqlCommand cmd = new SqlCommand("SELECT ListOne, Checked, ListNames FROM ShoppingList WHERE UserId = @id"))
                 {
                     cmd.CommandType = CommandType.Text;
                     cmd.Connection = con;
                     cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                    cmd.Parameters.Add("@ln", SqlDbType.Int).Value = ln;
                     con.Open();
                     using (SqlDataReader sdr = cmd.ExecuteReader())
                     {
                         sdr.Read();
-                        list = sdr["Items"].ToString();
+                        list = sdr["ListOne"].ToString();
                         check = sdr["Checked"].ToString();
+                        names = sdr["ListNames"].ToString();
+
                     }
                     con.Close();
                 }
@@ -260,23 +261,26 @@ namespace TheLifeLog
             {
                 return list;
             }
-            else
+            else if (option == 2)
             {
                 return check;
             }
+            else
+            {
+                return names;
+            }
         }
 
-        public int WriteShop(int id, string items, string check, int listNum)
+        public int WriteShop(int id, string items, string check)
         {
             SqlConnection conn = new SqlConnection(@"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True");
-            string sql = "UPDATE ShoppingList SET Items = (@it), Checked = (@checks) WHERE UserId = (@id) AND ListNum = (@LN)";
+            string sql = "UPDATE ShoppingList SET ListOne = (@lo), Checked = (@checks) WHERE UserId = (@id)";
 
             conn.Open();
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            cmd.Parameters.Add("@it", SqlDbType.NVarChar).Value = items;
+            cmd.Parameters.Add("@lo", SqlDbType.NVarChar).Value = items;
             cmd.Parameters.Add("@checks", SqlDbType.NVarChar).Value = check;
-            cmd.Parameters.Add("@LN", SqlDbType.Int).Value = listNum;
             int updated = cmd.ExecuteNonQuery();
             conn.Close();
             return updated;

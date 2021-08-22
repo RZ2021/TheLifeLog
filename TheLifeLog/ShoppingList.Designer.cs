@@ -32,11 +32,11 @@ namespace TheLifeLog
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShoppingList));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.bdButton = new System.Windows.Forms.Button();
-            this.otherButton = new System.Windows.Forms.Button();
-            this.mainButton = new System.Windows.Forms.Button();
-            this.xmasButton = new System.Windows.Forms.Button();
-            this.homeButton = new System.Windows.Forms.Button();
+            this.ListFourButton = new System.Windows.Forms.Button();
+            this.ListFiveButton = new System.Windows.Forms.Button();
+            this.ListOneButton = new System.Windows.Forms.Button();
+            this.ListThreeButton = new System.Windows.Forms.Button();
+            this.ListTwoButton = new System.Windows.Forms.Button();
             this.checkMark10 = new System.Windows.Forms.PictureBox();
             this.checkMark9 = new System.Windows.Forms.PictureBox();
             this.checkMark8 = new System.Windows.Forms.PictureBox();
@@ -100,8 +100,6 @@ namespace TheLifeLog
             this.slTb22 = new System.Windows.Forms.TextBox();
             this.slTb21 = new System.Windows.Forms.TextBox();
             this.ExitButton = new System.Windows.Forms.Label();
-            this.LeftArrow = new System.Windows.Forms.Label();
-            this.RightArrow = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkMark10)).BeginInit();
@@ -140,11 +138,11 @@ namespace TheLifeLog
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.bdButton);
-            this.panel1.Controls.Add(this.otherButton);
-            this.panel1.Controls.Add(this.mainButton);
-            this.panel1.Controls.Add(this.xmasButton);
-            this.panel1.Controls.Add(this.homeButton);
+            this.panel1.Controls.Add(this.ListFourButton);
+            this.panel1.Controls.Add(this.ListFiveButton);
+            this.panel1.Controls.Add(this.ListOneButton);
+            this.panel1.Controls.Add(this.ListThreeButton);
+            this.panel1.Controls.Add(this.ListTwoButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -161,70 +159,75 @@ namespace TheLifeLog
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
-            // bdButton
+            // ListFourButton
             // 
-            this.bdButton.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.bdButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bdButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bdButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdButton.Location = new System.Drawing.Point(3, 430);
-            this.bdButton.Name = "bdButton";
-            this.bdButton.Size = new System.Drawing.Size(238, 67);
-            this.bdButton.TabIndex = 9;
-            this.bdButton.Text = "Birthday Gifts";
-            this.bdButton.UseVisualStyleBackColor = false;
+            this.ListFourButton.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ListFourButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ListFourButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ListFourButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListFourButton.Location = new System.Drawing.Point(3, 430);
+            this.ListFourButton.Name = "ListFourButton";
+            this.ListFourButton.Size = new System.Drawing.Size(238, 67);
+            this.ListFourButton.TabIndex = 9;
+            this.ListFourButton.Text = "Birthday Gifts";
+            this.ListFourButton.UseVisualStyleBackColor = false;
+            this.ListFourButton.Click += new System.EventHandler(this.ListFourButton_Click);
             // 
-            // otherButton
+            // ListFiveButton
             // 
-            this.otherButton.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.otherButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.otherButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.otherButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otherButton.Location = new System.Drawing.Point(3, 503);
-            this.otherButton.Name = "otherButton";
-            this.otherButton.Size = new System.Drawing.Size(238, 67);
-            this.otherButton.TabIndex = 7;
-            this.otherButton.Text = "Other";
-            this.otherButton.UseVisualStyleBackColor = false;
+            this.ListFiveButton.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ListFiveButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ListFiveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ListFiveButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListFiveButton.Location = new System.Drawing.Point(3, 503);
+            this.ListFiveButton.Name = "ListFiveButton";
+            this.ListFiveButton.Size = new System.Drawing.Size(238, 67);
+            this.ListFiveButton.TabIndex = 7;
+            this.ListFiveButton.Text = "Other";
+            this.ListFiveButton.UseVisualStyleBackColor = false;
+            this.ListFiveButton.Click += new System.EventHandler(this.ListFiveButton_Click);
             // 
-            // mainButton
+            // ListOneButton
             // 
-            this.mainButton.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.mainButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.mainButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mainButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainButton.Location = new System.Drawing.Point(3, 211);
-            this.mainButton.Name = "mainButton";
-            this.mainButton.Size = new System.Drawing.Size(238, 67);
-            this.mainButton.TabIndex = 6;
-            this.mainButton.Text = "Main";
-            this.mainButton.UseVisualStyleBackColor = false;
+            this.ListOneButton.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ListOneButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ListOneButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ListOneButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListOneButton.Location = new System.Drawing.Point(3, 211);
+            this.ListOneButton.Name = "ListOneButton";
+            this.ListOneButton.Size = new System.Drawing.Size(238, 67);
+            this.ListOneButton.TabIndex = 6;
+            this.ListOneButton.Text = "Main";
+            this.ListOneButton.UseVisualStyleBackColor = false;
+            this.ListOneButton.Click += new System.EventHandler(this.ListOneButton_Click);
             // 
-            // xmasButton
+            // ListThreeButton
             // 
-            this.xmasButton.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.xmasButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.xmasButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.xmasButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xmasButton.Location = new System.Drawing.Point(3, 357);
-            this.xmasButton.Name = "xmasButton";
-            this.xmasButton.Size = new System.Drawing.Size(238, 67);
-            this.xmasButton.TabIndex = 4;
-            this.xmasButton.Text = "Christmas Gifts";
-            this.xmasButton.UseVisualStyleBackColor = false;
+            this.ListThreeButton.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ListThreeButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ListThreeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ListThreeButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListThreeButton.Location = new System.Drawing.Point(3, 357);
+            this.ListThreeButton.Name = "ListThreeButton";
+            this.ListThreeButton.Size = new System.Drawing.Size(238, 67);
+            this.ListThreeButton.TabIndex = 4;
+            this.ListThreeButton.Text = "Christmas Gifts";
+            this.ListThreeButton.UseVisualStyleBackColor = false;
+            this.ListThreeButton.Click += new System.EventHandler(this.ListThreeButton_Click);
             // 
-            // homeButton
+            // ListTwoButton
             // 
-            this.homeButton.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.homeButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeButton.Location = new System.Drawing.Point(3, 284);
-            this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(238, 67);
-            this.homeButton.TabIndex = 3;
-            this.homeButton.Text = "Home";
-            this.homeButton.UseVisualStyleBackColor = false;
+            this.ListTwoButton.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.ListTwoButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ListTwoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ListTwoButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListTwoButton.Location = new System.Drawing.Point(3, 284);
+            this.ListTwoButton.Name = "ListTwoButton";
+            this.ListTwoButton.Size = new System.Drawing.Size(238, 67);
+            this.ListTwoButton.TabIndex = 3;
+            this.ListTwoButton.Text = "Home";
+            this.ListTwoButton.UseVisualStyleBackColor = false;
+            this.ListTwoButton.Click += new System.EventHandler(this.ListTwoButton_Click);
             // 
             // checkMark10
             // 
@@ -889,34 +892,12 @@ namespace TheLifeLog
             this.ExitButton.Text = "x";
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // LeftArrow
-            // 
-            this.LeftArrow.AutoSize = true;
-            this.LeftArrow.Font = new System.Drawing.Font("Minerva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LeftArrow.Location = new System.Drawing.Point(545, 591);
-            this.LeftArrow.Name = "LeftArrow";
-            this.LeftArrow.Size = new System.Drawing.Size(67, 50);
-            this.LeftArrow.TabIndex = 146;
-            this.LeftArrow.Text = "<--";
-            // 
-            // RightArrow
-            // 
-            this.RightArrow.AutoSize = true;
-            this.RightArrow.Font = new System.Drawing.Font("Minerva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RightArrow.Location = new System.Drawing.Point(644, 591);
-            this.RightArrow.Name = "RightArrow";
-            this.RightArrow.Size = new System.Drawing.Size(67, 50);
-            this.RightArrow.TabIndex = 147;
-            this.RightArrow.Text = "-->";
-            // 
             // ShoppingList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1021, 657);
-            this.Controls.Add(this.RightArrow);
-            this.Controls.Add(this.LeftArrow);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.checkMark30);
             this.Controls.Add(this.checkMark29);
@@ -1025,11 +1006,11 @@ namespace TheLifeLog
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button bdButton;
-        private System.Windows.Forms.Button otherButton;
-        private System.Windows.Forms.Button mainButton;
-        private System.Windows.Forms.Button xmasButton;
-        private System.Windows.Forms.Button homeButton;
+        private System.Windows.Forms.Button ListFourButton;
+        private System.Windows.Forms.Button ListFiveButton;
+        private System.Windows.Forms.Button ListOneButton;
+        private System.Windows.Forms.Button ListThreeButton;
+        private System.Windows.Forms.Button ListTwoButton;
         private System.Windows.Forms.PictureBox checkMark10;
         private System.Windows.Forms.PictureBox checkMark9;
         private System.Windows.Forms.PictureBox checkMark8;
@@ -1094,7 +1075,5 @@ namespace TheLifeLog
         private System.Windows.Forms.TextBox slTb22;
         private System.Windows.Forms.TextBox slTb21;
         private System.Windows.Forms.Label ExitButton;
-        private System.Windows.Forms.Label LeftArrow;
-        private System.Windows.Forms.Label RightArrow;
     }
 }
