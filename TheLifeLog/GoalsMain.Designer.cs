@@ -610,7 +610,6 @@ namespace TheLifeLog
             this.Name = "GoalsMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GoalsMain";
-            this.Load += new System.EventHandler(this.GoalsMain_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cm10)).EndInit();

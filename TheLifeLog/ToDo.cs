@@ -246,10 +246,6 @@ namespace TheLifeLog
                 for (int len = 0; len < tdData.Count; len++)
                 {
                     tb[len].Text = "";
-                }
-
-                for (int len = 0; len < chData.Count; len++)
-                {
                     chData[len] = "0";
                 }
 
