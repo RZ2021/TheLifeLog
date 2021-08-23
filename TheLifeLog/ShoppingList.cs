@@ -64,6 +64,7 @@ namespace TheLifeLog
                     bts[len].Text = tempArray[len];
                 }
 
+                listData.Clear();
                 string[] tempArray1 = lists.Split('*');
                 foreach (string str in tempArray1)
                 {
@@ -87,24 +88,7 @@ namespace TheLifeLog
                     chData.Add(str);
                 }
 
-                //Goes through the arrays and sets up what checkmarks need to be filled in
-                PictureBox[] boxes = { checkMark1, checkMark2, checkMark3, checkMark4, checkMark5, checkMark6, checkMark7,
-                checkMark8, checkMark9, checkMark10, checkMark11, checkMark12, checkMark13, checkMark14, checkMark15,
-                checkMark16, checkMark17, checkMark18, checkMark19, checkMark20, checkMark21, checkMark22, checkMark23,
-                checkMark24, checkMark25, checkMark26, checkMark27, checkMark28, checkMark29, checkMark30 };
-                int temp2 = start;
-                for (int i = 0; i < 30; i++)
-                {
-                    if (chData[temp2] == "0")
-                    {
-                        boxes[i].Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
-                    }
-                    else if (chData[temp2] == "1")
-                    {
-                        boxes[i].Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
-                    }
-                    temp2++;
-                }
+                GetMarks();
 
             }
             catch
@@ -112,6 +96,28 @@ namespace TheLifeLog
                 MessageBox.Show("Something went wrong");
             }
 
+        }
+
+        private void GetMarks()
+        {
+            //Goes through the arrays and sets up what checkmarks need to be filled in
+            PictureBox[] boxes = { checkMark1, checkMark2, checkMark3, checkMark4, checkMark5, checkMark6, checkMark7,
+                checkMark8, checkMark9, checkMark10, checkMark11, checkMark12, checkMark13, checkMark14, checkMark15,
+                checkMark16, checkMark17, checkMark18, checkMark19, checkMark20, checkMark21, checkMark22, checkMark23,
+                checkMark24, checkMark25, checkMark26, checkMark27, checkMark28, checkMark29, checkMark30 };
+            int temp2 = start;
+            for (int i = 0; i < 30; i++)
+            {
+                if (chData[temp2] == "0")
+                {
+                    boxes[i].Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
+                }
+                else if (chData[temp2] == "1")
+                {
+                    boxes[i].Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
+                }
+                temp2++;
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -123,7 +129,7 @@ namespace TheLifeLog
         {
             try
             {
-                listData.Clear();
+                
                 TextBox[] tb = { slTb1, slTb2, slTb3, slTb4, slTb5, slTb6, slTb7, slTb8, slTb9, slTb10,
                     slTb11, slTb12, slTb13, slTb14, slTb15, slTb16, slTb17, slTb18, slTb19, slTb20,
                     slTb21, slTb22, slTb23, slTb24, slTb25, slTb26, slTb27, slTb28, slTb29, slTb30};
@@ -152,6 +158,31 @@ namespace TheLifeLog
             }
         }
 
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear everything?", "Clear Shopping List", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                TextBox[] tb = { slTb1, slTb2, slTb3, slTb4, slTb5, slTb6, slTb7, slTb8, slTb9, slTb10,
+                    slTb11, slTb12, slTb13, slTb14, slTb15, slTb16, slTb17, slTb18, slTb19, slTb20,
+                    slTb21, slTb22, slTb23, slTb24, slTb25, slTb26, slTb27, slTb28, slTb29, slTb30};
+
+                for (int len = 0; len < tb.Length; len++)
+                {
+                    tb[len].Text = "";
+                }
+
+                int temp = start;
+                for (int len = 0; len < 30; len++)
+                {
+                    chData[temp] = "0";
+                    temp++;
+                }
+
+                GetMarks();
+            }
+        }
+
         private void ListOneButton_Click(object sender, EventArgs e)
         {
             ListOneButton.BackColor = Color.Gold;
@@ -159,7 +190,7 @@ namespace TheLifeLog
             ListThreeButton.BackColor = Color.MediumTurquoise;
             ListFourButton.BackColor = Color.MediumTurquoise;
             ListFiveButton.BackColor = Color.MediumTurquoise;
-
+            listNum = 1;
             LoadList(1);
         }
 
@@ -170,6 +201,7 @@ namespace TheLifeLog
             ListThreeButton.BackColor = Color.MediumTurquoise;
             ListFourButton.BackColor = Color.MediumTurquoise;
             ListFiveButton.BackColor = Color.MediumTurquoise;
+            listNum = 2;
             LoadList(2);
         }
 
@@ -180,6 +212,7 @@ namespace TheLifeLog
             ListTwoButton.BackColor = Color.MediumTurquoise;
             ListFourButton.BackColor = Color.MediumTurquoise;
             ListFiveButton.BackColor = Color.MediumTurquoise;
+            listNum = 3;
             LoadList(3);
         }
 
@@ -190,6 +223,7 @@ namespace TheLifeLog
             ListTwoButton.BackColor = Color.MediumTurquoise;
             ListThreeButton.BackColor = Color.MediumTurquoise;
             ListFiveButton.BackColor = Color.MediumTurquoise;
+            listNum = 4;
             LoadList(4);
         }
 
@@ -200,6 +234,7 @@ namespace TheLifeLog
             ListTwoButton.BackColor = Color.MediumTurquoise;
             ListThreeButton.BackColor = Color.MediumTurquoise;
             ListFourButton.BackColor = Color.MediumTurquoise;
+            listNum = 5;
             LoadList(5);
         }
 
@@ -247,155 +282,152 @@ namespace TheLifeLog
 
         private void checkMark17_Click(object sender, EventArgs e)
         {
-            CheckMarking(16, start);
+            CheckMarking(16, listNum);
         }
 
         private void checkMark18_Click(object sender, EventArgs e)
         {
-            CheckMarking(17, start);
+            CheckMarking(17, listNum);
         }
 
         private void checkMark19_Click(object sender, EventArgs e)
         {
-            CheckMarking(18, start);
+            CheckMarking(18, listNum);
         }
 
         private void checkMark20_Click(object sender, EventArgs e)
         {
-            CheckMarking(29, start);
-
+            CheckMarking(29, listNum);
         }
 
         private void checkMark16_Click(object sender, EventArgs e)
         {
-            CheckMarking(15, start);
+            CheckMarking(15, listNum);
         }
 
         private void checkMark15_Click(object sender, EventArgs e)
         {
-            CheckMarking(14, start);
+            CheckMarking(14, listNum);
         }
 
         private void checkMark14_Click(object sender, EventArgs e)
         {
-            CheckMarking(13, start);
+            CheckMarking(13, listNum);
         }
 
         private void checkMark13_Click(object sender, EventArgs e)
         {
-            CheckMarking(12, start);
+            CheckMarking(12, listNum);
         }
 
         private void checkMark12_Click(object sender, EventArgs e)
         {
-            CheckMarking(11, start);
+            CheckMarking(11, listNum);
         }
 
         private void checkMark11_Click(object sender, EventArgs e)
         {
-            CheckMarking(10, start);
+            CheckMarking(10, listNum);
         }
 
         private void checkMark10_Click(object sender, EventArgs e)
         {
-            CheckMarking(9, start);
+            CheckMarking(9, listNum);
         }
 
         private void checkMark9_Click(object sender, EventArgs e)
         {
-            CheckMarking(8, start);
+            CheckMarking(8, listNum);
         }
 
         private void checkMark8_Click(object sender, EventArgs e)
         {
-            CheckMarking(7, start);
+            CheckMarking(7, listNum);
         }
 
         private void checkMark7_Click(object sender, EventArgs e)
         {
-            CheckMarking(6, start);
+            CheckMarking(6, listNum);
         }
 
         private void checkMark6_Click(object sender, EventArgs e)
         {
-            CheckMarking(5, start);
+            CheckMarking(5, listNum);
         }
 
         private void checkMark5_Click(object sender, EventArgs e)
         {
-            CheckMarking(4, start);
+            CheckMarking(4, listNum);
         }
 
         private void checkMark4_Click(object sender, EventArgs e)
         {
-            CheckMarking(3, start);
+            CheckMarking(3, listNum);
         }
 
         private void checkMark3_Click(object sender, EventArgs e)
         {
-            CheckMarking(2, start);
+            CheckMarking(2, listNum);
         }
 
         private void checkMark2_Click(object sender, EventArgs e)
         {
-            CheckMarking(1, start);
+            CheckMarking(1, listNum);
         }
 
         private void checkMark21_Click(object sender, EventArgs e)
         {
-            CheckMarking(20, start);
+            CheckMarking(20, listNum);
         }
 
         private void checkMark22_Click(object sender, EventArgs e)
         {
-            CheckMarking(21, start);
+            CheckMarking(21, listNum);
         }
 
         private void checkMark23_Click(object sender, EventArgs e)
         {
-            CheckMarking(22, start);
+            CheckMarking(22, listNum);
         }
 
         private void checkMark24_Click(object sender, EventArgs e)
         {
-            CheckMarking(23, start);
+            CheckMarking(23, listNum);
         }
 
         private void checkMark25_Click(object sender, EventArgs e)
         {
-            CheckMarking(24, start);
+            CheckMarking(24, listNum);
         }
 
         private void checkMark26_Click(object sender, EventArgs e)
         {
-            CheckMarking(25, start);
+            CheckMarking(25, listNum);
         }
 
         private void checkMark27_Click(object sender, EventArgs e)
         {
-            CheckMarking(26, start);
+            CheckMarking(26, listNum);
         }
 
         private void checkMark28_Click(object sender, EventArgs e)
         {
-            CheckMarking(27, start);
+            CheckMarking(27, listNum);
         }
 
         private void checkMark29_Click(object sender, EventArgs e)
         {
-            CheckMarking(28, start);
+            CheckMarking(28, listNum);
         }
 
         private void checkMark30_Click(object sender, EventArgs e)
         {
-            CheckMarking(29, start);
+            CheckMarking(29, listNum);
         }
-
-
 
         private void checkMark1_Click(object sender, EventArgs e)
         {
-            CheckMarking(0, start);
+            CheckMarking(0, listNum);
         }
 
 

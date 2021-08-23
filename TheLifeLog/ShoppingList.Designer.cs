@@ -100,6 +100,7 @@ namespace TheLifeLog
             this.slTb22 = new System.Windows.Forms.TextBox();
             this.slTb21 = new System.Windows.Forms.TextBox();
             this.ExitButton = new System.Windows.Forms.Label();
+            this.ClearButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkMark10)).BeginInit();
@@ -232,7 +233,7 @@ namespace TheLifeLog
             // checkMark10
             // 
             this.checkMark10.Image = ((System.Drawing.Image)(resources.GetObject("checkMark10.Image")));
-            this.checkMark10.Location = new System.Drawing.Point(263, 535);
+            this.checkMark10.Location = new System.Drawing.Point(290, 535);
             this.checkMark10.Name = "checkMark10";
             this.checkMark10.Size = new System.Drawing.Size(42, 34);
             this.checkMark10.TabIndex = 101;
@@ -242,7 +243,7 @@ namespace TheLifeLog
             // checkMark9
             // 
             this.checkMark9.Image = ((System.Drawing.Image)(resources.GetObject("checkMark9.Image")));
-            this.checkMark9.Location = new System.Drawing.Point(263, 486);
+            this.checkMark9.Location = new System.Drawing.Point(290, 486);
             this.checkMark9.Name = "checkMark9";
             this.checkMark9.Size = new System.Drawing.Size(42, 34);
             this.checkMark9.TabIndex = 100;
@@ -252,7 +253,7 @@ namespace TheLifeLog
             // checkMark8
             // 
             this.checkMark8.Image = ((System.Drawing.Image)(resources.GetObject("checkMark8.Image")));
-            this.checkMark8.Location = new System.Drawing.Point(263, 434);
+            this.checkMark8.Location = new System.Drawing.Point(290, 434);
             this.checkMark8.Name = "checkMark8";
             this.checkMark8.Size = new System.Drawing.Size(42, 34);
             this.checkMark8.TabIndex = 99;
@@ -262,7 +263,7 @@ namespace TheLifeLog
             // checkMark7
             // 
             this.checkMark7.Image = ((System.Drawing.Image)(resources.GetObject("checkMark7.Image")));
-            this.checkMark7.Location = new System.Drawing.Point(263, 384);
+            this.checkMark7.Location = new System.Drawing.Point(290, 384);
             this.checkMark7.Name = "checkMark7";
             this.checkMark7.Size = new System.Drawing.Size(42, 34);
             this.checkMark7.TabIndex = 98;
@@ -272,7 +273,7 @@ namespace TheLifeLog
             // checkMark6
             // 
             this.checkMark6.Image = ((System.Drawing.Image)(resources.GetObject("checkMark6.Image")));
-            this.checkMark6.Location = new System.Drawing.Point(263, 333);
+            this.checkMark6.Location = new System.Drawing.Point(290, 333);
             this.checkMark6.Name = "checkMark6";
             this.checkMark6.Size = new System.Drawing.Size(42, 34);
             this.checkMark6.TabIndex = 97;
@@ -282,7 +283,7 @@ namespace TheLifeLog
             // checkMark5
             // 
             this.checkMark5.Image = ((System.Drawing.Image)(resources.GetObject("checkMark5.Image")));
-            this.checkMark5.Location = new System.Drawing.Point(263, 282);
+            this.checkMark5.Location = new System.Drawing.Point(290, 282);
             this.checkMark5.Name = "checkMark5";
             this.checkMark5.Size = new System.Drawing.Size(42, 34);
             this.checkMark5.TabIndex = 96;
@@ -292,7 +293,7 @@ namespace TheLifeLog
             // checkMark4
             // 
             this.checkMark4.Image = ((System.Drawing.Image)(resources.GetObject("checkMark4.Image")));
-            this.checkMark4.Location = new System.Drawing.Point(263, 231);
+            this.checkMark4.Location = new System.Drawing.Point(290, 231);
             this.checkMark4.Name = "checkMark4";
             this.checkMark4.Size = new System.Drawing.Size(42, 34);
             this.checkMark4.TabIndex = 95;
@@ -302,7 +303,7 @@ namespace TheLifeLog
             // checkMark3
             // 
             this.checkMark3.Image = ((System.Drawing.Image)(resources.GetObject("checkMark3.Image")));
-            this.checkMark3.Location = new System.Drawing.Point(263, 181);
+            this.checkMark3.Location = new System.Drawing.Point(290, 181);
             this.checkMark3.Name = "checkMark3";
             this.checkMark3.Size = new System.Drawing.Size(42, 34);
             this.checkMark3.TabIndex = 94;
@@ -312,7 +313,7 @@ namespace TheLifeLog
             // checkMark1
             // 
             this.checkMark1.Image = ((System.Drawing.Image)(resources.GetObject("checkMark1.Image")));
-            this.checkMark1.Location = new System.Drawing.Point(263, 83);
+            this.checkMark1.Location = new System.Drawing.Point(290, 83);
             this.checkMark1.Name = "checkMark1";
             this.checkMark1.Size = new System.Drawing.Size(42, 34);
             this.checkMark1.TabIndex = 93;
@@ -322,7 +323,7 @@ namespace TheLifeLog
             // checkMark2
             // 
             this.checkMark2.Image = ((System.Drawing.Image)(resources.GetObject("checkMark2.Image")));
-            this.checkMark2.Location = new System.Drawing.Point(263, 134);
+            this.checkMark2.Location = new System.Drawing.Point(290, 134);
             this.checkMark2.Name = "checkMark2";
             this.checkMark2.Size = new System.Drawing.Size(42, 34);
             this.checkMark2.TabIndex = 92;
@@ -334,7 +335,7 @@ namespace TheLifeLog
             this.slTb10.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb10.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb10.Location = new System.Drawing.Point(311, 535);
+            this.slTb10.Location = new System.Drawing.Point(338, 535);
             this.slTb10.Multiline = true;
             this.slTb10.Name = "slTb10";
             this.slTb10.Size = new System.Drawing.Size(184, 35);
@@ -345,7 +346,7 @@ namespace TheLifeLog
             this.slTb9.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb9.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb9.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb9.Location = new System.Drawing.Point(311, 485);
+            this.slTb9.Location = new System.Drawing.Point(338, 485);
             this.slTb9.Multiline = true;
             this.slTb9.Name = "slTb9";
             this.slTb9.Size = new System.Drawing.Size(184, 35);
@@ -356,7 +357,7 @@ namespace TheLifeLog
             this.slTb8.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb8.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb8.Location = new System.Drawing.Point(311, 433);
+            this.slTb8.Location = new System.Drawing.Point(338, 433);
             this.slTb8.Multiline = true;
             this.slTb8.Name = "slTb8";
             this.slTb8.Size = new System.Drawing.Size(184, 35);
@@ -367,7 +368,7 @@ namespace TheLifeLog
             this.slTb7.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb7.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb7.Location = new System.Drawing.Point(311, 383);
+            this.slTb7.Location = new System.Drawing.Point(338, 383);
             this.slTb7.Multiline = true;
             this.slTb7.Name = "slTb7";
             this.slTb7.Size = new System.Drawing.Size(184, 35);
@@ -378,7 +379,7 @@ namespace TheLifeLog
             this.slTb6.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb6.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb6.Location = new System.Drawing.Point(311, 332);
+            this.slTb6.Location = new System.Drawing.Point(338, 332);
             this.slTb6.Multiline = true;
             this.slTb6.Name = "slTb6";
             this.slTb6.Size = new System.Drawing.Size(184, 35);
@@ -389,7 +390,7 @@ namespace TheLifeLog
             this.slTb5.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb5.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb5.Location = new System.Drawing.Point(311, 282);
+            this.slTb5.Location = new System.Drawing.Point(338, 282);
             this.slTb5.Multiline = true;
             this.slTb5.Name = "slTb5";
             this.slTb5.Size = new System.Drawing.Size(184, 35);
@@ -400,7 +401,7 @@ namespace TheLifeLog
             this.slTb4.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb4.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb4.Location = new System.Drawing.Point(311, 231);
+            this.slTb4.Location = new System.Drawing.Point(338, 231);
             this.slTb4.Multiline = true;
             this.slTb4.Name = "slTb4";
             this.slTb4.Size = new System.Drawing.Size(184, 35);
@@ -411,7 +412,7 @@ namespace TheLifeLog
             this.slTb3.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb3.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb3.Location = new System.Drawing.Point(311, 181);
+            this.slTb3.Location = new System.Drawing.Point(338, 181);
             this.slTb3.Multiline = true;
             this.slTb3.Name = "slTb3";
             this.slTb3.Size = new System.Drawing.Size(184, 35);
@@ -422,7 +423,7 @@ namespace TheLifeLog
             this.slTb2.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb2.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb2.Location = new System.Drawing.Point(311, 133);
+            this.slTb2.Location = new System.Drawing.Point(338, 133);
             this.slTb2.Multiline = true;
             this.slTb2.Name = "slTb2";
             this.slTb2.Size = new System.Drawing.Size(184, 35);
@@ -433,7 +434,7 @@ namespace TheLifeLog
             this.slTb1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb1.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb1.Location = new System.Drawing.Point(311, 83);
+            this.slTb1.Location = new System.Drawing.Point(338, 83);
             this.slTb1.Multiline = true;
             this.slTb1.Name = "slTb1";
             this.slTb1.Size = new System.Drawing.Size(184, 35);
@@ -442,7 +443,7 @@ namespace TheLifeLog
             // checkMark20
             // 
             this.checkMark20.Image = ((System.Drawing.Image)(resources.GetObject("checkMark20.Image")));
-            this.checkMark20.Location = new System.Drawing.Point(513, 535);
+            this.checkMark20.Location = new System.Drawing.Point(540, 535);
             this.checkMark20.Name = "checkMark20";
             this.checkMark20.Size = new System.Drawing.Size(42, 34);
             this.checkMark20.TabIndex = 121;
@@ -452,7 +453,7 @@ namespace TheLifeLog
             // checkMark19
             // 
             this.checkMark19.Image = ((System.Drawing.Image)(resources.GetObject("checkMark19.Image")));
-            this.checkMark19.Location = new System.Drawing.Point(513, 486);
+            this.checkMark19.Location = new System.Drawing.Point(540, 486);
             this.checkMark19.Name = "checkMark19";
             this.checkMark19.Size = new System.Drawing.Size(42, 34);
             this.checkMark19.TabIndex = 120;
@@ -462,7 +463,7 @@ namespace TheLifeLog
             // checkMark18
             // 
             this.checkMark18.Image = ((System.Drawing.Image)(resources.GetObject("checkMark18.Image")));
-            this.checkMark18.Location = new System.Drawing.Point(513, 434);
+            this.checkMark18.Location = new System.Drawing.Point(540, 434);
             this.checkMark18.Name = "checkMark18";
             this.checkMark18.Size = new System.Drawing.Size(42, 34);
             this.checkMark18.TabIndex = 119;
@@ -472,7 +473,7 @@ namespace TheLifeLog
             // checkMark17
             // 
             this.checkMark17.Image = ((System.Drawing.Image)(resources.GetObject("checkMark17.Image")));
-            this.checkMark17.Location = new System.Drawing.Point(513, 384);
+            this.checkMark17.Location = new System.Drawing.Point(540, 384);
             this.checkMark17.Name = "checkMark17";
             this.checkMark17.Size = new System.Drawing.Size(42, 34);
             this.checkMark17.TabIndex = 118;
@@ -482,7 +483,7 @@ namespace TheLifeLog
             // checkMark16
             // 
             this.checkMark16.Image = ((System.Drawing.Image)(resources.GetObject("checkMark16.Image")));
-            this.checkMark16.Location = new System.Drawing.Point(513, 333);
+            this.checkMark16.Location = new System.Drawing.Point(540, 333);
             this.checkMark16.Name = "checkMark16";
             this.checkMark16.Size = new System.Drawing.Size(42, 34);
             this.checkMark16.TabIndex = 117;
@@ -492,7 +493,7 @@ namespace TheLifeLog
             // checkMark15
             // 
             this.checkMark15.Image = ((System.Drawing.Image)(resources.GetObject("checkMark15.Image")));
-            this.checkMark15.Location = new System.Drawing.Point(513, 282);
+            this.checkMark15.Location = new System.Drawing.Point(540, 282);
             this.checkMark15.Name = "checkMark15";
             this.checkMark15.Size = new System.Drawing.Size(42, 34);
             this.checkMark15.TabIndex = 116;
@@ -502,7 +503,7 @@ namespace TheLifeLog
             // checkMark14
             // 
             this.checkMark14.Image = ((System.Drawing.Image)(resources.GetObject("checkMark14.Image")));
-            this.checkMark14.Location = new System.Drawing.Point(513, 231);
+            this.checkMark14.Location = new System.Drawing.Point(540, 231);
             this.checkMark14.Name = "checkMark14";
             this.checkMark14.Size = new System.Drawing.Size(42, 34);
             this.checkMark14.TabIndex = 115;
@@ -512,7 +513,7 @@ namespace TheLifeLog
             // checkMark13
             // 
             this.checkMark13.Image = ((System.Drawing.Image)(resources.GetObject("checkMark13.Image")));
-            this.checkMark13.Location = new System.Drawing.Point(513, 181);
+            this.checkMark13.Location = new System.Drawing.Point(540, 181);
             this.checkMark13.Name = "checkMark13";
             this.checkMark13.Size = new System.Drawing.Size(42, 34);
             this.checkMark13.TabIndex = 114;
@@ -522,7 +523,7 @@ namespace TheLifeLog
             // checkMark11
             // 
             this.checkMark11.Image = ((System.Drawing.Image)(resources.GetObject("checkMark11.Image")));
-            this.checkMark11.Location = new System.Drawing.Point(513, 83);
+            this.checkMark11.Location = new System.Drawing.Point(540, 83);
             this.checkMark11.Name = "checkMark11";
             this.checkMark11.Size = new System.Drawing.Size(42, 34);
             this.checkMark11.TabIndex = 113;
@@ -532,7 +533,7 @@ namespace TheLifeLog
             // checkMark12
             // 
             this.checkMark12.Image = ((System.Drawing.Image)(resources.GetObject("checkMark12.Image")));
-            this.checkMark12.Location = new System.Drawing.Point(513, 134);
+            this.checkMark12.Location = new System.Drawing.Point(540, 134);
             this.checkMark12.Name = "checkMark12";
             this.checkMark12.Size = new System.Drawing.Size(42, 34);
             this.checkMark12.TabIndex = 112;
@@ -544,7 +545,7 @@ namespace TheLifeLog
             this.slTb20.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb20.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb20.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb20.Location = new System.Drawing.Point(561, 535);
+            this.slTb20.Location = new System.Drawing.Point(588, 535);
             this.slTb20.Multiline = true;
             this.slTb20.Name = "slTb20";
             this.slTb20.Size = new System.Drawing.Size(184, 35);
@@ -555,7 +556,7 @@ namespace TheLifeLog
             this.slTb19.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb19.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb19.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb19.Location = new System.Drawing.Point(561, 485);
+            this.slTb19.Location = new System.Drawing.Point(588, 485);
             this.slTb19.Multiline = true;
             this.slTb19.Name = "slTb19";
             this.slTb19.Size = new System.Drawing.Size(184, 35);
@@ -566,7 +567,7 @@ namespace TheLifeLog
             this.slTb18.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb18.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb18.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb18.Location = new System.Drawing.Point(561, 433);
+            this.slTb18.Location = new System.Drawing.Point(588, 433);
             this.slTb18.Multiline = true;
             this.slTb18.Name = "slTb18";
             this.slTb18.Size = new System.Drawing.Size(184, 35);
@@ -577,7 +578,7 @@ namespace TheLifeLog
             this.slTb17.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb17.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb17.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb17.Location = new System.Drawing.Point(561, 383);
+            this.slTb17.Location = new System.Drawing.Point(588, 383);
             this.slTb17.Multiline = true;
             this.slTb17.Name = "slTb17";
             this.slTb17.Size = new System.Drawing.Size(184, 35);
@@ -588,7 +589,7 @@ namespace TheLifeLog
             this.slTb16.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb16.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb16.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb16.Location = new System.Drawing.Point(561, 332);
+            this.slTb16.Location = new System.Drawing.Point(588, 332);
             this.slTb16.Multiline = true;
             this.slTb16.Name = "slTb16";
             this.slTb16.Size = new System.Drawing.Size(184, 35);
@@ -599,7 +600,7 @@ namespace TheLifeLog
             this.slTb15.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb15.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb15.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb15.Location = new System.Drawing.Point(561, 282);
+            this.slTb15.Location = new System.Drawing.Point(588, 282);
             this.slTb15.Multiline = true;
             this.slTb15.Name = "slTb15";
             this.slTb15.Size = new System.Drawing.Size(184, 35);
@@ -610,7 +611,7 @@ namespace TheLifeLog
             this.slTb14.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb14.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb14.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb14.Location = new System.Drawing.Point(561, 231);
+            this.slTb14.Location = new System.Drawing.Point(588, 231);
             this.slTb14.Multiline = true;
             this.slTb14.Name = "slTb14";
             this.slTb14.Size = new System.Drawing.Size(184, 35);
@@ -621,7 +622,7 @@ namespace TheLifeLog
             this.slTb13.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb13.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb13.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb13.Location = new System.Drawing.Point(561, 181);
+            this.slTb13.Location = new System.Drawing.Point(588, 181);
             this.slTb13.Multiline = true;
             this.slTb13.Name = "slTb13";
             this.slTb13.Size = new System.Drawing.Size(184, 35);
@@ -632,7 +633,7 @@ namespace TheLifeLog
             this.slTb12.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb12.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb12.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb12.Location = new System.Drawing.Point(561, 133);
+            this.slTb12.Location = new System.Drawing.Point(588, 133);
             this.slTb12.Multiline = true;
             this.slTb12.Name = "slTb12";
             this.slTb12.Size = new System.Drawing.Size(184, 35);
@@ -643,7 +644,7 @@ namespace TheLifeLog
             this.slTb11.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb11.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb11.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb11.Location = new System.Drawing.Point(561, 83);
+            this.slTb11.Location = new System.Drawing.Point(588, 83);
             this.slTb11.Multiline = true;
             this.slTb11.Name = "slTb11";
             this.slTb11.Size = new System.Drawing.Size(184, 35);
@@ -654,16 +655,16 @@ namespace TheLifeLog
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Minerva", 24F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.Location = new System.Drawing.Point(463, 0);
+            this.Title.Location = new System.Drawing.Point(522, 0);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(362, 50);
+            this.Title.Size = new System.Drawing.Size(250, 50);
             this.Title.TabIndex = 122;
-            this.Title.Text = "Main Shopping List";
+            this.Title.Text = "Shopping List";
             // 
             // saveButton
             // 
             this.saveButton.Font = new System.Drawing.Font("Minerva", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Location = new System.Drawing.Point(911, 611);
+            this.saveButton.Location = new System.Drawing.Point(938, 601);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(89, 34);
             this.saveButton.TabIndex = 123;
@@ -674,7 +675,7 @@ namespace TheLifeLog
             // checkMark30
             // 
             this.checkMark30.Image = ((System.Drawing.Image)(resources.GetObject("checkMark30.Image")));
-            this.checkMark30.Location = new System.Drawing.Point(768, 535);
+            this.checkMark30.Location = new System.Drawing.Point(795, 535);
             this.checkMark30.Name = "checkMark30";
             this.checkMark30.Size = new System.Drawing.Size(42, 34);
             this.checkMark30.TabIndex = 144;
@@ -684,7 +685,7 @@ namespace TheLifeLog
             // checkMark29
             // 
             this.checkMark29.Image = ((System.Drawing.Image)(resources.GetObject("checkMark29.Image")));
-            this.checkMark29.Location = new System.Drawing.Point(768, 486);
+            this.checkMark29.Location = new System.Drawing.Point(795, 486);
             this.checkMark29.Name = "checkMark29";
             this.checkMark29.Size = new System.Drawing.Size(42, 34);
             this.checkMark29.TabIndex = 143;
@@ -694,7 +695,7 @@ namespace TheLifeLog
             // checkMark28
             // 
             this.checkMark28.Image = ((System.Drawing.Image)(resources.GetObject("checkMark28.Image")));
-            this.checkMark28.Location = new System.Drawing.Point(768, 434);
+            this.checkMark28.Location = new System.Drawing.Point(795, 434);
             this.checkMark28.Name = "checkMark28";
             this.checkMark28.Size = new System.Drawing.Size(42, 34);
             this.checkMark28.TabIndex = 142;
@@ -704,7 +705,7 @@ namespace TheLifeLog
             // checkMark27
             // 
             this.checkMark27.Image = ((System.Drawing.Image)(resources.GetObject("checkMark27.Image")));
-            this.checkMark27.Location = new System.Drawing.Point(768, 384);
+            this.checkMark27.Location = new System.Drawing.Point(795, 384);
             this.checkMark27.Name = "checkMark27";
             this.checkMark27.Size = new System.Drawing.Size(42, 34);
             this.checkMark27.TabIndex = 141;
@@ -714,7 +715,7 @@ namespace TheLifeLog
             // checkMark26
             // 
             this.checkMark26.Image = ((System.Drawing.Image)(resources.GetObject("checkMark26.Image")));
-            this.checkMark26.Location = new System.Drawing.Point(768, 333);
+            this.checkMark26.Location = new System.Drawing.Point(795, 333);
             this.checkMark26.Name = "checkMark26";
             this.checkMark26.Size = new System.Drawing.Size(42, 34);
             this.checkMark26.TabIndex = 140;
@@ -724,7 +725,7 @@ namespace TheLifeLog
             // checkMark25
             // 
             this.checkMark25.Image = ((System.Drawing.Image)(resources.GetObject("checkMark25.Image")));
-            this.checkMark25.Location = new System.Drawing.Point(768, 282);
+            this.checkMark25.Location = new System.Drawing.Point(795, 282);
             this.checkMark25.Name = "checkMark25";
             this.checkMark25.Size = new System.Drawing.Size(42, 34);
             this.checkMark25.TabIndex = 139;
@@ -734,7 +735,7 @@ namespace TheLifeLog
             // checkMark24
             // 
             this.checkMark24.Image = ((System.Drawing.Image)(resources.GetObject("checkMark24.Image")));
-            this.checkMark24.Location = new System.Drawing.Point(768, 231);
+            this.checkMark24.Location = new System.Drawing.Point(795, 231);
             this.checkMark24.Name = "checkMark24";
             this.checkMark24.Size = new System.Drawing.Size(42, 34);
             this.checkMark24.TabIndex = 138;
@@ -744,7 +745,7 @@ namespace TheLifeLog
             // checkMark23
             // 
             this.checkMark23.Image = ((System.Drawing.Image)(resources.GetObject("checkMark23.Image")));
-            this.checkMark23.Location = new System.Drawing.Point(768, 181);
+            this.checkMark23.Location = new System.Drawing.Point(795, 181);
             this.checkMark23.Name = "checkMark23";
             this.checkMark23.Size = new System.Drawing.Size(42, 34);
             this.checkMark23.TabIndex = 137;
@@ -754,7 +755,7 @@ namespace TheLifeLog
             // checkMark21
             // 
             this.checkMark21.Image = ((System.Drawing.Image)(resources.GetObject("checkMark21.Image")));
-            this.checkMark21.Location = new System.Drawing.Point(768, 83);
+            this.checkMark21.Location = new System.Drawing.Point(795, 83);
             this.checkMark21.Name = "checkMark21";
             this.checkMark21.Size = new System.Drawing.Size(42, 34);
             this.checkMark21.TabIndex = 136;
@@ -764,7 +765,7 @@ namespace TheLifeLog
             // checkMark22
             // 
             this.checkMark22.Image = ((System.Drawing.Image)(resources.GetObject("checkMark22.Image")));
-            this.checkMark22.Location = new System.Drawing.Point(768, 134);
+            this.checkMark22.Location = new System.Drawing.Point(795, 134);
             this.checkMark22.Name = "checkMark22";
             this.checkMark22.Size = new System.Drawing.Size(42, 34);
             this.checkMark22.TabIndex = 135;
@@ -776,7 +777,7 @@ namespace TheLifeLog
             this.slTb30.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb30.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb30.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb30.Location = new System.Drawing.Point(816, 535);
+            this.slTb30.Location = new System.Drawing.Point(843, 535);
             this.slTb30.Multiline = true;
             this.slTb30.Name = "slTb30";
             this.slTb30.Size = new System.Drawing.Size(184, 35);
@@ -787,7 +788,7 @@ namespace TheLifeLog
             this.slTb29.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb29.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb29.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb29.Location = new System.Drawing.Point(816, 485);
+            this.slTb29.Location = new System.Drawing.Point(843, 485);
             this.slTb29.Multiline = true;
             this.slTb29.Name = "slTb29";
             this.slTb29.Size = new System.Drawing.Size(184, 35);
@@ -798,7 +799,7 @@ namespace TheLifeLog
             this.slTb28.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb28.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb28.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb28.Location = new System.Drawing.Point(816, 433);
+            this.slTb28.Location = new System.Drawing.Point(843, 433);
             this.slTb28.Multiline = true;
             this.slTb28.Name = "slTb28";
             this.slTb28.Size = new System.Drawing.Size(184, 35);
@@ -809,7 +810,7 @@ namespace TheLifeLog
             this.slTb27.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb27.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb27.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb27.Location = new System.Drawing.Point(816, 383);
+            this.slTb27.Location = new System.Drawing.Point(843, 383);
             this.slTb27.Multiline = true;
             this.slTb27.Name = "slTb27";
             this.slTb27.Size = new System.Drawing.Size(184, 35);
@@ -820,7 +821,7 @@ namespace TheLifeLog
             this.slTb26.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb26.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb26.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb26.Location = new System.Drawing.Point(816, 332);
+            this.slTb26.Location = new System.Drawing.Point(843, 332);
             this.slTb26.Multiline = true;
             this.slTb26.Name = "slTb26";
             this.slTb26.Size = new System.Drawing.Size(184, 35);
@@ -831,7 +832,7 @@ namespace TheLifeLog
             this.slTb25.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb25.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb25.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb25.Location = new System.Drawing.Point(816, 282);
+            this.slTb25.Location = new System.Drawing.Point(843, 282);
             this.slTb25.Multiline = true;
             this.slTb25.Name = "slTb25";
             this.slTb25.Size = new System.Drawing.Size(184, 35);
@@ -842,7 +843,7 @@ namespace TheLifeLog
             this.slTb24.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb24.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb24.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb24.Location = new System.Drawing.Point(816, 231);
+            this.slTb24.Location = new System.Drawing.Point(843, 231);
             this.slTb24.Multiline = true;
             this.slTb24.Name = "slTb24";
             this.slTb24.Size = new System.Drawing.Size(184, 35);
@@ -853,7 +854,7 @@ namespace TheLifeLog
             this.slTb23.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb23.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb23.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb23.Location = new System.Drawing.Point(816, 181);
+            this.slTb23.Location = new System.Drawing.Point(843, 181);
             this.slTb23.Multiline = true;
             this.slTb23.Name = "slTb23";
             this.slTb23.Size = new System.Drawing.Size(184, 35);
@@ -864,7 +865,7 @@ namespace TheLifeLog
             this.slTb22.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb22.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb22.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb22.Location = new System.Drawing.Point(816, 133);
+            this.slTb22.Location = new System.Drawing.Point(843, 133);
             this.slTb22.Multiline = true;
             this.slTb22.Name = "slTb22";
             this.slTb22.Size = new System.Drawing.Size(184, 35);
@@ -875,7 +876,7 @@ namespace TheLifeLog
             this.slTb21.BackColor = System.Drawing.Color.PaleTurquoise;
             this.slTb21.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.slTb21.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.slTb21.Location = new System.Drawing.Point(816, 83);
+            this.slTb21.Location = new System.Drawing.Point(843, 83);
             this.slTb21.Multiline = true;
             this.slTb21.Name = "slTb21";
             this.slTb21.Size = new System.Drawing.Size(184, 35);
@@ -885,19 +886,31 @@ namespace TheLifeLog
             // 
             this.ExitButton.AutoSize = true;
             this.ExitButton.Font = new System.Drawing.Font("Minerva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(981, -10);
+            this.ExitButton.Location = new System.Drawing.Point(1006, -11);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(42, 50);
             this.ExitButton.TabIndex = 145;
             this.ExitButton.Text = "x";
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // ClearButton
+            // 
+            this.ClearButton.Font = new System.Drawing.Font("Minerva", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearButton.Location = new System.Drawing.Point(832, 601);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(89, 34);
+            this.ClearButton.TabIndex = 146;
+            this.ClearButton.Text = "Clear";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
             // ShoppingList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1021, 657);
+            this.ClientSize = new System.Drawing.Size(1046, 657);
+            this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.checkMark30);
             this.Controls.Add(this.checkMark29);
@@ -1075,5 +1088,6 @@ namespace TheLifeLog
         private System.Windows.Forms.TextBox slTb22;
         private System.Windows.Forms.TextBox slTb21;
         private System.Windows.Forms.Label ExitButton;
+        private System.Windows.Forms.Button ClearButton;
     }
 }
