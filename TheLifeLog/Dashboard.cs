@@ -436,7 +436,7 @@ namespace TheLifeLog
 
         private void GoalsButton_Click(object sender, EventArgs e)
         {
-            GoalsMain gm = new GoalsMain();
+            GoalsMain gm = new GoalsMain(userId);
             gm.Show();
         }
 

@@ -13,123 +13,59 @@ namespace TheLifeLog
 {
     public partial class GoalsMain : Form
     {
-        int check1 = 0, check2 = 0, check3 = 0, check4 = 0, check5 = 0, check6 = 0, check7 = 0, check8 = 0, check9 = 0, check10 = 0;
         string currentGoal;
+        int userId;
+        List<string> Tasks = new List<string>();
+        List<string> Checks = new List<string>();
 
-        
-
-        public GoalsMain()
+        public GoalsMain(int user)
         {
             InitializeComponent();
+            GoalsButton.BackColor = Color.Gold;
+            userId = user;
         }
 
         private void GoalsMain_Load(object sender, EventArgs e)
         {
-            GoalsButton.BackColor = Color.Gold;
 
-            
             currentGoal = goalTB.Text;
-            string constr = @"Data Source=MASTERBLASTER\SQLEXPRESS;Initial Catalog=LifeLog;Integrated Security=True;";
-            string sql = "SELECT goalName from Goals";
+            string constr = @"Data Source=MASTERBLASTER\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True;";
+            string sql = "SELECT GoalName from Goals WHERE UserId = (@id)";
             SqlConnection conn = new SqlConnection(constr);
             conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = userId;
             SqlCommand comboCom = new SqlCommand(sql, conn);
             SqlDataReader reader = comboCom.ExecuteReader();
             while (reader.Read())
             {
                 goalsCombo.Items.Add(reader[0]);
             }
+
         }
 
 
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+
             //writes data in textboxes to database
-            string g1 = goalTB.Text;
-            string g2 = whyTB.Text;
-            string g3 = challengeTB.Text;
-            string g4 = motivateTB.Text;
-            string g5 = dateTB.Text;
-            string g6 = taskOneTB.Text;
-            string g7 = taskTwoTB.Text;
-            string g8 = taskThreeTB.Text;
-            string g9 = taskFourTB.Text;
-            string g10 = taskFiveTB.Text;
-            string g11 = taskSixTB.Text;
-            string g12 = taskSevenTB.Text;
-            string g13 = taskEightTB.Text;
-            string g14 = taskNineTB.Text;
-            string g15 = taskTenTB.Text;
+            SqlConnection conn = new SqlConnection(@"Data Source=MASTERBLASTER\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True;");
 
-            String[] boxes = { g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15 };
-            int i = 0;
-            if(boxes[i] == null)
-            {
-                boxes[i] = " ";
-            }
-
-
-            SqlConnection conn = new SqlConnection(@"Data Source=MASTERBLASTER\SQLEXPRESS;Initial Catalog=LifeLog;Integrated Security=True;");
-
-            string sql = "INSERT INTO Goals (goalName, goalWhy, goalChallenges, goalMotivation, goalDate, taskOne, taskTwo, taskThree," +
-                "taskFour, taskFive, taskSix, taskSeven, taskEight, taskNine, taskTen, checkmarkOne, checkmarkTwo, checkmarkThree," +
-                "checkmarkFour, checkmarkFive, checkmarkSix, checkmarkSeven, checkmarkEight, checkmarkNine, checkmarkTen) VALUES (@appt1," +
-                "@appt2, @appt3, @appt4, @appt5, @appt6, @appt7, @appt8, @appt9, @appt10, @appt11, @appt12, @appt13, @appt14, @appt15," +
-                "@appt16, @appt17, @appt18, @appt19, @appt20, @appt21, @appt22, @appt23, @appt24, @appt25)";
+            string sql = "INSERT INTO Goals (UserId, GoalName, GoalWhy, GoalChal, GoalMot, GoalDate, Tasks, Checks) VALUES (@id, @gn, @gw," +
+                "@gc, @gm, @gd, @Task, @Check)";
 
             conn.Open();
             SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.Add("@appt1", SqlDbType.VarChar);
-            cmd.Parameters["@appt1"].Value = g1;
-            cmd.Parameters.Add("@appt2", SqlDbType.VarChar);
-            cmd.Parameters["@appt2"].Value = g2;
-            cmd.Parameters.Add("@appt3", SqlDbType.VarChar);
-            cmd.Parameters["@appt3"].Value = g3;
-            cmd.Parameters.Add("@appt4", SqlDbType.VarChar);
-            cmd.Parameters["@appt4"].Value = g4;
-            cmd.Parameters.Add("@appt5", SqlDbType.VarChar);
-            cmd.Parameters["@appt5"].Value = g5;
-            cmd.Parameters.Add("@appt6", SqlDbType.VarChar);
-            cmd.Parameters["@appt6"].Value = g6;
-            cmd.Parameters.Add("@appt7", SqlDbType.VarChar);
-            cmd.Parameters["@appt7"].Value = g7;
-            cmd.Parameters.Add("@appt8", SqlDbType.VarChar);
-            cmd.Parameters["@appt8"].Value = g8;
-            cmd.Parameters.Add("@appt9", SqlDbType.VarChar);
-            cmd.Parameters["@appt9"].Value = g9;
-            cmd.Parameters.Add("@appt10", SqlDbType.VarChar);
-            cmd.Parameters["@appt10"].Value = g10;
-            cmd.Parameters.Add("@appt11", SqlDbType.VarChar);
-            cmd.Parameters["@appt11"].Value = g11;
-            cmd.Parameters.Add("@appt12", SqlDbType.VarChar);
-            cmd.Parameters["@appt12"].Value = g12;
-            cmd.Parameters.Add("@appt13", SqlDbType.VarChar);
-            cmd.Parameters["@appt13"].Value = g13;
-            cmd.Parameters.Add("@appt14", SqlDbType.VarChar);
-            cmd.Parameters["@appt14"].Value = g14;
-            cmd.Parameters.Add("@appt15", SqlDbType.VarChar);
-            cmd.Parameters["@appt15"].Value = g15;
-            cmd.Parameters.Add("@appt16", SqlDbType.Int);
-            cmd.Parameters["@appt16"].Value = check1;
-            cmd.Parameters.Add("@appt17", SqlDbType.Int);
-            cmd.Parameters["@appt17"].Value = check2;
-            cmd.Parameters.Add("@appt18", SqlDbType.Int);
-            cmd.Parameters["@appt18"].Value = check3;
-            cmd.Parameters.Add("@appt19", SqlDbType.Int);
-            cmd.Parameters["@appt19"].Value = check4;
-            cmd.Parameters.Add("@appt20", SqlDbType.Int);
-            cmd.Parameters["@appt20"].Value = check5;
-            cmd.Parameters.Add("@appt21", SqlDbType.Int);
-            cmd.Parameters["@appt21"].Value = check6;
-            cmd.Parameters.Add("@appt22", SqlDbType.Int);
-            cmd.Parameters["@appt22"].Value = check7;
-            cmd.Parameters.Add("@appt23", SqlDbType.Int);
-            cmd.Parameters["@appt23"].Value = check8;
-            cmd.Parameters.Add("@appt24", SqlDbType.Int);
-            cmd.Parameters["@appt24"].Value = check9;
-            cmd.Parameters.Add("@appt25", SqlDbType.Int);
-            cmd.Parameters["@appt25"].Value = check10;
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = userId;
+            cmd.Parameters.Add("@gn", SqlDbType.NVarChar).Value = goalTB.Text;
+            cmd.Parameters.Add("@gw", SqlDbType.NVarChar).Value = whyTB.Text;
+            cmd.Parameters.Add("@gc", SqlDbType.NVarChar).Value = challengeTB.Text;
+            cmd.Parameters.Add("@gm", SqlDbType.NVarChar).Value = motivateTB.Text;
+            cmd.Parameters.Add("@gd", SqlDbType.NVarChar).Value = dateTB.Text;
+            cmd.Parameters.Add("@Task", SqlDbType.NVarChar).Value = user;
+            cmd.Parameters.Add("@Check", SqlDbType.NVarChar).Value = userId;
+
 
             cmd.ExecuteNonQuery();
 
@@ -163,7 +99,7 @@ namespace TheLifeLog
             }
 
             SqlConnection conn = new SqlConnection(@"Data Source=MASTERBLASTER\SQLEXPRESS;Initial Catalog=LifeLog;Integrated Security=True;");
-            string sql = "UPDATE Goals SET goalName = (@appt), goalWhy = (@appt2), goalChallenges = (@appt3), goalMotivation = (@appt4), goalDate = (@appt5)," +
+            string sql = "UPDATE goal SET goalName = (@appt), goalWhy = (@appt2), goalChallenges = (@appt3), goalMotivation = (@appt4), goalDate = (@appt5)," +
                 "taskOne = (@appt6), taskTwo = (@appt7), taskThree = (@appt8), taskFour = (@appt9), taskFive = (@appt10), taskSix = (@appt11), taskSeven = (@appt12), " +
                 "taskEight = (@appt13), taskNine = (@appt14), taskTen = (@appt15), checkmarkOne = (@appt16), checkmarkTwo = (@appt17), checkmarkThree = (@appt18)," +
                 "checkmarkFour = (@appt19), checkmarkFive = (@appt20), checkmarkSix = (@appt21), checkmarkSeven = (@appt22), checkmarkEight = (@appt23), checkmarkNine = (@appt24), checkmarkTen = (@appt25) WHERE goalName = @Name";
@@ -257,62 +193,61 @@ namespace TheLifeLog
 
         private void goalsCombo_SelectedValueChanged(object sender, EventArgs e)
         {
+            string task, check;
+            Tasks.Clear();
+            Checks.Clear();
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to open a different goal? Anything that hasn't been saved will be lost.", "Continue", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 string choice = goalsCombo.Text;
-                string constr = @"Data Source=MASTERBLASTER\SQLEXPRESS;Initial Catalog=LifeLog;Integrated Security=True;";
+                string constr = @"Data Source=MASTERBLASTER\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True;";
                 using (SqlConnection con = new SqlConnection(constr))
                 {
-                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Goals WHERE goalName = @Name"))
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM Goals WHERE GoalName = @Name AND UserId = @id"))
                     {
                         cmd.CommandType = CommandType.Text;
                         cmd.Connection = con;
                         cmd.Parameters.AddWithValue("@Name", choice);
+                        cmd.Parameters.AddWithValue("@id", userId);
                         con.Open();
                         using (SqlDataReader sdr = cmd.ExecuteReader())
                         {
-
                             sdr.Read();
-                            goalTB.Text = sdr["goalName"].ToString();
-                            whyTB.Text = sdr["goalWhy"].ToString();
-                            challengeTB.Text = sdr["goalChallenges"].ToString();
-                            motivateTB.Text = sdr["goalMotivation"].ToString();
-                            dateTB.Text = sdr["goalDate"].ToString();
-                            taskOneTB.Text = sdr["taskOne"].ToString();
-                            taskTwoTB.Text = sdr["taskTwo"].ToString();
-                            taskThreeTB.Text = sdr["taskThree"].ToString();
-                            taskFourTB.Text = sdr["taskFour"].ToString();
-                            taskFiveTB.Text = sdr["taskFive"].ToString();
-                            taskSixTB.Text = sdr["taskSix"].ToString();
-                            taskSevenTB.Text = sdr["taskSeven"].ToString();
-                            taskEightTB.Text = sdr["taskEight"].ToString();
-                            taskNineTB.Text = sdr["taskNine"].ToString();
-                            taskTenTB.Text = sdr["taskTen"].ToString();
-                            check1 = Convert.ToInt32(sdr["checkmarkOne"]);
-                            check2 = Convert.ToInt32(sdr["checkmarkTwo"]);
-                            check3 = Convert.ToInt32(sdr["checkmarkThree"]);
-                            check4 = Convert.ToInt32(sdr["checkmarkFour"]);
-                            check5 = Convert.ToInt32(sdr["checkmarkFive"]);
-                            check6 = Convert.ToInt32(sdr["checkmarkSix"]);
-                            check7 = Convert.ToInt32(sdr["checkmarkSeven"]);
-                            check8 = Convert.ToInt32(sdr["checkmarkEight"]);
-                            check9 = Convert.ToInt32(sdr["checkmarkNine"]);
-                            check10 = Convert.ToInt32(sdr["checkmarkTen"]);
+                            goalTB.Text = sdr["GoalName"].ToString();
+                            whyTB.Text = sdr["GoalWhy"].ToString();
+                            challengeTB.Text = sdr["GoalChallenges"].ToString();
+                            motivateTB.Text = sdr["GoalMotivation"].ToString();
+                            dateTB.Text = sdr["GoalDate"].ToString();
+                            task = sdr["Tasks"].ToString();
+                            check = sdr["Checks"].ToString();
 
                         }
                         con.Close();
                     }
                 }
 
+                TextBox[] tb = {taskOneTB, taskTwoTB, taskThreeTB, taskFourTB, taskFiveTB, taskSixTB, taskSevenTB,
+                taskEightTB, taskNineTB, taskTenTB};
+
+                string[] tempArray = task.Split('*');
+                foreach (string str in tempArray)
+                {
+                    Tasks.Add(str);
+                }
+
+                for (int len = 0; len < Tasks.Count; len++)
+                {
+                    tb[len].Text = Tasks[len];
+                }
+
+                string[] tempArray2 = check.Split('*');
+                foreach (string str in tempArray2)
+                {
+                    Checks.Add(str);
+                }
+
                 checkMarks();
             }
-            else if (dialogResult == DialogResult.No)
-            {
-                //do something else
-            }
-
-            
         }
 
         private void cm4_Click(object sender, EventArgs e)
@@ -486,16 +421,15 @@ namespace TheLifeLog
         void checkMarks()
         {
             //Goes through the arrays and sets up what checkmarks need to be filled in
-            int[] checks = { check1, check2, check3, check4, check5, check6, check7, check8, check9, check10 };
             PictureBox[] boxes = {cm1, cm2, cm3, cm4, cm5, cm6, cm7, cm8, cm9, cm10};
 
-            for (int i = 0; i < checks.Length; i++)
+            for (int i = 0; i < Checks.Count; i++)
             {
-                if (checks[i] == 0)
+                if (Checks[i] == "0")
                 {
                     boxes[i].Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkbox111.png");
                 }
-                else if (checks[i] == 1)
+                else if (Checks[i] == "1")
                 {
                     boxes[i].Image = Image.FromFile("C:/Users/royet/source/repos/TheLifeLog/images/checkedCheckbox.png");
                 }
