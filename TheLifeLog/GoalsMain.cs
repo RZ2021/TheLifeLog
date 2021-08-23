@@ -162,7 +162,7 @@ namespace TheLifeLog
             PictureBox[] boxes = { cm1, cm2, cm3, cm4, cm5, cm6, cm7, cm8, cm9, cm10 };
             if(get)
             {
-                for (int i = 0; i < Checks.Count; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     if (Checks[i] == "0")
                     {
@@ -203,11 +203,6 @@ namespace TheLifeLog
         private void cm4_Click(object sender, EventArgs e)
         {
             CheckMarks(3, false);
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-            clearTB();
         }
 
         private void cm3_Click(object sender, EventArgs e)
@@ -260,10 +255,41 @@ namespace TheLifeLog
         private void label11_MouseHover(object sender, EventArgs e)
         {
             ToolTip t1 = new ToolTip();
-            t1.Show("Start New Goal", label11);
+            t1.Show("Start New Goal", NewButton);
         }
 
-        private void clearTB()
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this goal?", "Delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string sql = "DELETE FROM Goals WHERE UserId = @id AND GoalName = @gn";
+                SaveGoals(sql, 3);
+                goalTB.Clear();
+                whyTB.Clear();
+                challengeTB.Clear();
+                motivateTB.Clear();
+                dateTB.Clear();
+
+                TextBox[] tb = {taskOneTB, taskTwoTB, taskThreeTB, taskFourTB, taskFiveTB, taskSixTB, taskSevenTB,
+                taskEightTB, taskNineTB, taskTenTB};
+                for (int i = 0; i < 10; i++)
+                {
+                    tb[i].Text = "";
+                    Checks[i] = "0";
+                }
+
+                for (int i = 0; i < 10; i++)
+                {
+                    Checks.Add("0");
+                }
+
+                CheckMarks(0, true);
+                LoadGoals();
+            }
+        }
+
+        private void NewButton_Click(object sender, EventArgs e)
         {
             goalTB.Clear();
             whyTB.Clear();
@@ -271,17 +297,21 @@ namespace TheLifeLog
             motivateTB.Clear();
             dateTB.Clear();
 
+            Tasks.Clear();
             TextBox[] tb = {taskOneTB, taskTwoTB, taskThreeTB, taskFourTB, taskFiveTB, taskSixTB, taskSevenTB,
                 taskEightTB, taskNineTB, taskTenTB};
-            for (int i = 0; i < Tasks.Count; i++)
+            for (int i = 0; i < 10; i++)
             {
                 tb[i].Text = "";
                 Checks[i] = "0";
             }
 
+            for (int i = 0; i < 10; i++)
+            {
+                Checks.Add("0");
+            }
+
             CheckMarks(0, true);
         }
-
-        
     }
 }

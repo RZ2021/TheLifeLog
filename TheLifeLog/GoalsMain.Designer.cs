@@ -70,7 +70,7 @@ namespace TheLifeLog
             this.label3 = new System.Windows.Forms.Label();
             this.cm9 = new System.Windows.Forms.PictureBox();
             this.taskNineTB = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.NewButton = new System.Windows.Forms.Label();
             this.updateButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.exitLabel = new System.Windows.Forms.Label();
@@ -405,9 +405,9 @@ namespace TheLifeLog
             this.saveButton.Font = new System.Drawing.Font("Minerva", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButton.Location = new System.Drawing.Point(268, 597);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(86, 34);
+            this.saveButton.Size = new System.Drawing.Size(94, 49);
             this.saveButton.TabIndex = 106;
-            this.saveButton.Text = "New";
+            this.saveButton.Text = "Save New";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
@@ -516,24 +516,24 @@ namespace TheLifeLog
             this.taskNineTB.Size = new System.Drawing.Size(361, 35);
             this.taskNineTB.TabIndex = 108;
             // 
-            // label11
+            // NewButton
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Minerva", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(247, -26);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 75);
-            this.label11.TabIndex = 110;
-            this.label11.Text = "+";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            this.label11.MouseHover += new System.EventHandler(this.label11_MouseHover);
+            this.NewButton.AutoSize = true;
+            this.NewButton.Font = new System.Drawing.Font("Minerva", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewButton.Location = new System.Drawing.Point(247, -26);
+            this.NewButton.Name = "NewButton";
+            this.NewButton.Size = new System.Drawing.Size(60, 75);
+            this.NewButton.TabIndex = 110;
+            this.NewButton.Text = "+";
+            this.NewButton.Click += new System.EventHandler(this.NewButton_Click);
+            this.NewButton.MouseHover += new System.EventHandler(this.label11_MouseHover);
             // 
             // updateButton
             // 
             this.updateButton.Font = new System.Drawing.Font("Minerva", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateButton.Location = new System.Drawing.Point(377, 597);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(86, 34);
+            this.updateButton.Size = new System.Drawing.Size(96, 49);
             this.updateButton.TabIndex = 111;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
@@ -544,10 +544,11 @@ namespace TheLifeLog
             this.clearButton.Font = new System.Drawing.Font("Minerva", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearButton.Location = new System.Drawing.Point(488, 597);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(86, 34);
+            this.clearButton.Size = new System.Drawing.Size(96, 49);
             this.clearButton.TabIndex = 112;
-            this.clearButton.Text = "Clear";
+            this.clearButton.Text = "Delete";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // exitLabel
             // 
@@ -569,7 +570,7 @@ namespace TheLifeLog
             this.Controls.Add(this.exitLabel);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.updateButton);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.NewButton);
             this.Controls.Add(this.cm9);
             this.Controls.Add(this.taskNineTB);
             this.Controls.Add(this.label10);
@@ -667,7 +668,7 @@ namespace TheLifeLog
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox cm9;
         private System.Windows.Forms.TextBox taskNineTB;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label NewButton;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.PictureBox pictureBox2;
