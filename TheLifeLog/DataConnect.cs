@@ -286,5 +286,42 @@ namespace TheLifeLog
             return updated;
         }
 
+
+        public string ReadMeal(int id)
+        {
+            string meal;
+            string constr = @"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True";
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT Meals FROM MealPlan WHERE UserId = @id"))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        sdr.Read();
+                        meal = sdr["Meals"].ToString();
+                    }
+                    con.Close();
+                }
+            }
+            return meal;
+        }
+
+        public int WriteMeal(int id, string meals)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True");
+            string sql = "UPDATE MealPlan SET Meals = @meal WHERE UserId = (@id)";
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@meal", SqlDbType.NVarChar).Value = meals;
+            int updated = cmd.ExecuteNonQuery();
+            conn.Close();
+            return updated;
+        }
     }
 }

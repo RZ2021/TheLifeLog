@@ -13,196 +13,108 @@ namespace TheLifeLog
 {
     public partial class MealPlan : Form
     {
-        public MealPlan()
+        int userId;
+        List<string> Meals = new List<string>();
+        public MealPlan(int user)
         {
             InitializeComponent();
+            userId = user;
+
+            GetMeals();
         }
 
-        private void MealPlan_Load(object sender, EventArgs e)
+        private void GetMeals()
         {
-            //Reads data from db and places it into variables
-            string constr = @"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=LifeLog;Integrated Security=True";
-            using (SqlConnection con = new SqlConnection(constr))
+            try
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM MealPlanning"))
+                DataConnect dc = new DataConnect();
+                string meal = dc.ReadMeal(userId);
+                if (meal == null)
                 {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Connection = con;
-                    con.Open();
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        sdr.Read();
-                        bmTB.Text = sdr["bkftMon"].ToString();
-                        lmTB.Text = sdr["lunMon"].ToString();
-                        dmTB.Text = sdr["dinMon"].ToString();
-                        demTB.Text = sdr["desMon"].ToString();
-                        btTB.Text = sdr["bkftTues"].ToString();
-                        lthTB.Text = sdr["lunTues"].ToString();
-                        dtTB.Text = sdr["dinTues"].ToString();
-                        detTB.Text = sdr["desTues"].ToString();
-                        bwTB.Text = sdr["bkftWed"].ToString();
-                        lwTB.Text = sdr["lunWed"].ToString();
-                        dwTB.Text = sdr["dinWed"].ToString();
-                        dewTB.Text = sdr["desWed"].ToString();
-                        bthTB.Text = sdr["bkftThurs"].ToString();
-                        lthTB.Text = sdr["lunThurs"].ToString();
-                        dthTB.Text = sdr["dinThurs"].ToString();
-                        dethTB.Text = sdr["desThurs"].ToString();
-                        bfTB.Text = sdr["bkftFri"].ToString();
-                        lfTB.Text = sdr["lunFri"].ToString();
-                        dfTB.Text = sdr["dinFri"].ToString();
-                        defTB.Text = sdr["desFri"].ToString();
-                        bsTB.Text = sdr["bkftSat"].ToString();
-                        lsTB.Text = sdr["lunSat"].ToString();
-                        dsTB.Text = sdr["dinSat"].ToString();
-                        desTB.Text = sdr["desSat"].ToString();
-                        bsuTB.Text = sdr["bkftSun"].ToString();
-                        lsuTB.Text = sdr["lunSun"].ToString();
-                        desuTB.Text = sdr["dinSun"].ToString();
-                        desuTB.Text = sdr["desSun"].ToString();
 
-                    }
-                    con.Close();
                 }
+                else
+                {
+                    string[] tempArray = meal.Split('*');
+                    foreach (string str in tempArray)
+                    {
+                        Meals.Add(str);
+                    }
+
+                    RichTextBox[] tb = {TB1, TB2, TB3, TB4, TB5, TB6, TB7, TB8, TB9, TB10, TB11, TB12, TB13, TB14,
+                    TB15, TB16, TB17, TB18, TB19, TB20, TB21, TB22, TB23, TB24, TB25, TB26, TB27, TB28};
+
+                    for (int len = 0; len < Meals.Count; len++)
+                    {
+                        tb[len].Text = Meals[len];
+                    }
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Something went wrong");
             }
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            bmTB.Text = " ";
-            lmTB.Text = " ";
-            dmTB.Text = " ";
-            demTB.Text = " ";
-            btTB.Text = " ";
-            ltTB.Text = " ";
-            dtTB.Text = " ";
-            detTB.Text = " ";
-            bwTB.Text = " ";
-            lwTB.Text = " ";
-            dwTB.Text = " ";
-            dewTB.Text = " ";
-            bthTB.Text = " ";
-            lthTB.Text = " ";
-            dthTB.Text = " ";
-            dethTB.Text = " ";
-            bfTB.Text = " ";
-            lfTB.Text = " ";
-            dfTB.Text = " ";
-            defTB.Text = " ";
-            bsTB.Text = " ";
-            lsTB.Text = " ";
-            dsTB.Text = " ";
-            desTB.Text = " ";
-            bsuTB.Text = " ";
-            lsuTB.Text = " ";
-            dsuTB.Text = " ";
-            desuTB.Text = " ";
+            TB1.Text = " ";
+            TB8.Text = " ";
+            TB15.Text = " ";
+            TB22.Text = " ";
+            TB2.Text = " ";
+            TB9.Text = " ";
+            TB16.Text = " ";
+            TB23.Text = " ";
+            TB3.Text = " ";
+            TB10.Text = " ";
+            TB17.Text = " ";
+            TB24.Text = " ";
+            TB4.Text = " ";
+            TB11.Text = " ";
+            TB18.Text = " ";
+            TB25.Text = " ";
+            TB5.Text = " ";
+            TB12.Text = " ";
+            TB19.Text = " ";
+            TB26.Text = " ";
+            TB6.Text = " ";
+            TB13.Text = " ";
+            TB20.Text = " ";
+            TB27.Text = " ";
+            TB7.Text = " ";
+            TB14.Text = " ";
+            TB21.Text = " ";
+            TB28.Text = " ";
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            string mp1 = bmTB.Text;
-            string mp2 = lmTB.Text;
-            string mp3 = dmTB.Text;
-            string mp4 = demTB.Text;
-            string mp5 = btTB.Text;
-            string mp6 = ltTB.Text;
-            string mp7 = dtTB.Text;
-            string mp8 = detTB.Text;
-            string mp9 = bwTB.Text;
-            string mp10 = lwTB.Text;
-            string mp11 = dwTB.Text;
-            string mp12 = dewTB.Text;
-            string mp13 = bthTB.Text;
-            string mp14 = lthTB.Text;
-            string mp15 = dthTB.Text;
-            string mp16 = dethTB.Text;
-            string mp17 = bfTB.Text;
-            string mp18 = lfTB.Text;
-            string mp19 = dfTB.Text;
-            string mp20 = defTB.Text;
-            string mp21 = bsTB.Text;
-            string mp22 = lsTB.Text;
-            string mp23 = dsTB.Text;
-            string mp24 = desTB.Text;
-            string mp25 = bsuTB.Text;
-            string mp26 = lsuTB.Text;
-            string mp27 = dsuTB.Text;
-            string mp28 = desuTB.Text;
-
-            SqlConnection conn = new SqlConnection(@"Data Source=MASTERBLASTER\SQLEXPRESS;Initial Catalog=LifeLog;Integrated Security=True;");
-            string sql = "UPDATE MealPlanning SET bkftMon = (@appt), lunMon = (@appt2), dinMon = (@appt3), desMon = (@appt4), bkftTues = (@appt5)," +
-                "lunTues = (@appt6), dinTues = (@appt7), desTues = (@appt8), bkftWed = (@appt9), lunWed = (@appt10), dinWed = (@appt11), desWed = (@appt12), " +
-                "bkftThurs = (@appt13), lunThurs = (@appt14), dinThurs = (@appt15)," + "desThurs = (@appt16), bkftFri = (@appt17), lunFri = (@appt18), dinFri = (@appt19), " +
-                "desFri = (@appt20), bkftSat = (@appt21), lunSat = (@appt22), " + "dinSat = (@appt23), desSat = (@appt24), bkftSun = (@appt25), " +
-                "lunSun = (@appt26), dinSun = (@appt27), desSun = (@appt28)";
-
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.Add("@appt", SqlDbType.VarChar);
-                cmd.Parameters["@appt"].Value = mp1;
-                cmd.Parameters.Add("@appt2", SqlDbType.VarChar);
-                cmd.Parameters["@appt2"].Value = mp2;
-                cmd.Parameters.Add("@appt3", SqlDbType.VarChar);
-                cmd.Parameters["@appt3"].Value = mp3;
-                cmd.Parameters.Add("@appt4", SqlDbType.VarChar);
-                cmd.Parameters["@appt4"].Value = mp4;
-                cmd.Parameters.Add("@appt5", SqlDbType.VarChar);
-                cmd.Parameters["@appt5"].Value = mp5;
-                cmd.Parameters.Add("@appt6", SqlDbType.VarChar);
-                cmd.Parameters["@appt6"].Value = mp6;
-                cmd.Parameters.Add("@appt7", SqlDbType.VarChar);
-                cmd.Parameters["@appt7"].Value = mp7;
-                cmd.Parameters.Add("@appt8", SqlDbType.VarChar);
-                cmd.Parameters["@appt8"].Value = mp8;
-                cmd.Parameters.Add("@appt9", SqlDbType.VarChar);
-                cmd.Parameters["@appt9"].Value = mp9;
-                cmd.Parameters.Add("@appt10", SqlDbType.VarChar);
-                cmd.Parameters["@appt10"].Value = mp10;
-                cmd.Parameters.Add("@appt11", SqlDbType.VarChar);
-                cmd.Parameters["@appt11"].Value = mp11;
-                cmd.Parameters.Add("@appt12", SqlDbType.VarChar);
-                cmd.Parameters["@appt12"].Value = mp12;
-                cmd.Parameters.Add("@appt13", SqlDbType.VarChar);
-                cmd.Parameters["@appt13"].Value = mp13;
-                cmd.Parameters.Add("@appt14", SqlDbType.VarChar);
-                cmd.Parameters["@appt14"].Value = mp14;
-                cmd.Parameters.Add("@appt15", SqlDbType.VarChar);
-                cmd.Parameters["@appt15"].Value = mp15;
-                cmd.Parameters.Add("@appt16", SqlDbType.VarChar);
-                cmd.Parameters["@appt16"].Value = mp16;
-                cmd.Parameters.Add("@appt17", SqlDbType.VarChar);
-                cmd.Parameters["@appt17"].Value = mp17;
-                cmd.Parameters.Add("@appt18", SqlDbType.VarChar);
-                cmd.Parameters["@appt18"].Value = mp18;
-                cmd.Parameters.Add("@appt19", SqlDbType.VarChar);
-                cmd.Parameters["@appt19"].Value = mp19;
-                cmd.Parameters.Add("@appt20", SqlDbType.VarChar);
-                cmd.Parameters["@appt20"].Value = mp20;
-                cmd.Parameters.Add("@appt21", SqlDbType.VarChar);
-                cmd.Parameters["@appt21"].Value = mp21;
-                cmd.Parameters.Add("@appt22", SqlDbType.VarChar);
-                cmd.Parameters["@appt22"].Value = mp22;
-                cmd.Parameters.Add("@appt23", SqlDbType.VarChar);
-                cmd.Parameters["@appt23"].Value = mp23;
-                cmd.Parameters.Add("@appt24", SqlDbType.VarChar);
-                cmd.Parameters["@appt24"].Value = mp24;
-                cmd.Parameters.Add("@appt25", SqlDbType.VarChar);
-                cmd.Parameters["@appt25"].Value = mp25;
-                cmd.Parameters.Add("@appt26", SqlDbType.VarChar);
-                cmd.Parameters["@appt26"].Value = mp26;
-                cmd.Parameters.Add("@appt27", SqlDbType.VarChar);
-                cmd.Parameters["@appt27"].Value = mp27;
-                cmd.Parameters.Add("@appt28", SqlDbType.VarChar);
-                cmd.Parameters["@appt28"].Value = mp28;
+                Meals.Clear();
 
-                cmd.ExecuteNonQuery();
+                RichTextBox[] tb = {TB1, TB2, TB3, TB4, TB5, TB6, TB7, TB8, TB9, TB10, TB11, TB12, TB13, TB14,
+                    TB15, TB16, TB17, TB18, TB19, TB20, TB21, TB22, TB23, TB24, TB25, TB26, TB27, TB28};
 
-                conn.Close();
+                //writes data in textboxes to database};
+                for (int len = 0; len < tb.Length; len++)
+                {
+                    Meals.Add(tb[len].Text);
+                }
 
-                MessageBox.Show("Your meal planner was saved!");
+                string meal = String.Join("*", Meals.ToArray());
+                DataConnect dc = new DataConnect();
+                int answer = dc.WriteMeal(userId, meal);
+                if (answer != 0)
+                {
+                    MessageBox.Show("Your meal planner was saved!");
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong");
+                }
             }
             catch
             {
@@ -212,9 +124,71 @@ namespace TheLifeLog
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            
+            List<string> listData = new List<string>();
+            DataConnect dc = new DataConnect();
+            string shopLists = dc.ReadShop(userId, 1);
+
+            string[] tempArray1 = shopLists.Split('*');
+            foreach (string str in tempArray1)
+            {
+                listData.Add(str);
+            }
+
+            int ind = listData.FindIndex(a => a.Contains(""));
+
+            if(ind > 29)
+            {
+                DialogResult dr = MessageBox.Show("You're main shopping list is full, do you want to send these items" +
+                    " to the next available list?", "Continue", MessageBoxButtons.YesNo);
+                if(dr == DialogResult.Yes)
+                {
+                    string items = ListTB.Text;
+                    string[] tempArray2 = items.Split(',');
+                    int count = 0;
+                    for (int x = ind; x < tempArray2.Length; x++)
+                    {
+                        if (listData[ind] != "")
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            listData[ind] = tempArray2[count];
+                            count++;
+                        }
+                    }
+                    MessageBox.Show("Your items have been sent");
+                }
+                else
+                {
+                    MessageBox.Show("Your items will not be sent");
+                }
+            }
+            else
+            {
+                string items = ListTB.Text;
+                string[] tempArray2 = items.Split(',');
+                int count = 0;
+                for (int x = ind; x < tempArray2.Length; x++)
+                {
+                    if (listData[ind] != "")
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        listData[ind] = tempArray2[count];
+                        count++;
+                    }
+                }
+
+                MessageBox.Show("Your items have been sent");
+
+            }
 
         }
+
+   
 
         private void exitLabel_Click(object sender, EventArgs e)
         {

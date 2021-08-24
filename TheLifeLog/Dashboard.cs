@@ -417,7 +417,7 @@ namespace TheLifeLog
 
         private void MealPlanningButton_Click(object sender, EventArgs e)
         {
-            MealPlan mp = new MealPlan();
+            MealPlan mp = new MealPlan(userId);
             mp.Show();
 
         }

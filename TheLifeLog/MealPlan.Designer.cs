@@ -43,37 +43,37 @@ namespace TheLifeLog
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.bmTB = new System.Windows.Forms.RichTextBox();
+            this.TB1 = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.sendtoTB = new System.Windows.Forms.RichTextBox();
-            this.lmTB = new System.Windows.Forms.RichTextBox();
-            this.dmTB = new System.Windows.Forms.RichTextBox();
-            this.demTB = new System.Windows.Forms.RichTextBox();
-            this.detTB = new System.Windows.Forms.RichTextBox();
-            this.dtTB = new System.Windows.Forms.RichTextBox();
-            this.ltTB = new System.Windows.Forms.RichTextBox();
-            this.btTB = new System.Windows.Forms.RichTextBox();
-            this.dewTB = new System.Windows.Forms.RichTextBox();
-            this.dwTB = new System.Windows.Forms.RichTextBox();
-            this.lwTB = new System.Windows.Forms.RichTextBox();
-            this.bwTB = new System.Windows.Forms.RichTextBox();
-            this.dethTB = new System.Windows.Forms.RichTextBox();
-            this.dthTB = new System.Windows.Forms.RichTextBox();
-            this.lthTB = new System.Windows.Forms.RichTextBox();
-            this.bthTB = new System.Windows.Forms.RichTextBox();
-            this.defTB = new System.Windows.Forms.RichTextBox();
-            this.dfTB = new System.Windows.Forms.RichTextBox();
-            this.lfTB = new System.Windows.Forms.RichTextBox();
-            this.bfTB = new System.Windows.Forms.RichTextBox();
-            this.desTB = new System.Windows.Forms.RichTextBox();
-            this.dsTB = new System.Windows.Forms.RichTextBox();
-            this.lsTB = new System.Windows.Forms.RichTextBox();
-            this.bsTB = new System.Windows.Forms.RichTextBox();
-            this.desuTB = new System.Windows.Forms.RichTextBox();
-            this.dsuTB = new System.Windows.Forms.RichTextBox();
-            this.lsuTB = new System.Windows.Forms.RichTextBox();
-            this.bsuTB = new System.Windows.Forms.RichTextBox();
+            this.ListTB = new System.Windows.Forms.RichTextBox();
+            this.TB8 = new System.Windows.Forms.RichTextBox();
+            this.TB15 = new System.Windows.Forms.RichTextBox();
+            this.TB22 = new System.Windows.Forms.RichTextBox();
+            this.TB23 = new System.Windows.Forms.RichTextBox();
+            this.TB16 = new System.Windows.Forms.RichTextBox();
+            this.TB9 = new System.Windows.Forms.RichTextBox();
+            this.TB2 = new System.Windows.Forms.RichTextBox();
+            this.TB24 = new System.Windows.Forms.RichTextBox();
+            this.TB17 = new System.Windows.Forms.RichTextBox();
+            this.TB10 = new System.Windows.Forms.RichTextBox();
+            this.TB3 = new System.Windows.Forms.RichTextBox();
+            this.TB25 = new System.Windows.Forms.RichTextBox();
+            this.TB18 = new System.Windows.Forms.RichTextBox();
+            this.TB11 = new System.Windows.Forms.RichTextBox();
+            this.TB4 = new System.Windows.Forms.RichTextBox();
+            this.TB26 = new System.Windows.Forms.RichTextBox();
+            this.TB19 = new System.Windows.Forms.RichTextBox();
+            this.TB12 = new System.Windows.Forms.RichTextBox();
+            this.TB5 = new System.Windows.Forms.RichTextBox();
+            this.TB27 = new System.Windows.Forms.RichTextBox();
+            this.TB20 = new System.Windows.Forms.RichTextBox();
+            this.TB13 = new System.Windows.Forms.RichTextBox();
+            this.TB6 = new System.Windows.Forms.RichTextBox();
+            this.TB28 = new System.Windows.Forms.RichTextBox();
+            this.TB21 = new System.Windows.Forms.RichTextBox();
+            this.TB14 = new System.Windows.Forms.RichTextBox();
+            this.TB7 = new System.Windows.Forms.RichTextBox();
             this.saveButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
             this.sendButton = new System.Windows.Forms.Button();
@@ -226,16 +226,16 @@ namespace TheLifeLog
             this.label13.TabIndex = 12;
             this.label13.Text = "Dessert";
             // 
-            // bmTB
+            // TB1
             // 
-            this.bmTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.bmTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bmTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bmTB.Location = new System.Drawing.Point(138, 166);
-            this.bmTB.Name = "bmTB";
-            this.bmTB.Size = new System.Drawing.Size(175, 103);
-            this.bmTB.TabIndex = 13;
-            this.bmTB.Text = "";
+            this.TB1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB1.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB1.Location = new System.Drawing.Point(138, 166);
+            this.TB1.Name = "TB1";
+            this.TB1.Size = new System.Drawing.Size(175, 103);
+            this.TB1.TabIndex = 13;
+            this.TB1.Text = "";
             // 
             // label14
             // 
@@ -259,318 +259,318 @@ namespace TheLifeLog
             this.label15.TabIndex = 42;
             this.label15.Text = "Enter 10 items at a time with a comma between each";
             // 
-            // sendtoTB
+            // ListTB
             // 
-            this.sendtoTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.sendtoTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.sendtoTB.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendtoTB.Location = new System.Drawing.Point(138, 736);
-            this.sendtoTB.Name = "sendtoTB";
-            this.sendtoTB.Size = new System.Drawing.Size(754, 81);
-            this.sendtoTB.TabIndex = 43;
-            this.sendtoTB.Text = "";
+            this.ListTB.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.ListTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListTB.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListTB.Location = new System.Drawing.Point(138, 736);
+            this.ListTB.Name = "ListTB";
+            this.ListTB.Size = new System.Drawing.Size(754, 81);
+            this.ListTB.TabIndex = 43;
+            this.ListTB.Text = "";
             // 
-            // lmTB
+            // TB8
             // 
-            this.lmTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.lmTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lmTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lmTB.Location = new System.Drawing.Point(139, 286);
-            this.lmTB.Name = "lmTB";
-            this.lmTB.Size = new System.Drawing.Size(175, 103);
-            this.lmTB.TabIndex = 44;
-            this.lmTB.Text = "";
+            this.TB8.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB8.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB8.Location = new System.Drawing.Point(139, 286);
+            this.TB8.Name = "TB8";
+            this.TB8.Size = new System.Drawing.Size(175, 103);
+            this.TB8.TabIndex = 44;
+            this.TB8.Text = "";
             // 
-            // dmTB
+            // TB15
             // 
-            this.dmTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dmTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dmTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dmTB.Location = new System.Drawing.Point(138, 407);
-            this.dmTB.Name = "dmTB";
-            this.dmTB.Size = new System.Drawing.Size(175, 103);
-            this.dmTB.TabIndex = 45;
-            this.dmTB.Text = "";
+            this.TB15.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB15.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB15.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB15.Location = new System.Drawing.Point(138, 407);
+            this.TB15.Name = "TB15";
+            this.TB15.Size = new System.Drawing.Size(175, 103);
+            this.TB15.TabIndex = 45;
+            this.TB15.Text = "";
             // 
-            // demTB
+            // TB22
             // 
-            this.demTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.demTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.demTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.demTB.Location = new System.Drawing.Point(139, 527);
-            this.demTB.Name = "demTB";
-            this.demTB.Size = new System.Drawing.Size(175, 103);
-            this.demTB.TabIndex = 46;
-            this.demTB.Text = "";
+            this.TB22.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB22.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB22.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB22.Location = new System.Drawing.Point(139, 527);
+            this.TB22.Name = "TB22";
+            this.TB22.Size = new System.Drawing.Size(175, 103);
+            this.TB22.TabIndex = 46;
+            this.TB22.Text = "";
             // 
-            // detTB
+            // TB23
             // 
-            this.detTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.detTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.detTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detTB.Location = new System.Drawing.Point(334, 527);
-            this.detTB.Name = "detTB";
-            this.detTB.Size = new System.Drawing.Size(175, 103);
-            this.detTB.TabIndex = 50;
-            this.detTB.Text = "";
+            this.TB23.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB23.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB23.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB23.Location = new System.Drawing.Point(334, 527);
+            this.TB23.Name = "TB23";
+            this.TB23.Size = new System.Drawing.Size(175, 103);
+            this.TB23.TabIndex = 50;
+            this.TB23.Text = "";
             // 
-            // dtTB
+            // TB16
             // 
-            this.dtTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dtTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtTB.Location = new System.Drawing.Point(333, 407);
-            this.dtTB.Name = "dtTB";
-            this.dtTB.Size = new System.Drawing.Size(175, 103);
-            this.dtTB.TabIndex = 49;
-            this.dtTB.Text = "";
+            this.TB16.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB16.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB16.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB16.Location = new System.Drawing.Point(333, 407);
+            this.TB16.Name = "TB16";
+            this.TB16.Size = new System.Drawing.Size(175, 103);
+            this.TB16.TabIndex = 49;
+            this.TB16.Text = "";
             // 
-            // ltTB
+            // TB9
             // 
-            this.ltTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ltTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ltTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltTB.Location = new System.Drawing.Point(334, 286);
-            this.ltTB.Name = "ltTB";
-            this.ltTB.Size = new System.Drawing.Size(175, 103);
-            this.ltTB.TabIndex = 48;
-            this.ltTB.Text = "";
+            this.TB9.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB9.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB9.Location = new System.Drawing.Point(334, 286);
+            this.TB9.Name = "TB9";
+            this.TB9.Size = new System.Drawing.Size(175, 103);
+            this.TB9.TabIndex = 48;
+            this.TB9.Text = "";
             // 
-            // btTB
+            // TB2
             // 
-            this.btTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.btTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTB.Location = new System.Drawing.Point(333, 166);
-            this.btTB.Name = "btTB";
-            this.btTB.Size = new System.Drawing.Size(175, 103);
-            this.btTB.TabIndex = 47;
-            this.btTB.Text = "";
+            this.TB2.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB2.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB2.Location = new System.Drawing.Point(333, 166);
+            this.TB2.Name = "TB2";
+            this.TB2.Size = new System.Drawing.Size(175, 103);
+            this.TB2.TabIndex = 47;
+            this.TB2.Text = "";
             // 
-            // dewTB
+            // TB24
             // 
-            this.dewTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dewTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dewTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dewTB.Location = new System.Drawing.Point(528, 527);
-            this.dewTB.Name = "dewTB";
-            this.dewTB.Size = new System.Drawing.Size(175, 103);
-            this.dewTB.TabIndex = 54;
-            this.dewTB.Text = "";
+            this.TB24.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB24.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB24.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB24.Location = new System.Drawing.Point(528, 527);
+            this.TB24.Name = "TB24";
+            this.TB24.Size = new System.Drawing.Size(175, 103);
+            this.TB24.TabIndex = 54;
+            this.TB24.Text = "";
             // 
-            // dwTB
+            // TB17
             // 
-            this.dwTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dwTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dwTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dwTB.Location = new System.Drawing.Point(527, 407);
-            this.dwTB.Name = "dwTB";
-            this.dwTB.Size = new System.Drawing.Size(175, 103);
-            this.dwTB.TabIndex = 53;
-            this.dwTB.Text = "";
+            this.TB17.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB17.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB17.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB17.Location = new System.Drawing.Point(527, 407);
+            this.TB17.Name = "TB17";
+            this.TB17.Size = new System.Drawing.Size(175, 103);
+            this.TB17.TabIndex = 53;
+            this.TB17.Text = "";
             // 
-            // lwTB
+            // TB10
             // 
-            this.lwTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.lwTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lwTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lwTB.Location = new System.Drawing.Point(528, 286);
-            this.lwTB.Name = "lwTB";
-            this.lwTB.Size = new System.Drawing.Size(175, 103);
-            this.lwTB.TabIndex = 52;
-            this.lwTB.Text = "";
+            this.TB10.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB10.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB10.Location = new System.Drawing.Point(528, 286);
+            this.TB10.Name = "TB10";
+            this.TB10.Size = new System.Drawing.Size(175, 103);
+            this.TB10.TabIndex = 52;
+            this.TB10.Text = "";
             // 
-            // bwTB
+            // TB3
             // 
-            this.bwTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.bwTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bwTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bwTB.Location = new System.Drawing.Point(527, 166);
-            this.bwTB.Name = "bwTB";
-            this.bwTB.Size = new System.Drawing.Size(175, 103);
-            this.bwTB.TabIndex = 51;
-            this.bwTB.Text = "";
+            this.TB3.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB3.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB3.Location = new System.Drawing.Point(527, 166);
+            this.TB3.Name = "TB3";
+            this.TB3.Size = new System.Drawing.Size(175, 103);
+            this.TB3.TabIndex = 51;
+            this.TB3.Text = "";
             // 
-            // dethTB
+            // TB25
             // 
-            this.dethTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dethTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dethTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dethTB.Location = new System.Drawing.Point(718, 527);
-            this.dethTB.Name = "dethTB";
-            this.dethTB.Size = new System.Drawing.Size(175, 103);
-            this.dethTB.TabIndex = 58;
-            this.dethTB.Text = "";
+            this.TB25.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB25.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB25.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB25.Location = new System.Drawing.Point(718, 527);
+            this.TB25.Name = "TB25";
+            this.TB25.Size = new System.Drawing.Size(175, 103);
+            this.TB25.TabIndex = 58;
+            this.TB25.Text = "";
             // 
-            // dthTB
+            // TB18
             // 
-            this.dthTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dthTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dthTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dthTB.Location = new System.Drawing.Point(717, 407);
-            this.dthTB.Name = "dthTB";
-            this.dthTB.Size = new System.Drawing.Size(175, 103);
-            this.dthTB.TabIndex = 57;
-            this.dthTB.Text = "";
+            this.TB18.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB18.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB18.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB18.Location = new System.Drawing.Point(717, 407);
+            this.TB18.Name = "TB18";
+            this.TB18.Size = new System.Drawing.Size(175, 103);
+            this.TB18.TabIndex = 57;
+            this.TB18.Text = "";
             // 
-            // lthTB
+            // TB11
             // 
-            this.lthTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.lthTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lthTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lthTB.Location = new System.Drawing.Point(718, 286);
-            this.lthTB.Name = "lthTB";
-            this.lthTB.Size = new System.Drawing.Size(175, 103);
-            this.lthTB.TabIndex = 56;
-            this.lthTB.Text = "";
+            this.TB11.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB11.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB11.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB11.Location = new System.Drawing.Point(718, 286);
+            this.TB11.Name = "TB11";
+            this.TB11.Size = new System.Drawing.Size(175, 103);
+            this.TB11.TabIndex = 56;
+            this.TB11.Text = "";
             // 
-            // bthTB
+            // TB4
             // 
-            this.bthTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.bthTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bthTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bthTB.Location = new System.Drawing.Point(717, 166);
-            this.bthTB.Name = "bthTB";
-            this.bthTB.Size = new System.Drawing.Size(175, 103);
-            this.bthTB.TabIndex = 55;
-            this.bthTB.Text = "";
+            this.TB4.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB4.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB4.Location = new System.Drawing.Point(717, 166);
+            this.TB4.Name = "TB4";
+            this.TB4.Size = new System.Drawing.Size(175, 103);
+            this.TB4.TabIndex = 55;
+            this.TB4.Text = "";
             // 
-            // defTB
+            // TB26
             // 
-            this.defTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.defTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.defTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.defTB.Location = new System.Drawing.Point(908, 527);
-            this.defTB.Name = "defTB";
-            this.defTB.Size = new System.Drawing.Size(175, 103);
-            this.defTB.TabIndex = 62;
-            this.defTB.Text = "";
+            this.TB26.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB26.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB26.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB26.Location = new System.Drawing.Point(908, 527);
+            this.TB26.Name = "TB26";
+            this.TB26.Size = new System.Drawing.Size(175, 103);
+            this.TB26.TabIndex = 62;
+            this.TB26.Text = "";
             // 
-            // dfTB
+            // TB19
             // 
-            this.dfTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dfTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dfTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dfTB.Location = new System.Drawing.Point(907, 407);
-            this.dfTB.Name = "dfTB";
-            this.dfTB.Size = new System.Drawing.Size(175, 103);
-            this.dfTB.TabIndex = 61;
-            this.dfTB.Text = "";
+            this.TB19.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB19.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB19.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB19.Location = new System.Drawing.Point(907, 407);
+            this.TB19.Name = "TB19";
+            this.TB19.Size = new System.Drawing.Size(175, 103);
+            this.TB19.TabIndex = 61;
+            this.TB19.Text = "";
             // 
-            // lfTB
+            // TB12
             // 
-            this.lfTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.lfTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lfTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lfTB.Location = new System.Drawing.Point(908, 286);
-            this.lfTB.Name = "lfTB";
-            this.lfTB.Size = new System.Drawing.Size(175, 103);
-            this.lfTB.TabIndex = 60;
-            this.lfTB.Text = "";
+            this.TB12.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB12.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB12.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB12.Location = new System.Drawing.Point(908, 286);
+            this.TB12.Name = "TB12";
+            this.TB12.Size = new System.Drawing.Size(175, 103);
+            this.TB12.TabIndex = 60;
+            this.TB12.Text = "";
             // 
-            // bfTB
+            // TB5
             // 
-            this.bfTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.bfTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bfTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bfTB.Location = new System.Drawing.Point(908, 166);
-            this.bfTB.Name = "bfTB";
-            this.bfTB.Size = new System.Drawing.Size(175, 103);
-            this.bfTB.TabIndex = 59;
-            this.bfTB.Text = "";
+            this.TB5.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB5.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB5.Location = new System.Drawing.Point(908, 166);
+            this.TB5.Name = "TB5";
+            this.TB5.Size = new System.Drawing.Size(175, 103);
+            this.TB5.TabIndex = 59;
+            this.TB5.Text = "";
             // 
-            // desTB
+            // TB27
             // 
-            this.desTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.desTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.desTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desTB.Location = new System.Drawing.Point(1099, 527);
-            this.desTB.Name = "desTB";
-            this.desTB.Size = new System.Drawing.Size(175, 103);
-            this.desTB.TabIndex = 66;
-            this.desTB.Text = "";
+            this.TB27.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB27.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB27.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB27.Location = new System.Drawing.Point(1099, 527);
+            this.TB27.Name = "TB27";
+            this.TB27.Size = new System.Drawing.Size(175, 103);
+            this.TB27.TabIndex = 66;
+            this.TB27.Text = "";
             // 
-            // dsTB
+            // TB20
             // 
-            this.dsTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dsTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dsTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dsTB.Location = new System.Drawing.Point(1098, 407);
-            this.dsTB.Name = "dsTB";
-            this.dsTB.Size = new System.Drawing.Size(175, 103);
-            this.dsTB.TabIndex = 65;
-            this.dsTB.Text = "";
+            this.TB20.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB20.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB20.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB20.Location = new System.Drawing.Point(1098, 407);
+            this.TB20.Name = "TB20";
+            this.TB20.Size = new System.Drawing.Size(175, 103);
+            this.TB20.TabIndex = 65;
+            this.TB20.Text = "";
             // 
-            // lsTB
+            // TB13
             // 
-            this.lsTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.lsTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lsTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lsTB.Location = new System.Drawing.Point(1099, 286);
-            this.lsTB.Name = "lsTB";
-            this.lsTB.Size = new System.Drawing.Size(175, 103);
-            this.lsTB.TabIndex = 64;
-            this.lsTB.Text = "";
+            this.TB13.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB13.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB13.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB13.Location = new System.Drawing.Point(1099, 286);
+            this.TB13.Name = "TB13";
+            this.TB13.Size = new System.Drawing.Size(175, 103);
+            this.TB13.TabIndex = 64;
+            this.TB13.Text = "";
             // 
-            // bsTB
+            // TB6
             // 
-            this.bsTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.bsTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bsTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bsTB.Location = new System.Drawing.Point(1098, 166);
-            this.bsTB.Name = "bsTB";
-            this.bsTB.Size = new System.Drawing.Size(175, 103);
-            this.bsTB.TabIndex = 63;
-            this.bsTB.Text = "";
+            this.TB6.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB6.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB6.Location = new System.Drawing.Point(1098, 166);
+            this.TB6.Name = "TB6";
+            this.TB6.Size = new System.Drawing.Size(175, 103);
+            this.TB6.TabIndex = 63;
+            this.TB6.Text = "";
             // 
-            // desuTB
+            // TB28
             // 
-            this.desuTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.desuTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.desuTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.desuTB.Location = new System.Drawing.Point(1292, 527);
-            this.desuTB.Name = "desuTB";
-            this.desuTB.Size = new System.Drawing.Size(175, 103);
-            this.desuTB.TabIndex = 70;
-            this.desuTB.Text = "";
+            this.TB28.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB28.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB28.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB28.Location = new System.Drawing.Point(1292, 527);
+            this.TB28.Name = "TB28";
+            this.TB28.Size = new System.Drawing.Size(175, 103);
+            this.TB28.TabIndex = 70;
+            this.TB28.Text = "";
             // 
-            // dsuTB
+            // TB21
             // 
-            this.dsuTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.dsuTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dsuTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dsuTB.Location = new System.Drawing.Point(1291, 407);
-            this.dsuTB.Name = "dsuTB";
-            this.dsuTB.Size = new System.Drawing.Size(175, 103);
-            this.dsuTB.TabIndex = 69;
-            this.dsuTB.Text = "";
+            this.TB21.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB21.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB21.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB21.Location = new System.Drawing.Point(1291, 407);
+            this.TB21.Name = "TB21";
+            this.TB21.Size = new System.Drawing.Size(175, 103);
+            this.TB21.TabIndex = 69;
+            this.TB21.Text = "";
             // 
-            // lsuTB
+            // TB14
             // 
-            this.lsuTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.lsuTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lsuTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lsuTB.Location = new System.Drawing.Point(1292, 286);
-            this.lsuTB.Name = "lsuTB";
-            this.lsuTB.Size = new System.Drawing.Size(175, 103);
-            this.lsuTB.TabIndex = 68;
-            this.lsuTB.Text = "";
+            this.TB14.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB14.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB14.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB14.Location = new System.Drawing.Point(1292, 286);
+            this.TB14.Name = "TB14";
+            this.TB14.Size = new System.Drawing.Size(175, 103);
+            this.TB14.TabIndex = 68;
+            this.TB14.Text = "";
             // 
-            // bsuTB
+            // TB7
             // 
-            this.bsuTB.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.bsuTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bsuTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bsuTB.Location = new System.Drawing.Point(1291, 166);
-            this.bsuTB.Name = "bsuTB";
-            this.bsuTB.Size = new System.Drawing.Size(175, 103);
-            this.bsuTB.TabIndex = 67;
-            this.bsuTB.Text = "";
+            this.TB7.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TB7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB7.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TB7.Location = new System.Drawing.Point(1291, 166);
+            this.TB7.Name = "TB7";
+            this.TB7.Size = new System.Drawing.Size(175, 103);
+            this.TB7.TabIndex = 67;
+            this.TB7.Text = "";
             // 
             // saveButton
             // 
             this.saveButton.Font = new System.Drawing.Font("Minerva", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Location = new System.Drawing.Point(1378, 794);
+            this.saveButton.Location = new System.Drawing.Point(1377, 783);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(89, 34);
             this.saveButton.TabIndex = 124;
@@ -581,7 +581,7 @@ namespace TheLifeLog
             // clearButton
             // 
             this.clearButton.Font = new System.Drawing.Font("Minerva", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(1269, 794);
+            this.clearButton.Location = new System.Drawing.Point(1268, 783);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(89, 34);
             this.clearButton.TabIndex = 125;
@@ -596,7 +596,7 @@ namespace TheLifeLog
             this.sendButton.Name = "sendButton";
             this.sendButton.Size = new System.Drawing.Size(89, 34);
             this.sendButton.TabIndex = 126;
-            this.sendButton.Text = "Save";
+            this.sendButton.Text = "Send";
             this.sendButton.UseVisualStyleBackColor = true;
             this.sendButton.Click += new System.EventHandler(this.sendButton_Click);
             // 
@@ -604,7 +604,7 @@ namespace TheLifeLog
             // 
             this.exitLabel.AutoSize = true;
             this.exitLabel.Font = new System.Drawing.Font("Minerva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitLabel.Location = new System.Drawing.Point(1447, 0);
+            this.exitLabel.Location = new System.Drawing.Point(1474, -11);
             this.exitLabel.Name = "exitLabel";
             this.exitLabel.Size = new System.Drawing.Size(42, 50);
             this.exitLabel.TabIndex = 127;
@@ -618,42 +618,42 @@ namespace TheLifeLog
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1491, 840);
+            this.ClientSize = new System.Drawing.Size(1476, 850);
             this.Controls.Add(this.exitLabel);
             this.Controls.Add(this.sendButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.saveButton);
-            this.Controls.Add(this.desuTB);
-            this.Controls.Add(this.dsuTB);
-            this.Controls.Add(this.lsuTB);
-            this.Controls.Add(this.bsuTB);
-            this.Controls.Add(this.desTB);
-            this.Controls.Add(this.dsTB);
-            this.Controls.Add(this.lsTB);
-            this.Controls.Add(this.bsTB);
-            this.Controls.Add(this.defTB);
-            this.Controls.Add(this.dfTB);
-            this.Controls.Add(this.lfTB);
-            this.Controls.Add(this.bfTB);
-            this.Controls.Add(this.dethTB);
-            this.Controls.Add(this.dthTB);
-            this.Controls.Add(this.lthTB);
-            this.Controls.Add(this.bthTB);
-            this.Controls.Add(this.dewTB);
-            this.Controls.Add(this.dwTB);
-            this.Controls.Add(this.lwTB);
-            this.Controls.Add(this.bwTB);
-            this.Controls.Add(this.detTB);
-            this.Controls.Add(this.dtTB);
-            this.Controls.Add(this.ltTB);
-            this.Controls.Add(this.btTB);
-            this.Controls.Add(this.demTB);
-            this.Controls.Add(this.dmTB);
-            this.Controls.Add(this.lmTB);
-            this.Controls.Add(this.sendtoTB);
+            this.Controls.Add(this.TB28);
+            this.Controls.Add(this.TB21);
+            this.Controls.Add(this.TB14);
+            this.Controls.Add(this.TB7);
+            this.Controls.Add(this.TB27);
+            this.Controls.Add(this.TB20);
+            this.Controls.Add(this.TB13);
+            this.Controls.Add(this.TB6);
+            this.Controls.Add(this.TB26);
+            this.Controls.Add(this.TB19);
+            this.Controls.Add(this.TB12);
+            this.Controls.Add(this.TB5);
+            this.Controls.Add(this.TB25);
+            this.Controls.Add(this.TB18);
+            this.Controls.Add(this.TB11);
+            this.Controls.Add(this.TB4);
+            this.Controls.Add(this.TB24);
+            this.Controls.Add(this.TB17);
+            this.Controls.Add(this.TB10);
+            this.Controls.Add(this.TB3);
+            this.Controls.Add(this.TB23);
+            this.Controls.Add(this.TB16);
+            this.Controls.Add(this.TB9);
+            this.Controls.Add(this.TB2);
+            this.Controls.Add(this.TB22);
+            this.Controls.Add(this.TB15);
+            this.Controls.Add(this.TB8);
+            this.Controls.Add(this.ListTB);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.bmTB);
+            this.Controls.Add(this.TB1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -672,7 +672,6 @@ namespace TheLifeLog
             this.Name = "MealPlan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MealPlan";
-            this.Load += new System.EventHandler(this.MealPlan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -693,37 +692,37 @@ namespace TheLifeLog
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.RichTextBox bmTB;
+        private System.Windows.Forms.RichTextBox TB1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.RichTextBox sendtoTB;
-        private System.Windows.Forms.RichTextBox lmTB;
-        private System.Windows.Forms.RichTextBox dmTB;
-        private System.Windows.Forms.RichTextBox demTB;
-        private System.Windows.Forms.RichTextBox detTB;
-        private System.Windows.Forms.RichTextBox dtTB;
-        private System.Windows.Forms.RichTextBox ltTB;
-        private System.Windows.Forms.RichTextBox btTB;
-        private System.Windows.Forms.RichTextBox dewTB;
-        private System.Windows.Forms.RichTextBox dwTB;
-        private System.Windows.Forms.RichTextBox lwTB;
-        private System.Windows.Forms.RichTextBox bwTB;
-        private System.Windows.Forms.RichTextBox dethTB;
-        private System.Windows.Forms.RichTextBox dthTB;
-        private System.Windows.Forms.RichTextBox lthTB;
-        private System.Windows.Forms.RichTextBox bthTB;
-        private System.Windows.Forms.RichTextBox defTB;
-        private System.Windows.Forms.RichTextBox dfTB;
-        private System.Windows.Forms.RichTextBox lfTB;
-        private System.Windows.Forms.RichTextBox bfTB;
-        private System.Windows.Forms.RichTextBox desTB;
-        private System.Windows.Forms.RichTextBox dsTB;
-        private System.Windows.Forms.RichTextBox lsTB;
-        private System.Windows.Forms.RichTextBox bsTB;
-        private System.Windows.Forms.RichTextBox desuTB;
-        private System.Windows.Forms.RichTextBox dsuTB;
-        private System.Windows.Forms.RichTextBox lsuTB;
-        private System.Windows.Forms.RichTextBox bsuTB;
+        private System.Windows.Forms.RichTextBox ListTB;
+        private System.Windows.Forms.RichTextBox TB8;
+        private System.Windows.Forms.RichTextBox TB15;
+        private System.Windows.Forms.RichTextBox TB22;
+        private System.Windows.Forms.RichTextBox TB23;
+        private System.Windows.Forms.RichTextBox TB16;
+        private System.Windows.Forms.RichTextBox TB9;
+        private System.Windows.Forms.RichTextBox TB2;
+        private System.Windows.Forms.RichTextBox TB24;
+        private System.Windows.Forms.RichTextBox TB17;
+        private System.Windows.Forms.RichTextBox TB10;
+        private System.Windows.Forms.RichTextBox TB3;
+        private System.Windows.Forms.RichTextBox TB25;
+        private System.Windows.Forms.RichTextBox TB18;
+        private System.Windows.Forms.RichTextBox TB11;
+        private System.Windows.Forms.RichTextBox TB4;
+        private System.Windows.Forms.RichTextBox TB26;
+        private System.Windows.Forms.RichTextBox TB19;
+        private System.Windows.Forms.RichTextBox TB12;
+        private System.Windows.Forms.RichTextBox TB5;
+        private System.Windows.Forms.RichTextBox TB27;
+        private System.Windows.Forms.RichTextBox TB20;
+        private System.Windows.Forms.RichTextBox TB13;
+        private System.Windows.Forms.RichTextBox TB6;
+        private System.Windows.Forms.RichTextBox TB28;
+        private System.Windows.Forms.RichTextBox TB21;
+        private System.Windows.Forms.RichTextBox TB14;
+        private System.Windows.Forms.RichTextBox TB7;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button sendButton;
