@@ -250,8 +250,11 @@ namespace TheLifeLog
                 checkMark8, checkMark9, checkMark10, checkMark11, checkMark12, checkMark13, checkMark14, checkMark15,
                 checkMark16, checkMark17, checkMark18, checkMark19, checkMark20, checkMark21, checkMark22, checkMark23,
                 checkMark24, checkMark25, checkMark26, checkMark27, checkMark28, checkMark29, checkMark30 };
-
-            if(listNum == 2)
+            if(listNum == 1)
+            {
+                num = pb;
+            }
+            else if(listNum == 2)
             {
                 num = pb + 30;
             }

@@ -15,6 +15,8 @@ namespace TheLifeLog
     {
         int userId;
         List<string> Meals = new List<string>();
+        List<string> listData = new List<string>();
+
         public MealPlan(int user)
         {
             InitializeComponent();
@@ -29,27 +31,21 @@ namespace TheLifeLog
             {
                 DataConnect dc = new DataConnect();
                 string meal = dc.ReadMeal(userId);
-                if (meal == null)
-                {
 
+                string[] tempArray = meal.Split('*');
+                foreach (string str in tempArray)
+                {
+                    Meals.Add(str);
                 }
-                else
-                {
-                    string[] tempArray = meal.Split('*');
-                    foreach (string str in tempArray)
-                    {
-                        Meals.Add(str);
-                    }
 
-                    RichTextBox[] tb = {TB1, TB2, TB3, TB4, TB5, TB6, TB7, TB8, TB9, TB10, TB11, TB12, TB13, TB14,
+                RichTextBox[] tb = {TB1, TB2, TB3, TB4, TB5, TB6, TB7, TB8, TB9, TB10, TB11, TB12, TB13, TB14,
                     TB15, TB16, TB17, TB18, TB19, TB20, TB21, TB22, TB23, TB24, TB25, TB26, TB27, TB28};
 
-                    for (int len = 0; len < Meals.Count; len++)
-                    {
-                        tb[len].Text = Meals[len];
-                    }
-
+                for (int len = 0; len < Meals.Count; len++)
+                {
+                    tb[len].Text = Meals[len];
                 }
+
             }
             catch
             {
@@ -59,34 +55,12 @@ namespace TheLifeLog
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            TB1.Text = " ";
-            TB8.Text = " ";
-            TB15.Text = " ";
-            TB22.Text = " ";
-            TB2.Text = " ";
-            TB9.Text = " ";
-            TB16.Text = " ";
-            TB23.Text = " ";
-            TB3.Text = " ";
-            TB10.Text = " ";
-            TB17.Text = " ";
-            TB24.Text = " ";
-            TB4.Text = " ";
-            TB11.Text = " ";
-            TB18.Text = " ";
-            TB25.Text = " ";
-            TB5.Text = " ";
-            TB12.Text = " ";
-            TB19.Text = " ";
-            TB26.Text = " ";
-            TB6.Text = " ";
-            TB13.Text = " ";
-            TB20.Text = " ";
-            TB27.Text = " ";
-            TB7.Text = " ";
-            TB14.Text = " ";
-            TB21.Text = " ";
-            TB28.Text = " ";
+            RichTextBox[] tb = {TB1, TB2, TB3, TB4, TB5, TB6, TB7, TB8, TB9, TB10, TB11, TB12, TB13, TB14,
+                    TB15, TB16, TB17, TB18, TB19, TB20, TB21, TB22, TB23, TB24, TB25, TB26, TB27, TB28};
+            foreach(RichTextBox t in tb)
+            {
+                t.Text = "";
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -124,71 +98,93 @@ namespace TheLifeLog
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            List<string> listData = new List<string>();
             DataConnect dc = new DataConnect();
             string shopLists = dc.ReadShop(userId, 1);
 
             string[] tempArray1 = shopLists.Split('*');
             foreach (string str in tempArray1)
             {
-                listData.Add(str);
+                string i = str.Replace(" ", String.Empty);
+                listData.Add(i);
             }
 
-            int ind = listData.FindIndex(a => a.Contains(""));
+            int ind = listData.IndexOf("");
 
-            if(ind > 29)
+            string items = ListTB.Text;
+            string[] tempArray2 = items.Split(',');
+            int check = ind + tempArray2.Length;
+
+            if (ind > 29)
             {
-                DialogResult dr = MessageBox.Show("You're main shopping list is full, do you want to send these items" +
+                DialogResult dr = MessageBox.Show("Your main shopping list is full, do you want to send these items" +
                     " to the next available list?", "Continue", MessageBoxButtons.YesNo);
                 if(dr == DialogResult.Yes)
                 {
-                    string items = ListTB.Text;
-                    string[] tempArray2 = items.Split(',');
-                    int count = 0;
-                    for (int x = ind; x < tempArray2.Length; x++)
-                    {
-                        if (listData[ind] != "")
-                        {
-                            continue;
-                        }
-                        else
-                        {
-                            listData[ind] = tempArray2[count];
-                            count++;
-                        }
-                    }
-                    MessageBox.Show("Your items have been sent");
+                    SendItems(tempArray2, ind);
                 }
                 else
                 {
                     MessageBox.Show("Your items will not be sent");
                 }
             }
+            else if(check > 29)
+            {
+                DialogResult dr = MessageBox.Show("These items will fill your main shopping list and go into the next one. " +
+                    "Do you still want to send?", "Continue", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    SendItems(tempArray2, ind);
+                }
+                else
+                {
+                    MessageBox.Show("Your items will not be sent");
+                }
+            }
+            else if (check > 150)
+            {
+                DialogResult dr = MessageBox.Show("You don't have enough space in any of your shopping lists for all of these items" +
+                    ", some will be lost or written over. Would you still like to continue?", "Continue", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    SendItems(tempArray2, ind);
+                }
+                else
+                {
+                    MessageBox.Show("Your items will not be sent");
+                }
+            }
+            else if(ind == -1)
+            {
+                MessageBox.Show("Your shopping lists are all full, please make some space before trying to send items.");
+            }
             else
             {
-                string items = ListTB.Text;
-                string[] tempArray2 = items.Split(',');
-                int count = 0;
-                for (int x = ind; x < tempArray2.Length; x++)
-                {
-                    if (listData[ind] != "")
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        listData[ind] = tempArray2[count];
-                        count++;
-                    }
-                }
-
-                MessageBox.Show("Your items have been sent");
-
+                SendItems(tempArray2, ind);
             }
 
         }
 
-   
+        private void SendItems(string[] tempArray2, int index)
+        {
+            for (int x = 0; x < tempArray2.Length; x++)
+            {
+                if (listData[index] != "")
+                {
+                    index++;
+                    continue;
+                }
+                else
+                {
+                    listData[index] = tempArray2[x];
+                    index++;
+                }
+            }
+
+            string list = String.Join("*", listData.ToArray());
+            DataConnect dc = new DataConnect();
+            dc.WriteShop(userId, list, "-1");
+            MessageBox.Show("Your items have been sent");
+        }
 
         private void exitLabel_Click(object sender, EventArgs e)
         {

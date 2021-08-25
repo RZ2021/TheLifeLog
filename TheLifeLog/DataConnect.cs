@@ -274,13 +274,23 @@ namespace TheLifeLog
         public int WriteShop(int id, string items, string check)
         {
             SqlConnection conn = new SqlConnection(@"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True");
-            string sql = "UPDATE ShoppingList SET ListOne = (@lo), Checked = (@checks) WHERE UserId = (@id)";
+            string sql;
+            if(check == "-1")
+            {
+                sql = "UPDATE ShoppingList SET ListOne = (@lo) WHERE UserId = (@id)"; 
+            }
+            else
+            {
+                sql = "UPDATE ShoppingList SET ListOne = (@lo), Checked = (@checks) WHERE UserId = (@id)";
+            }
 
             conn.Open();
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             cmd.Parameters.Add("@lo", SqlDbType.NVarChar).Value = items;
+            
             cmd.Parameters.Add("@checks", SqlDbType.NVarChar).Value = check;
+            
             int updated = cmd.ExecuteNonQuery();
             conn.Close();
             return updated;
