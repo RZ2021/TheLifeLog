@@ -217,7 +217,7 @@ namespace TheLifeLog
 
         private void HabitsButton_Click(object sender, EventArgs e)
         {
-            Habits hb = new Habits();
+            Habits hb = new Habits(userId);
             hb.Show();
             this.Hide();
         }
