@@ -12,15 +12,18 @@ namespace TheLifeLog
 {
     public partial class Habits : Form
     {
+        int userId;
         readonly string yesDate = DateTime.Now.AddDays(-1).ToString("ddMM");
         readonly string today = DateTime.Now.ToString("ddMM");
-        int t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10;
-        int click1 = 0, click2 = 0, click3 = 0, click4 = 0, click5 = 0, click6 = 0, click7 = 0, click8 = 0, click9 = 0, click10 = 0;
-        string y1, y2, y3, y4, y5, y6, y7, y8, y9, y10;
+        List<string> habits = new List<string>();
+        List<string> totals = new List<string>();
+        List<string> streaks = new List<string>();
+        List<string> yesterday = new List<string>();
 
-        public Habits()
+        public Habits(int user)
         {
             InitializeComponent();
+            userId = user;
         }
 
         private void exitLabel_Click(object sender, EventArgs e)
@@ -126,67 +129,32 @@ namespace TheLifeLog
             MessageBox.Show("Your habits have been saved!");
         }
 
-        private void Habits_Load(object sender, EventArgs e)
+        private void GetHabits()
         {
-            //Reads data from db and places it into textboxes
-            string constr = @"Data Source=MASTERBLASTER\SQLEXPRESS;Initial Catalog=LifeLog;Integrated Security=True;";
-            using (SqlConnection con = new SqlConnection(constr))
+            try
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Habits"))
-                {
-                    cmd.CommandType = CommandType.Text;
-                    cmd.Connection = con;
-                    con.Open();
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        sdr.Read();
-                        habitTB1.Text = sdr["name1"].ToString();
-                        habitTB2.Text = sdr["name2"].ToString();
-                        habitTB3.Text = sdr["name3"].ToString();
-                        habitTB4.Text = sdr["name4"].ToString();
-                        habitTB5.Text = sdr["name5"].ToString();
-                        habitTB6.Text = sdr["name6"].ToString();
-                        habitTB7.Text = sdr["name7"].ToString();
-                        habitTB8.Text = sdr["name8"].ToString();
-                        habitTB9.Text = sdr["name9"].ToString();
-                        habitTB10.Text = sdr["name10"].ToString();
-                        t1 = Convert.ToInt32(sdr["total1"]);
-                        t2 = Convert.ToInt32(sdr["total2"]);
-                        t3 = Convert.ToInt32(sdr["total3"]);
-                        t4 = Convert.ToInt32(sdr["total4"]);
-                        t5 = Convert.ToInt32(sdr["total5"]);
-                        t6 = Convert.ToInt32(sdr["total6"]);
-                        t7 = Convert.ToInt32(sdr["total7"]);
-                        t8 = Convert.ToInt32(sdr["total8"]);
-                        t9 = Convert.ToInt32(sdr["total9"]);
-                        t10 = Convert.ToInt32(sdr["total10"]);
-                        s1 = Convert.ToInt32(sdr["streak1"]);
-                        s2 = Convert.ToInt32(sdr["streak2"]);
-                        s3 = Convert.ToInt32(sdr["streak3"]);
-                        s4 = Convert.ToInt32(sdr["streak4"]);
-                        s5 = Convert.ToInt32(sdr["streak5"]);
-                        s6 = Convert.ToInt32(sdr["streak6"]);
-                        s7 = Convert.ToInt32(sdr["streak7"]);
-                        s8 = Convert.ToInt32(sdr["streak8"]);
-                        s9 = Convert.ToInt32(sdr["streak9"]);
-                        s10 = Convert.ToInt32(sdr["streak10"]);
-                        y1 = sdr["yesDate1"].ToString();
-                        y2 = sdr["yesDate2"].ToString();
-                        y3 = sdr["yesDate3"].ToString();
-                        y4 = sdr["yesDate4"].ToString();
-                        y5 = sdr["yesDate5"].ToString();
-                        y6 = sdr["yesDate6"].ToString();
-                        y7 = sdr["yesDate7"].ToString();
-                        y8 = sdr["yesDate8"].ToString();
-                        y9 = sdr["yesDate9"].ToString();
-                        y10 = sdr["yesDate10"].ToString();
-                    }
-                    con.Close();
-                }
-            }
+                DataConnect dc = new DataConnect();
+                string list = dc.ReadHabit(userId);
 
-            refreshLabels();
-            refreshChecks();
+                string[] tempArray = list.Split('|');
+                foreach (string str in tempArray)
+                {
+                    
+                }
+
+                RichTextBox[] tb = {TB1, TB2, TB3, TB4, TB5, TB6, TB7, TB8, TB9, TB10, TB11, TB12, TB13, TB14,
+                    TB15, TB16, TB17, TB18, TB19, TB20, TB21, TB22, TB23, TB24, TB25, TB26, TB27, TB28};
+
+                for (int len = 0; len < Meals.Count; len++)
+                {
+                    tb[len].Text = Meals[len];
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Something went wrong");
+            }
         }
 
         private void refreshChecks()

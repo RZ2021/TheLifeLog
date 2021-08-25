@@ -333,5 +333,51 @@ namespace TheLifeLog
             conn.Close();
             return updated;
         }
+
+        public string ReadHabit(int id)
+        {
+            string habit, tot, str, yes;
+            string constr = @"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True";
+            using (SqlConnection con = new SqlConnection(constr))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT Habit, Total, Streak, Yesterday FROM Habits WHERE UserId = @id"))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+                    cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                    con.Open();
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        sdr.Read();
+                        habit = sdr["Habit"].ToString();
+                        tot = sdr["Total"].ToString();
+                        str = sdr["Streak"].ToString();
+                        yes = sdr["Yesterday"].ToString();
+
+                    }
+                    con.Close();
+                }
+            }
+            string list = String.Join("|", habit, tot, str, yes);
+
+            return list;
+        }
+
+        public int WriteHabit(int id, string habits, string total, string streaks, string yesterday)
+        {
+            SqlConnection conn = new SqlConnection(@"Data Source=MasterBlaster\SQLEXPRESS;Initial Catalog=TheLifeLog;Integrated Security=True");
+            string sql = "UPDATE Habits SET Habit = @hab, Total = @tot, Streak = @str, Yesterday = @yes WHERE UserId = (@id)";
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@hab", SqlDbType.NVarChar).Value = habits;
+            cmd.Parameters.Add("@tot", SqlDbType.NVarChar).Value = total;
+            cmd.Parameters.Add("@str", SqlDbType.NVarChar).Value = streaks;
+            cmd.Parameters.Add("@yes", SqlDbType.NVarChar).Value = yesterday;
+            int updated = cmd.ExecuteNonQuery();
+            conn.Close();
+            return updated;
+        }
     }
 }
