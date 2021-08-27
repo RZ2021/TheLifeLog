@@ -311,6 +311,7 @@ namespace TheLifeLog
             this.pictureBox2.Size = new System.Drawing.Size(169, 180);
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // MealPlanningButton
             // 
@@ -456,6 +457,9 @@ namespace TheLifeLog
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Dashboard_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Dashboard_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Dashboard_MouseUp);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);

@@ -14,6 +14,8 @@ namespace TheLifeLog
     public partial class Dashboard : Form
     {
         private int userId;
+        private bool mouseDown;
+        private Point lastLocation;
         public Dashboard()
         {
             InitializeComponent();
@@ -527,6 +529,34 @@ namespace TheLifeLog
         private void CleaningButton_MouseLeave(object sender, EventArgs e)
         {
             CleaningButton.BackColor = Color.MediumTurquoise;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            log.Show();
+        }
+
+        private void Dashboard_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void Dashboard_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void Dashboard_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }
