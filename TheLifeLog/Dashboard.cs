@@ -19,7 +19,7 @@ namespace TheLifeLog
         public Dashboard()
         {
             InitializeComponent();
-            userId = 1;
+            userId = 8;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

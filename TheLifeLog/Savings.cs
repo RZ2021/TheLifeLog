@@ -27,15 +27,6 @@ namespace TheLifeLog
         {
             savingsButton.BackColor = Color.Gold;
             GetSavings();
-            ProgressTimer.Enabled = true;
-            ProgressTimer.Interval = 1000;
-            MyProgressBar[] pb = { myProgressBar1, myProgressBar2, myProgressBar3, myProgressBar4 };
-            for(int x = 0; x < pb.Length; x++)
-            {
-                pb[x].Enabled = true;
-                pb[x].Minimum = 0;
-                pb[x].Maximum = 100;
-            }
 
         }
 
@@ -59,6 +50,16 @@ namespace TheLifeLog
                 }
                 else
                 {
+                    ProgressTimer.Enabled = true;
+                    ProgressTimer.Interval = 1000;
+                    MyProgressBar[] pb = { myProgressBar1, myProgressBar2, myProgressBar3, myProgressBar4 };
+                    for (int i = 0; i < pb.Length; i++)
+                    {
+                        pb[i].Enabled = true;
+                        pb[i].Minimum = 0;
+                        pb[i].Maximum = 100;
+                    }
+
                     CurrentTot.Clear();
                     GoalName.Clear();
                     Label[] n = { name1Label, name2Label, name3Label, name4Label };
@@ -224,6 +225,13 @@ namespace TheLifeLog
                 }
             }
             
+        }
+
+        private void billsButton_Click(object sender, EventArgs e)
+        {
+            Bills bs = new Bills(userId);
+            bs.Show();
+            this.Close();
         }
     }
 }

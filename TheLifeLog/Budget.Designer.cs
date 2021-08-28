@@ -116,6 +116,7 @@ namespace TheLifeLog
             this.billsButton.TabIndex = 12;
             this.billsButton.Text = "Bills";
             this.billsButton.UseVisualStyleBackColor = false;
+            this.billsButton.Click += new System.EventHandler(this.billsButton_Click);
             // 
             // pictureBox2
             // 

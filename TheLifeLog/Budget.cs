@@ -215,5 +215,12 @@ namespace TheLifeLog
             return total;
 
         }
+
+        private void billsButton_Click(object sender, EventArgs e)
+        {
+            Bills bs = new Bills(userId);
+            bs.Show();
+            this.Close();
+        }
     }
 }
