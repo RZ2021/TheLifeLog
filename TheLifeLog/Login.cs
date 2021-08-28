@@ -47,5 +47,12 @@ namespace TheLifeLog
         {
             mouseDown = false;
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            NewUser nu = new NewUser();
+            nu.Show();
+            this.Close();
+        }
     }
 }
