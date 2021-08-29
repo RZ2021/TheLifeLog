@@ -24,6 +24,7 @@ namespace TheLifeLog
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            //Call the previews
             ToDoProgress();
             CalendarPreview();
             motivationQuotes();
@@ -32,6 +33,7 @@ namespace TheLifeLog
 
         private void motivationQuotes()
         {
+            //Gets a random quote from the array and displays it
             String[] quotes = {"The secret to getting ahead is getting started.", "The best time to plant a tree was 20 years ago. " +
                     "The second best time is now.", "It’s hard to beat a person who never gives up.", "If people are doubting how far you can go, " +
                     "go so far that you can’t hear them anymore.", "Impossible is just an opinion.", "One day or day one. You decide.",
@@ -47,6 +49,7 @@ namespace TheLifeLog
 
         private void ToDoProgress()
         {
+            //Gets checkmarks from database and adds it to a count
             DataConnect dc = new DataConnect();
             string checks = dc.ReadTodo(userId, 1, 2);
             int count = 0;
@@ -60,12 +63,13 @@ namespace TheLifeLog
                 }
             }
 
+            
             string[] paths = { "C:/Users/royet/source/repos/TheLifeLog/Images/tdPro1.png", "C:/Users/royet/source/repos/TheLifeLog/Images/tdPro2.png", "C:/Users/royet/source/repos/TheLifeLog/Images/tdPro3.png",
             "C:/Users/royet/source/repos/TheLifeLog/Images/tdPro4.png", "C:/Users/royet/source/repos/TheLifeLog/Images/tdPro5.png", "C:/Users/royet/source/repos/TheLifeLog/Images/tdPro6.png",
             "C:/Users/royet/source/repos/TheLifeLog/Images/tdPro7.png", "C:/Users/royet/source/repos/TheLifeLog/Images/tdPro8.png", "C:/Users/royet/source/repos/TheLifeLog/Images/tdPro9.png",
             "C:/Users/royet/source/repos/TheLifeLog/Images/tdPro10.png"};
 
-            
+            //Gets picture based on how many checkmarks are checked
             if(count == 0)
             {
                 tdPro.Image = Image.FromFile(paths[0]);
@@ -81,13 +85,11 @@ namespace TheLifeLog
                 tdPro.Image = Image.FromFile(paths[count - 1]);
                 tdProLabel.Text = count + " Tasks Completed";
             }
-        }
-
-
-       
+        }     
 
         private void CalendarPreview()
         {
+            //Gets items in calendar from the database
             DataConnect dc = new DataConnect();
             string temp = dc.ReadCalendar(userId, 1);
             List<string> calData = new List<string>();
@@ -97,12 +99,15 @@ namespace TheLifeLog
             {
                 calData.Add(str);
             }
+            
+            //Gets current day, month, year, and day of week in order to check for the correct days
             int month = DateTime.Now.Month;
             int year = DateTime.Now.Year;
             DateTime dt = new DateTime(year, month, 1);
             int start = (int)dt.DayOfWeek;
             int today = DateTime.Now.Day;
 
+            //Sets the start date to the appropriate box
             if(start == 0)
             {
                 start += today - 1;
@@ -133,7 +138,7 @@ namespace TheLifeLog
             }
 
             int count = 0;
-
+            //Counts out of three days how many of them have events written
             if(calData[start] != "")
             {
                 count++;
@@ -147,6 +152,7 @@ namespace TheLifeLog
                 count++;
             }
 
+            //Sets preview
             if (count == 1)
             {
                 calendarDaysLabel.Text = count.ToString();
@@ -167,6 +173,7 @@ namespace TheLifeLog
 
         private void SavingsPreview()
         {
+            //Gets savings goal and current totals
             DataConnect dc = new DataConnect();
             string goals = dc.ReadSavings(userId, 1);
             string totals = dc.ReadSavings(userId, 3);
@@ -200,6 +207,7 @@ namespace TheLifeLog
                 }
             }
 
+            //Converts to percentage of goal saved, and then calculates which is closest to being done
             List<double> save = new List<double>();
             for(int x = 0; x < Totals.Count; x++)
             {
@@ -211,6 +219,7 @@ namespace TheLifeLog
                 }
             }
 
+            //Gets the closest savings goal to be done
             var min = save.Min();
             percentLabel.Text = "You are " + min.ToString() + "% away from a savings goal!";
 
@@ -226,14 +235,12 @@ namespace TheLifeLog
         {
             ToDo td = new ToDo(userId);
             td.Show();
-
         }
 
         private void MealPlanningButton_Click(object sender, EventArgs e)
         {
             MealPlan mp = new MealPlan(userId);
             mp.Show();
-
         }
 
         private void BudgetButton_Click(object sender, EventArgs e)

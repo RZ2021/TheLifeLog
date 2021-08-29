@@ -76,6 +76,7 @@ namespace TheLifeLog
         {
             try
             {
+                //Gets data from db
                 DataConnect dc = new DataConnect();
                 string temp = dc.ReadCalendar(id, 1);
                 if (temp == null)
@@ -93,6 +94,7 @@ namespace TheLifeLog
                         calData.Add(str);
                     }
 
+                    //Places data into textboxes
                     RichTextBox[] tb = {tb1, tb2, tb3, tb4, tb5, tb6, tb7, tb8, tb9, tb10, tb11, tb12, tb13, tb14,
                     tb15, tb16, tb17, tb18, tb19, tb20, tb21, tb22, tb23, tb24, tb25, tb26, tb27, tb28, tb29, tb30,
                     tb31, tb32, tb33, tb34, tb35, tb36, tb37};
@@ -118,12 +120,14 @@ namespace TheLifeLog
             RichTextBox[] tb = {tb1, tb2, tb3, tb4, tb5, tb6, tb7, tb8, tb9, tb10, tb11, tb12, tb13, tb14,
                     tb15, tb16, tb17, tb18, tb19, tb20, tb21, tb22, tb23, tb24, tb25, tb26, tb27, tb28, tb29, tb30,
                     tb31, tb32, tb33, tb34, tb35, tb36, tb37};
+
             //writes data in textboxes to database
             for (int len = 0; len < tb.Length; len++)
             {
                 calData.Add(tb[len].Text);
             }
 
+            //Turns back into string and sends to calendar db
             string dates = String.Join("*", calData.ToArray());
             DataConnect dc = new DataConnect();
             int answer = dc.WriteCalendar(id, dates, mon, year);
@@ -198,18 +202,6 @@ namespace TheLifeLog
 
         private void setDates()
         {
-            //Send the mon and year to the database
-            SqlConnection conn = new SqlConnection(@"Data Source=MASTERBLASTER\SQLEXPRESS;Initial Catalog=LifeLog;Integrated Security=True;");
-            string sql = "UPDATE Calendar SET Month = (@appt), Year = (@appt2)";
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(sql, conn);
-            cmd.Parameters.Add("@appt", SqlDbType.VarChar);
-            cmd.Parameters["@appt"].Value = mon;
-            cmd.Parameters.Add("@appt2", SqlDbType.VarChar);
-            cmd.Parameters["@appt2"].Value = year;
-            cmd.ExecuteNonQuery();
-            conn.Close();
-
             //Get the right day of the week
             DateTime dt = new DateTime(year, mon, 1);
             int wday = (int)dt.DayOfWeek;
@@ -263,8 +255,6 @@ namespace TheLifeLog
                     tb35.ReadOnly = true;
                     tb36.ReadOnly = true;
                     tb37.ReadOnly = true;
-
-
                     break;
                 case 1:
                     date1.Text = "";
@@ -716,43 +706,14 @@ namespace TheLifeLog
 
         private void clearCalendar_Click(object sender, EventArgs e)
         {
-            tb1.Text = "";
-            tb2.Text = "";
-            tb3.Text = "";
-            tb4.Text = "";
-            tb5.Text = "";
-            tb6.Text = "";
-            tb7.Text = "";
-            tb8.Text = "";
-            tb9.Text = "";
-            tb10.Text = "";
-            tb11.Text = "";
-            tb12.Text = "";
-            tb13.Text = "";
-            tb14.Text = "";
-            tb15.Text = "";
-            tb16.Text = "";
-            tb17.Text = "";
-            tb18.Text = "";
-            tb19.Text = "";
-            tb20.Text = "";
-            tb21.Text = "";
-            tb22.Text = "";
-            tb23.Text = "";
-            tb24.Text = "";
-            tb25.Text = "";
-            tb26.Text = "";
-            tb27.Text = "";
-            tb28.Text = "";
-            tb29.Text = "";
-            tb30.Text = "";
-            tb31.Text = "";
-            tb32.Text = "";
-            tb33.Text = "";
-            tb34.Text = "";
-            tb35.Text = "";
-            tb36.Text = "";
-            tb37.Text = "";
+            RichTextBox[] tb = {tb1, tb2, tb3, tb4, tb5, tb6, tb7, tb8, tb9, tb10, tb11, tb12, tb13, tb14,
+                    tb15, tb16, tb17, tb18, tb19, tb20, tb21, tb22, tb23, tb24, tb25, tb26, tb27, tb28, tb29, tb30,
+                    tb31, tb32, tb33, tb34, tb35, tb36, tb37};
+
+            for (int len = 0; len < tb.Length; len++)
+            {
+                tb[len].Text = "";
+            }
         }
     }
 }
