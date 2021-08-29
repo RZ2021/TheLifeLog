@@ -16,10 +16,10 @@ namespace TheLifeLog
         private int userId;
         private bool mouseDown;
         private Point lastLocation;
-        public Dashboard()
+        public Dashboard(int user)
         {
             InitializeComponent();
-            userId = 8;
+            userId = user;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -162,6 +162,55 @@ namespace TheLifeLog
             }
 
         }*/
+
+        private void Calendar()
+        {
+            DataConnect dc = new DataConnect();
+            string temp = dc.ReadCalendar(userId, 1);
+            List<string> calData = new List<string>();
+
+            string[] tempArray = temp.Split('*');
+            foreach (string str in tempArray)
+            {
+                calData.Add(str);
+            }
+            int month = DateTime.Now.Month;
+            int year = DateTime.Now.Year;
+            DateTime dt = new DateTime(year, month, 1);
+            int start = (int)dt.DayOfWeek;
+            int today = dt.Day;
+
+            if(start == 0)
+            {
+                start += today - 1;
+            }
+            else if (start == 1)
+            {
+                start += today - 1;
+            }
+            else if (start == 2)
+            {
+                start += today - 1;
+            }
+            else if (start == 3)
+            {
+                start += today - 1;
+            }
+            else if (start == 4)
+            {
+                start += today - 1;
+            }
+            else if (start == 5)
+            {
+                start += today - 1;
+            }
+            else if (start == 6)
+            {
+                start += today - 1;
+            }
+
+
+        }
 
         private void calendarPreview()
         {

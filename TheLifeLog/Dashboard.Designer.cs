@@ -61,6 +61,7 @@ namespace TheLifeLog
             this.ToDoButton = new System.Windows.Forms.Button();
             this.CalendarButton = new System.Windows.Forms.Button();
             this.exitLabel = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -80,7 +81,7 @@ namespace TheLifeLog
             this.panel7.Controls.Add(this.label2);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.label7);
-            this.panel7.Location = new System.Drawing.Point(657, 437);
+            this.panel7.Location = new System.Drawing.Point(664, 431);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(413, 202);
             this.panel7.TabIndex = 14;
@@ -140,7 +141,7 @@ namespace TheLifeLog
             this.panel6.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel6.Controls.Add(this.motivationLabel);
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Location = new System.Drawing.Point(657, 248);
+            this.panel6.Location = new System.Drawing.Point(664, 242);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(413, 166);
             this.panel6.TabIndex = 13;
@@ -177,7 +178,7 @@ namespace TheLifeLog
             // 
             this.panel5.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Location = new System.Drawing.Point(818, 83);
+            this.panel5.Location = new System.Drawing.Point(825, 77);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(252, 144);
             this.panel5.TabIndex = 12;
@@ -198,7 +199,7 @@ namespace TheLifeLog
             this.panel4.Controls.Add(this.tdProLabel);
             this.panel4.Controls.Add(this.tdPro);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(280, 248);
+            this.panel4.Location = new System.Drawing.Point(287, 242);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(348, 391);
             this.panel4.TabIndex = 11;
@@ -239,7 +240,7 @@ namespace TheLifeLog
             // 
             this.panel3.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(551, 83);
+            this.panel3.Location = new System.Drawing.Point(558, 77);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(252, 144);
             this.panel3.TabIndex = 10;
@@ -249,7 +250,7 @@ namespace TheLifeLog
             this.panel2.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel2.Controls.Add(this.percentLabel);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(280, 83);
+            this.panel2.Location = new System.Drawing.Point(287, 77);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(252, 144);
             this.panel2.TabIndex = 9;
@@ -277,10 +278,10 @@ namespace TheLifeLog
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Minerva", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(601, 9);
+            this.label3.Font = new System.Drawing.Font("Minerva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(583, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 41);
+            this.label3.Size = new System.Drawing.Size(185, 50);
             this.label3.TabIndex = 8;
             this.label3.Text = "Dashboard";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -288,6 +289,7 @@ namespace TheLifeLog
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.MealPlanningButton);
             this.panel1.Controls.Add(this.GoalsButton);
@@ -319,9 +321,9 @@ namespace TheLifeLog
             this.MealPlanningButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.MealPlanningButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MealPlanningButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MealPlanningButton.Location = new System.Drawing.Point(3, 533);
+            this.MealPlanningButton.Location = new System.Drawing.Point(3, 494);
             this.MealPlanningButton.Name = "MealPlanningButton";
-            this.MealPlanningButton.Size = new System.Drawing.Size(238, 63);
+            this.MealPlanningButton.Size = new System.Drawing.Size(238, 54);
             this.MealPlanningButton.TabIndex = 8;
             this.MealPlanningButton.Text = "Meal Planning";
             this.MealPlanningButton.UseVisualStyleBackColor = false;
@@ -335,9 +337,9 @@ namespace TheLifeLog
             this.GoalsButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.GoalsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GoalsButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoalsButton.Location = new System.Drawing.Point(3, 327);
+            this.GoalsButton.Location = new System.Drawing.Point(3, 314);
             this.GoalsButton.Name = "GoalsButton";
-            this.GoalsButton.Size = new System.Drawing.Size(238, 63);
+            this.GoalsButton.Size = new System.Drawing.Size(238, 54);
             this.GoalsButton.TabIndex = 6;
             this.GoalsButton.Text = "Goals";
             this.GoalsButton.UseVisualStyleBackColor = false;
@@ -351,9 +353,9 @@ namespace TheLifeLog
             this.CleaningButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.CleaningButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CleaningButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CleaningButton.Location = new System.Drawing.Point(3, 602);
+            this.CleaningButton.Location = new System.Drawing.Point(3, 554);
             this.CleaningButton.Name = "CleaningButton";
-            this.CleaningButton.Size = new System.Drawing.Size(238, 63);
+            this.CleaningButton.Size = new System.Drawing.Size(238, 54);
             this.CleaningButton.TabIndex = 7;
             this.CleaningButton.Text = "Cleaning";
             this.CleaningButton.UseVisualStyleBackColor = false;
@@ -367,9 +369,9 @@ namespace TheLifeLog
             this.ShoppingButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ShoppingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShoppingButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShoppingButton.Location = new System.Drawing.Point(3, 464);
+            this.ShoppingButton.Location = new System.Drawing.Point(3, 434);
             this.ShoppingButton.Name = "ShoppingButton";
-            this.ShoppingButton.Size = new System.Drawing.Size(238, 63);
+            this.ShoppingButton.Size = new System.Drawing.Size(238, 54);
             this.ShoppingButton.TabIndex = 5;
             this.ShoppingButton.Text = "Shopping List";
             this.ShoppingButton.UseVisualStyleBackColor = false;
@@ -383,9 +385,9 @@ namespace TheLifeLog
             this.BudgetButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BudgetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BudgetButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BudgetButton.Location = new System.Drawing.Point(3, 395);
+            this.BudgetButton.Location = new System.Drawing.Point(3, 374);
             this.BudgetButton.Name = "BudgetButton";
-            this.BudgetButton.Size = new System.Drawing.Size(238, 63);
+            this.BudgetButton.Size = new System.Drawing.Size(238, 54);
             this.BudgetButton.TabIndex = 4;
             this.BudgetButton.Text = "Budget ";
             this.BudgetButton.UseVisualStyleBackColor = false;
@@ -399,9 +401,9 @@ namespace TheLifeLog
             this.ToDoButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ToDoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ToDoButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ToDoButton.Location = new System.Drawing.Point(3, 258);
+            this.ToDoButton.Location = new System.Drawing.Point(3, 252);
             this.ToDoButton.Name = "ToDoButton";
-            this.ToDoButton.Size = new System.Drawing.Size(238, 63);
+            this.ToDoButton.Size = new System.Drawing.Size(238, 54);
             this.ToDoButton.TabIndex = 3;
             this.ToDoButton.Text = "To Do";
             this.ToDoButton.UseVisualStyleBackColor = false;
@@ -417,7 +419,7 @@ namespace TheLifeLog
             this.CalendarButton.Font = new System.Drawing.Font("Minerva", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CalendarButton.Location = new System.Drawing.Point(3, 189);
             this.CalendarButton.Name = "CalendarButton";
-            this.CalendarButton.Size = new System.Drawing.Size(238, 63);
+            this.CalendarButton.Size = new System.Drawing.Size(238, 54);
             this.CalendarButton.TabIndex = 2;
             this.CalendarButton.Text = "Monthly Calendar";
             this.CalendarButton.UseVisualStyleBackColor = false;
@@ -429,12 +431,22 @@ namespace TheLifeLog
             // 
             this.exitLabel.AutoSize = true;
             this.exitLabel.Font = new System.Drawing.Font("Minerva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitLabel.Location = new System.Drawing.Point(1081, 0);
+            this.exitLabel.Location = new System.Drawing.Point(1082, -9);
             this.exitLabel.Name = "exitLabel";
             this.exitLabel.Size = new System.Drawing.Size(42, 50);
             this.exitLabel.TabIndex = 16;
             this.exitLabel.Text = "x";
             this.exitLabel.Click += new System.EventHandler(this.exitLabel_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Minerva", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(79, 630);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 29);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Logout";
             // 
             // Dashboard
             // 
@@ -474,6 +486,7 @@ namespace TheLifeLog
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -513,5 +526,6 @@ namespace TheLifeLog
         private System.Windows.Forms.Label motivationLabel;
         private System.Windows.Forms.Label percentLabel;
         private System.Windows.Forms.Label exitLabel;
+        private System.Windows.Forms.Label label11;
     }
 }

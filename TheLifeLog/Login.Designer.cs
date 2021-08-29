@@ -31,8 +31,8 @@ namespace TheLifeLog
         {
             this.label3 = new System.Windows.Forms.Label();
             this.exitLabel = new System.Windows.Forms.Label();
-            this.tdTb2 = new System.Windows.Forms.TextBox();
-            this.tdTb1 = new System.Windows.Forms.TextBox();
+            this.passTB = new System.Windows.Forms.TextBox();
+            this.unTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
@@ -60,27 +60,27 @@ namespace TheLifeLog
             this.exitLabel.Text = "x";
             this.exitLabel.Click += new System.EventHandler(this.exitLabel_Click);
             // 
-            // tdTb2
+            // passTB
             // 
-            this.tdTb2.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tdTb2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tdTb2.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tdTb2.Location = new System.Drawing.Point(130, 286);
-            this.tdTb2.Multiline = true;
-            this.tdTb2.Name = "tdTb2";
-            this.tdTb2.Size = new System.Drawing.Size(319, 35);
-            this.tdTb2.TabIndex = 65;
+            this.passTB.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.passTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passTB.Location = new System.Drawing.Point(130, 286);
+            this.passTB.Multiline = true;
+            this.passTB.Name = "passTB";
+            this.passTB.Size = new System.Drawing.Size(319, 35);
+            this.passTB.TabIndex = 65;
             // 
-            // tdTb1
+            // unTB
             // 
-            this.tdTb1.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.tdTb1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tdTb1.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tdTb1.Location = new System.Drawing.Point(130, 181);
-            this.tdTb1.Multiline = true;
-            this.tdTb1.Name = "tdTb1";
-            this.tdTb1.Size = new System.Drawing.Size(319, 35);
-            this.tdTb1.TabIndex = 64;
+            this.unTB.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.unTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.unTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unTB.Location = new System.Drawing.Point(130, 181);
+            this.unTB.Multiline = true;
+            this.unTB.Name = "unTB";
+            this.unTB.Size = new System.Drawing.Size(319, 35);
+            this.unTB.TabIndex = 64;
             // 
             // label1
             // 
@@ -111,6 +111,7 @@ namespace TheLifeLog
             this.saveButton.TabIndex = 84;
             this.saveButton.Text = "Login";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // label4
             // 
@@ -133,8 +134,8 @@ namespace TheLifeLog
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tdTb2);
-            this.Controls.Add(this.tdTb1);
+            this.Controls.Add(this.passTB);
+            this.Controls.Add(this.unTB);
             this.Controls.Add(this.exitLabel);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -152,8 +153,8 @@ namespace TheLifeLog
         #endregion
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label exitLabel;
-        private System.Windows.Forms.TextBox tdTb2;
-        private System.Windows.Forms.TextBox tdTb1;
+        private System.Windows.Forms.TextBox passTB;
+        private System.Windows.Forms.TextBox unTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button saveButton;

@@ -44,7 +44,7 @@ namespace TheLifeLog
             // saveButton
             // 
             this.saveButton.Font = new System.Drawing.Font("Minerva", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Location = new System.Drawing.Point(198, 399);
+            this.saveButton.Location = new System.Drawing.Point(202, 375);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(98, 47);
             this.saveButton.TabIndex = 91;
@@ -56,7 +56,7 @@ namespace TheLifeLog
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Minerva", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(113, 193);
+            this.label2.Location = new System.Drawing.Point(95, 179);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(265, 35);
             this.label2.TabIndex = 90;
@@ -66,7 +66,7 @@ namespace TheLifeLog
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Minerva", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(112, 103);
+            this.label1.Location = new System.Drawing.Point(94, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(266, 35);
             this.label1.TabIndex = 89;
@@ -77,7 +77,7 @@ namespace TheLifeLog
             this.p1TB.BackColor = System.Drawing.Color.PaleTurquoise;
             this.p1TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.p1TB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.p1TB.Location = new System.Drawing.Point(95, 231);
+            this.p1TB.Location = new System.Drawing.Point(101, 217);
             this.p1TB.Multiline = true;
             this.p1TB.Name = "p1TB";
             this.p1TB.Size = new System.Drawing.Size(319, 35);
@@ -88,7 +88,7 @@ namespace TheLifeLog
             this.unTB.BackColor = System.Drawing.Color.PaleTurquoise;
             this.unTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.unTB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unTB.Location = new System.Drawing.Point(95, 141);
+            this.unTB.Location = new System.Drawing.Point(101, 127);
             this.unTB.Multiline = true;
             this.unTB.Name = "unTB";
             this.unTB.Size = new System.Drawing.Size(319, 35);
@@ -98,7 +98,7 @@ namespace TheLifeLog
             // 
             this.exitLabel.AutoSize = true;
             this.exitLabel.Font = new System.Drawing.Font("Minerva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitLabel.Location = new System.Drawing.Point(464, -6);
+            this.exitLabel.Location = new System.Drawing.Point(471, -6);
             this.exitLabel.Name = "exitLabel";
             this.exitLabel.Size = new System.Drawing.Size(42, 50);
             this.exitLabel.TabIndex = 86;
@@ -109,7 +109,7 @@ namespace TheLifeLog
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Minerva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(98, -6);
+            this.label3.Location = new System.Drawing.Point(92, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(316, 50);
             this.label3.TabIndex = 85;
@@ -119,7 +119,7 @@ namespace TheLifeLog
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Minerva", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(112, 285);
+            this.label4.Location = new System.Drawing.Point(95, 270);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(306, 35);
             this.label4.TabIndex = 93;
@@ -130,7 +130,7 @@ namespace TheLifeLog
             this.p2TB.BackColor = System.Drawing.Color.PaleTurquoise;
             this.p2TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.p2TB.Font = new System.Drawing.Font("Minerva", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.p2TB.Location = new System.Drawing.Point(95, 322);
+            this.p2TB.Location = new System.Drawing.Point(101, 308);
             this.p2TB.Multiline = true;
             this.p2TB.Name = "p2TB";
             this.p2TB.Size = new System.Drawing.Size(319, 35);
@@ -140,7 +140,7 @@ namespace TheLifeLog
             // 
             this.ErrorLabel.AutoSize = true;
             this.ErrorLabel.Font = new System.Drawing.Font("Minerva", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorLabel.Location = new System.Drawing.Point(147, 465);
+            this.ErrorLabel.Location = new System.Drawing.Point(89, 455);
             this.ErrorLabel.Name = "ErrorLabel";
             this.ErrorLabel.Size = new System.Drawing.Size(0, 35);
             this.ErrorLabel.TabIndex = 94;
